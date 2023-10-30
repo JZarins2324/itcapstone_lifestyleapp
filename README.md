@@ -1,6 +1,7 @@
  itcapstone_lifestyleapp
  Lifestyle Companion. 
- A web app for tracking days and tasks. 
+ A web app for tracking days and tasks.
+ It is a web app, so does not need to be installed.
 
  Table of Contents 
  includes date features and task management features. 
