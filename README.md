@@ -1,5 +1,4 @@
-<!-- itcapstone_lifestyleapp
-
+ itcapstone_lifestyleapp
  Lifestyle Companion. 
  A web app for tracking days and tasks. 
 
