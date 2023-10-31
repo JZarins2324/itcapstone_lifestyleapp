@@ -6,7 +6,8 @@
  Table of Contents 
  includes date features and task management features. 
 
- USAGE GIF 
+ USAGE GIF
+ 
  Everyone in the Team is contributing. Potential Node or Jasmine 
  tests. Everyone in the Team is credited. Student license. 
 
