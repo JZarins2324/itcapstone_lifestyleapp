@@ -1,52 +1,61 @@
 # Lifestyle Companion
 
+Lifestyle Companion is a web-based application designed to make day-to-day task management and scheduling simple and stress-free. It requires no installation and can be accessed from any web browser, making it a flexible solution for anyone looking to organize their life more effectively.
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Team and Contributions](#team-and-contributions)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+- [Changelog](#changelog)
+- [Demo](#demo)
 
 ## Introduction
-The Lifestyle Companion is a digital tool designed to help users organize their daily lives and reduce stress. Whether you're a busy parent, a student juggling multiple classes, or a professional on the go, our app offers a one-stop solution for managing personal information, daily tasks, and much more.
+Welcome to Lifestyle Companion – your digital partner in planning and organizing your daily activities. Whether it's managing your tasks, keeping track of important dates, or remembering passwords, our app is here to ensure you stay on top of everything with ease and security.
 
 ## Features
-- **To-Do List**: Keep track of your tasks with an easy-to-use interface.
-- **Password Keeper**: Securely store and retrieve your passwords.
-- **Calendar**: Overview of your daily, weekly, and monthly tasks.
-- **Task Alerts**: Get notified about your tasks so you never miss a beat.
-- **Secure Personal Information**: All data is stored with a high degree of security.
+Lifestyle Companion comes with a variety of features to help streamline your day:
+- **Date Features**: View calendars and set reminders for important dates.
+- **Task Management**: Organize your tasks with intuitive lists and notifications.
 
-### Additional Features (To be implemented)
-- **Meal Planner**: Plan your meals and keep track of your diet.
-- **Grocery List**: Organize your shopping trips with a convenient grocery list.
-- **Daily Medicine Tracker**: Never forget to take your medication with our reminder system.
-
-## Installation
-This section will be updated with detailed steps on how to set up the Lifestyle Companion app on both PC and Mac systems.
+There is no need for installation since Lifestyle Companion is a web app accessible through your preferred browser.
 
 ## Usage
-Instructions for using the Lifestyle Companion app will be provided, with steps on how to:
-- Add, edit, and delete tasks.
-- Manage your passwords and secure information.
-- Navigate through the app's calendar and features.
+Here's a quick look at how Lifestyle Companion can enhance your daily productivity:
 
-## Contributing
-We welcome contributions from the community. Please read our contributing guidelines to get started.
+![Usage GIF](path_to_usage_gif)
 
-## License
-The Lifestyle Companion app is made available under the [LICENSE NAME]. See the LICENSE file for more details.
+*Note: Replace `path_to_usage_gif` with the actual path to the GIF.*
 
-## Contact
-For support, feedback, or inquiries, please reach out to us at [Contact Information].
+## Team and Contributions
+Our team is dedicated to providing a seamless and efficient experience with Lifestyle Companion. We are open to contributions and are considering incorporating Node or Jasmine for future testing.
 
-## Acknowledgments
-Special thanks to the team members and contributors who have made this project possible:
+The entire team is credited for their contributions:
 - S. Schmitz
 - A. Morford
 - J. Zarins
 
-And thank you to all our users and supporters!
+We operate under a student license, ensuring that our work adheres to the necessary academic standards and regulations.
+
+## License
+Lifestyle Companion is shared with the community under a student license. For more detailed information, please refer to the LICENSE file.
+
+## Contact
+For any inquiries or support issues, please reach out to our team at [Team Contact Information].
+
+*Note: Replace `[Team Contact Information]` with your actual contact details.*
+
+## Changelog
+Insert Changes Here.
+
+*Note: Update this section regularly with details about new features, bug fixes, and improvements.*
+
+## Demo
+Below is a diagrammatic representation of Lifestyle Companion's functionality:
+
+![Demo Diagram](path_to_demo_diagram)
+
+*Note: Replace `path_to_demo_diagram` with the actual path to the image.*
+
