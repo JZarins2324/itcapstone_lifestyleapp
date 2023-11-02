@@ -27,8 +27,6 @@ Here's a quick look at how Lifestyle Companion can enhance your daily productivi
 
 ![Usage GIF](path_to_usage_gif)
 
-*Note: Replace `path_to_usage_gif` with the actual path to the GIF.*
-
 ## Team and Contributions
 Our team is dedicated to providing a seamless and efficient experience with Lifestyle Companion. We are open to contributions and are considering incorporating Node or Jasmine for future testing.
 
@@ -45,8 +43,6 @@ Lifestyle Companion is shared with the community under a student license. For mo
 ## Contact
 For any inquiries or support issues, please reach out to our team at [Team Contact Information].
 
-*Note: Replace `[Team Contact Information]` with your actual contact details.*
-
 ## Changelog
 Insert Changes Here.
 
@@ -56,5 +52,3 @@ Insert Changes Here.
 Below is a diagrammatic representation of Lifestyle Companion's functionality:
 
 ![Demo Diagram](path_to_demo_diagram)
-
-*Note: Replace `path_to_demo_diagram` with the actual path to the image.*
