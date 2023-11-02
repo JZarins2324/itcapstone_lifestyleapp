@@ -58,4 +58,3 @@ Below is a diagrammatic representation of Lifestyle Companion's functionality:
 ![Demo Diagram](path_to_demo_diagram)
 
 *Note: Replace `path_to_demo_diagram` with the actual path to the image.*
-
