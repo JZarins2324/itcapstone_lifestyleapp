@@ -17,7 +17,7 @@ Welcome to Lifestyle Companion – your digital partner in planning and organizi
 
 ## Features
 Lifestyle Companion comes with a variety of features to help streamline your day:
-- **Date Features**: View calendars and set reminders for important dates.
+- **Date Features**: Set reminders.
 - **Task Management**: Organize your tasks with intuitive lists and notifications.
 
 There is no need for installation since Lifestyle Companion is a web app accessible through your preferred browser.
