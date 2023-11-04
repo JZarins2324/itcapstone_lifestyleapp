@@ -1,2 +1,5 @@
 <?php
-echo "Hello, World!";
+// Redirect to home page
+header('Location: pages/home.php');
+exit();
+?>
