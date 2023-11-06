@@ -50,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password is incorrect
             // Handle the error appropriately
             $_SESSION['error'] = 'Incorrect username or password.';
-						header('Location: ../pages/login.php');
-						exit();
+			header('Location: ../pages/login.php');
+			exit();
         }
     }
 }
