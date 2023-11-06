@@ -3,13 +3,10 @@
   <body>
     <header>This is used to create the database.</header>
     <?php
-      $serverName = "localhost";
-      $username = "root";
-      $password = "mysql";
-      $dbname = "LifestyleDB";
+      include "../includes/dbconnect.php";
 
       // Create Connection
-      $conn = new mysqli($serverName, $username, $password, $dbname);
+      $conn = new mysqli($host, $user, $pass, $dbname);
       // Check Connection
       if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);
@@ -21,8 +18,8 @@
       
       $createUsers = "CREATE TABLE users (
           userID INT(6) AUTO_INCREMENT,
-          userName VARCHAR(16) NOT NULL,
-          userPass VARCHAR(16) NOT NULL,
+          userName VARCHAR(128) NOT NULL,
+          userPass VARCHAR(128) NOT NULL,
           currentTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           PRIMARY KEY (userID)
         );";
