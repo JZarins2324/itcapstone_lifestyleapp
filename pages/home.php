@@ -19,6 +19,6 @@ if(!isset($_SESSION["username"])){
     <h1>Welcome to Lifestyle Companion, <?= $_SESSION["username"] ?></h1>
     <p>This is the home page. Here you can manage your to-dos, notes, and other information.</p>
     <a href='view.php'>View Entries</a> | 
-    <a href='logout.php'>Logout</a>
+    <a href='../server/logout.php'>Logout</a>
 </body>
 </html>
