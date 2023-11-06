@@ -55,62 +55,38 @@
         $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
         $notesData = "INSERT INTO notes (notesDesc) VALUES ('This field has a maximum of two-hundred-fifty-six characters.');";
 
-        if ($conn->query($createLifestyleDB) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-        if ($conn->query($createUsers) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
+// Create database if it doesn't exist
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully or already exists\n";
+} else {
+    echo "Error creating database: " . $conn->error;
+    $conn->close();
+    exit;
+}
 
-        if ($conn->query($createLists) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
+// Select the database
+$conn->select_db($dbname);
 
-        if ($conn->query($createPasswords) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
+// SQL to create table
+$createUsers = "CREATE TABLE IF NOT EXISTS users (
+	userID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	userName VARCHAR(30) NOT NULL,
+	userPass VARCHAR(255) NOT NULL,
+	currentTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
 
-        if ($conn->query($createNotes) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
 
-        if ($conn->query($userData) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
+// Check and create table if it doesn't exist
+if ($conn->query($createUsers) !== TRUE) {
+    echo "Error creating table: " . $conn->error;
+}
 
-        if ($conn->query($listData) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
-
-        if ($conn->query($passwordData) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
-
-        if ($conn->query($notesData) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
-
-        $conn->close();
-    ?>
-
-  </body>
-</html>
+// Close connection
+$conn->close();
+?>
