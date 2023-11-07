@@ -3,7 +3,7 @@
   <body>
     <header>This is used to create the database.</header>
     <?php
-      include "includes/dbconnect.php";
+      include "../includes/dbconnect.php";
 
       // Create Connection
       $conn = new mysqli($host, $user, $pass, $dbname);
@@ -15,8 +15,6 @@
 
       // Create Tables
       $createLifestyleDB = "CREATE DATABASE IF NOT EXISTS LifestyleDB;";
-
-      $conn->select_db("lifestyledb");
       
       $createUsers = "CREATE TABLE users (
           userID INT(6) AUTO_INCREMENT,
@@ -52,6 +50,11 @@
           FOREIGN KEY (userID) REFERENCES users(userID)
         );";
         
+        $userData = "INSERT INTO users (userName, userPass) VALUES ('Steve', 'Captain99');";
+        $listData = "INSERT INTO lists (listDate, listDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
+        $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
+        $notesData = "INSERT INTO notes (notesDesc) VALUES ('This field has a maximum of two-hundred-fifty-six characters.');";
+
         $userData = "INSERT INTO users (userName, userPass) VALUES ('Steve', 'Captain99');";
         $listData = "INSERT INTO lists (listDate, listDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
         $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
@@ -111,5 +114,8 @@
           echo "Error in SQL: " . $conn->error;
         };
 
+        // Close connection
         $conn->close();
-    ?>
+      ?>
+  </body>
+<html>

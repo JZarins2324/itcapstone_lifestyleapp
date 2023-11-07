@@ -13,12 +13,14 @@ if(!isset($_SESSION["username"])){
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Lifestyle Companion</title>
-    <!-- Add link to CSS file if needed -->
+		<link rel="stylesheet" type="text/css" href="../assets/css/stylesheet.css">
 </head>
 <body>
     <h1>Welcome to Lifestyle Companion, <?= $_SESSION["username"] ?></h1>
     <p>This is the home page. Here you can manage your to-dos, notes, and other information.</p>
+		<div class="links-container">
     <a href='view.php'>View Entries</a> | 
     <a href='../server/logout.php'>Logout</a>
+		</div>
 </body>
 </html>
