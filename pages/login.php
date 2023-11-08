@@ -20,18 +20,22 @@ if (isset($_SESSION['error'])) {
 </head>
 <body>
 <div class="login-container">
-    <h1>Login</h1>
+    <h1 id="formTitle">Login</h1>
     <form method="post" action="../server/authenticate.php">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
-        <input type="submit" value="login" />
+        <input id="submit" type="submit" value="Login" />
     </form>
-    <h1>Sign Up</h1>
+    <button id="change">Create Account</button>
+    <!-- <h1>Sign Up</h1>
     <form method="post" action="../server/authenticate.php">
         <input type="text" name="newUsername" placeholder="Username" required />
         <input type="password" name="newPassword" placeholder="Password" required />
         <input type="submit" value="signup" />
-    </form>
+    </form> -->
+    <?php
+        echo '<script src="../assets/js/login.js"></script>'
+    ?>
 </div>
 </body>
 </html>
