@@ -13,7 +13,7 @@ change.addEventListener('click', function () {
   } else if (submitBtn.value == "Create Account"){
     submitBtn.value = "Login";
     submitBtn.name = "Login";
-    formTitle.innerHTML = "Create Account";
+    formTitle.innerHTML = "Login";
     change.innerHTML = "Create Account"
   }
 });
