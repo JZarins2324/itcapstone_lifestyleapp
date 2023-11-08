@@ -24,8 +24,9 @@ if (isset($_SESSION['error'])) {
     <form method="post" action="../server/authenticate.php">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
-        <input id="submit" type="submit" value="Login" />
+        <input id="submit" name="Login" type="submit" value="Login" />
     </form>
+    <p style="text-align:center">or</p>
     <button id="change">Create Account</button>
     <!-- <h1>Sign Up</h1>
     <form method="post" action="../server/authenticate.php">
