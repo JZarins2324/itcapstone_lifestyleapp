@@ -24,13 +24,13 @@ if (isset($_SESSION['error'])) {
     <form method="post" action="../server/authenticate.php">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
-        <input type="submit" value="Login" />
+        <input type="submit" value="login" />
     </form>
     <h1>Sign Up</h1>
     <form method="post" action="../server/authenticate.php">
         <input type="text" name="newUsername" placeholder="Username" required />
         <input type="password" name="newPassword" placeholder="Password" required />
-        <input type="submit" value="Login" />
+        <input type="submit" value="signup" />
     </form>
 </div>
 </body>
