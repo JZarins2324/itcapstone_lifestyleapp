@@ -4,7 +4,7 @@ body {
 		place-items: center;
 		min-height: 100vh;
 }
-.links-container {
+/* .links-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,4 +42,4 @@ input[type="submit"] {
 .error-message {
 		color: red;
 		text-align: center;
-}
+} */

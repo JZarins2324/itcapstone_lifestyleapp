@@ -13,7 +13,8 @@ if(!isset($_SESSION["username"])){
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Lifestyle Companion</title>
-		<link rel="stylesheet" type="text/css" href="../assets/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/app.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
 </head>
 <body>
     <h1>Welcome to Lifestyle Companion, <?= $_SESSION["username"] ?></h1>

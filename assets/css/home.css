@@ -1,0 +1,11 @@
+.links-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50);
+	gap: 10px;
+}
