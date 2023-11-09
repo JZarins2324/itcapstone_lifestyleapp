@@ -20,7 +20,7 @@ if(!isset($_SESSION["username"])){
     <select name="new" id="new">
       <option value="note">Note</option>
       <option value="password">Password</option>
-      <option value="todolist">To-Do List</option>
+      <option value="task">Task</option>
     </select>
     <br><br>
 
@@ -30,7 +30,11 @@ if(!isset($_SESSION["username"])){
     <label for="desc">Description</label><br>
     <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Description..."></textarea><br><br>
 
+    <label id="dateLabel" for="date" style="display:none">Date</label>
+    <input type="date" name="date" id="date" style="display:none"><br><br>
+
     <input type="submit" value="Add">
   </form>
+  <?= '<script src="../assets/js/input.js"></script>'; ?>
 </body>
 </html>
