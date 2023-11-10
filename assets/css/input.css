@@ -1,0 +1,33 @@
+#container {
+  width: 300px;
+  margin: 10rem auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form {
+  padding: 10px;
+}
+
+label:first-child {
+  font-size: larger;
+}
+
+select {
+  font-size: large;
+}
+
+input,
+textarea {
+  width: 275px;
+}
+
+#submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5C85AD;
+  color: white;
+  cursor: pointer;
+}
