@@ -21,10 +21,7 @@ if(!isset($_SESSION["username"])){
     <h1>Welcome to Lifestyle Companion, <?= $_SESSION["username"] ?></h1>
 		</header>
 		<div class="layout">
-    <aside class="left-aside">
-			aside
-			information
-		</aside>
+    <aside class="left-aside"></aside>
 		<main class="main-content">
 		<div class="main">
 		<p>This is the home page. Here you can manage your to-dos, notes, and other information.</p>
@@ -44,10 +41,7 @@ if(!isset($_SESSION["username"])){
     <a href='../server/logout.php'>Logout</a>
 		</div>
 		</main>
-		<aside class="right-aside">
-			aside
-			information
-		</aside>
+		<aside class="right-aside"></aside>
 		</div>
 		<footer class="site-footer">footer information</footer>
 
