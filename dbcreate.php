@@ -4,9 +4,7 @@
 <html>
   <body>
     <header>This is used to create the database.</header>
-    <?php
-      include "includes/dbconnect.php";
-    
+    <?php include "../includes/dbconnect.php";
       // Create Connection
       $conn = new mysqli($host, $user, $pass, $dbname);
       // Check Connection
@@ -16,8 +14,6 @@
       echo "Connected Successfully";
       // Create Tables
       $createLifestyleDB = "CREATE DATABASE IF NOT EXISTS LifestyleDB;";
-
-      $conn->select_db("lifestyledb");
       
       $createUsers = "CREATE TABLE IF NOT EXISTS users (
           userID INT(6) AUTO_INCREMENT,
@@ -57,43 +53,53 @@
         $taskData = "INSERT INTO tasks (taskDate, taskDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
         $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
         $notesData = "INSERT INTO notes (notesDesc) VALUES ('This field has a maximum of two-hundred-fifty-six characters.');";
-
+        
         if ($conn->query($createLifestyleDB) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          $userData = "INSERT INTO users (userName, userPass) VALUES ('Steve', 'Captain99');";
+          $listData = "INSERT INTO lists (listDate, listDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
+          $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
+          $notesData = "INSERT INTO notes (notesDesc) VALUES ('This field has a maximum of two-hundred-fifty-six characters.');";
 
-        if ($conn->query($createUsers) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($createLifestyleDB) === true) {
+            echo "SQL running successfully";
+          } else {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($createTasks) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($createUsers) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($createPasswords) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($createTasks) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($createNotes) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($createPasswords) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($userData) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($createNotes) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($taskData) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($userData) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($passwordData) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($taskData) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
-        if ($conn->query($notesData) !== true) {
-          echo "Error in SQL: " . $conn->error;
-        };
+          if ($conn->query($passwordData) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
 
+          if ($conn->query($notesData) !== true) {
+            echo "Error in SQL: " . $conn->error;
+          };
+        }
+
+        // Close connection
         $conn->close();
     ?>
   </body>

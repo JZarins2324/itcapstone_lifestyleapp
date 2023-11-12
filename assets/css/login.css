@@ -1,0 +1,36 @@
+.login-container {
+  width: 300px;
+  padding: 20px;
+  margin: 100px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 5px 14px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#change {
+  margin-top: 0rem;
+}
+
+#change,
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5C85AD;
+  color: white;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

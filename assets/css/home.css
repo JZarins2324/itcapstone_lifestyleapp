@@ -1,0 +1,45 @@
+
+/* FLEX CSS ENVIRONMENT */
+.site-header {
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+}
+
+html, body {
+  text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.layout {
+	display: flex;
+	flex-direction: row;
+}
+
+.left-aside {
+	flex: 0 0 auto;
+}
+
+.main-content {
+	flex-grow: 1;
+
+}
+
+.right-aside {
+	flex: 0 0 auto;
+}
+
+.links-container {
+	text-align: center;
+	width: 100%;
+}

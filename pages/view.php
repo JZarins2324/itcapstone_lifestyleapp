@@ -1,4 +1,13 @@
 <?php include "../includes/tabledata.php";
+session_start();
+
+// Check if the user is logged in, if not then redirect to login page
+if(!isset($_SESSION["username"])){
+    header("location: login.php");
+    exit;
+}
+
+// The view page for displaying user information
 
     // The view page for displaying user information
 
