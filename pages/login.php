@@ -57,12 +57,9 @@ if (isset($_SESSION['error'])) {
         <input type="password" name="password" placeholder="Password" required />
         <input type="submit" value="Login" />
     </form>
-    <h1>Sign Up</h1>
-    <form method="post" action="../server/authenticate.php">
-        <input type="text" name="newUsername" placeholder="Username" required />
-        <input type="password" name="newPassword" placeholder="Password" required />
-        <input type="submit" value="Login" />
-    </form>
+    <?php 
+      echo "*Warning: Password must contain a number";
+    ?>
 </div>
 </body>
 </html>

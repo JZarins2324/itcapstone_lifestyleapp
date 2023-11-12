@@ -1,3 +1,5 @@
+<?php // Author: Samuel Schmitz ?>
+
 <html>
   <body>
 
@@ -29,58 +31,68 @@
         }
       }
 
-      /* Compare Username and Password
-      if ($userName == Database Username && $userPass == Database Password) {
-        Send to homepage
-      }
-      else {
-        echo "Username and/or Password is incorrect."
-      }*/
+      //Require Number
+      $passChars = str_split($userPass);
 
-      //Sign Up Variables Set
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // collect value of input field
-        $newUser = $_POST['newUsername'];
-        if (empty($userName)) {
-          echo "Name is empty";
-        } else {
-          echo $userName;
+      foreach ($passChars as $passChar) {
+        for ($i = 0; $i < 10; $i++) {
+          if ($passChar = $i) {
+            break;
+          }
+          else {
+            $_SESSION['numberMessage'] = "Password requires number.";
+          }
         }
       }
 
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // collect value of input field
-        $newPass = $_POST['newPassword'];
-        if (empty($userPass)) {
-          echo "Name is empty";
-        } else {
-          echo $userPass;
+      // Check Login or Create Account
+      if (isset($_POST["Login"])) {
+
+        // Generate Queries
+        $names = array($conn->query("SELECT userName FROM users WHERE userName = $userName"));
+        $passwords = array($conn->query("SELECT userPass FROM users WHERE userPass = $userPass"));
+        
+        $nameCount = count($names);
+        $passCount = count($passwords);
+
+        // Compare Username and Password
+        if ($nameCount = 1 && $passCount = 1) {
+          // Redirect to home page
+          header('Location: pages/home.php');
+          exit();
         }
+        else {
+          echo "Username and/or Password is incorrect.";
+        }
+      
+      } else if (isset($_POST["Create Account"])) {
+
+        // Database Variables
+        $serverName = "localhost";
+        $username = "root";
+        $password = "mysql";
+        $dbname = "LifestyleDB";
+
+        // Create Connection
+        $conn = new mysqli($serverName, $username, $password, $dbname);
+
+        // Check Connection
+        if ($conn->connect_error) {
+          die("Connection Failed: " . $conn->connect_error);
+        }
+        echo "Connected Successfully";
+
+        // Insert New User SQL
+        $addUser = "INSERT INTO users SET userName = '$newUser', userPass = '$newPass'";
+
+        // Insert New User
+        if ($conn->query($addUser) === true) {
+          echo "SQL running successfully";
+        } else {
+          echo "Error in SQL: " . $conn->error;
+        };
+
       }
-
-
-      // Database Variables
-      $serverName = "localhost";
-      $username = "root";
-      $password = "mysql";
-      $dbname = "LifestyleDB";
-      // Create Connection
-      $conn = new mysqli($serverName, $username, $password, $dbname);
-      // Check Connection
-      if ($conn->connect_error) {
-        die("Connection Failed: " . $conn->connect_error);
-      }
-      echo "Connected Successfully";
-
-      // SQL Query
-      $addUser = "UPDATE users SET userName = '$newUser', userPass = '$newPass'";
-
-      // Run SQL Query
-      if ($conn->query($addUser) === true) {
-        echo "SQL running successfully";
-      } else {
-        echo "Error in SQL: " . $conn->error;
-      };
     ?>
 
   </body>

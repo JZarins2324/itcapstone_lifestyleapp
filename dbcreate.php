@@ -1,3 +1,5 @@
+<?php // Author: Samuel Schmitz ?>
+
 <!DOCTYPE html>
 <html>
   <body>
@@ -25,12 +27,12 @@
           PRIMARY KEY (userID)
         );";
         
-        $createLists = "CREATE TABLE IF NOT EXISTS lists (
-          listID INT(6) NOT NULL AUTO_INCREMENT,
-          listDate DATETIME NOT NULL,
-          listDesc VARCHAR(128) NOT NULL,
+        $createTasks = "CREATE TABLE IF NOT EXISTS tasks (
+          taskID INT(6) NOT NULL AUTO_INCREMENT,
+          taskDate DATETIME NOT NULL,
+          taskDesc VARCHAR(128) NOT NULL,
           userID INT(6),
-          PRIMARY KEY (listID),
+          PRIMARY KEY (taskID),
           FOREIGN KEY (userID) REFERENCES users(userID)
         );";
         
@@ -52,7 +54,7 @@
         );";
         
         $userData = "INSERT INTO users (userName, userPass) VALUES ('Steve', 'Captain99');";
-        $listData = "INSERT INTO lists (listDate, listDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
+        $taskData = "INSERT INTO tasks (taskDate, taskDesc) VALUES ('1/1/01', 'This is an example of describing your todo');";
         $passwordData = "INSERT INTO passwords (passName, passDesc) VALUES ('Falcon66', 'Gmail');";
         $notesData = "INSERT INTO notes (notesDesc) VALUES ('This field has a maximum of two-hundred-fifty-six characters.');";
 
@@ -64,7 +66,7 @@
           echo "Error in SQL: " . $conn->error;
         };
 
-        if ($conn->query($createLists) !== true) {
+        if ($conn->query($createTasks) !== true) {
           echo "Error in SQL: " . $conn->error;
         };
 
@@ -80,7 +82,7 @@
           echo "Error in SQL: " . $conn->error;
         };
 
-        if ($conn->query($listData) !== true) {
+        if ($conn->query($taskData) !== true) {
           echo "Error in SQL: " . $conn->error;
         };
 
@@ -94,3 +96,5 @@
 
         $conn->close();
     ?>
+  </body>
+</html>
