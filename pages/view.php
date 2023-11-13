@@ -31,11 +31,26 @@ if(!isset($_SESSION["username"])){
         echo "</div>";
     }
 
-    //Display Table Data
-    /*foreach ($taskData as $data) {
-        ?><tr><td>
-        <?php echo "$data"; ?>
-        </td></tr><?php
-    }*/
+    // Display Task Data
+    if ($taskData->num_rows > 0) {
+      echo "<table>";
+      while ($data = $taskData->fetch_assoc()) {
+        echo "<tr><td>";
+        echo "Task Data: " .$data["taskDate"]. " - Task Description: " .$data["taskDesc"];
+        echo "</td></tr>";
+      }
+      echo "</table>";
+    }
+    ?> <br> <?php
+    // Display Note Data
+    if ($noteData->num_rows > 0) {
+        echo "<table>";
+        while ($data = $noteData->fetch_assoc()) {
+          echo "<tr><td>";
+          echo "Note Description: " .$data["notesDesc"]. "";
+          echo "</td></tr>";
+        }
+        echo "</table>";
+      }
 
 ?>

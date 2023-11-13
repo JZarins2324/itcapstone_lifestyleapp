@@ -56,7 +56,7 @@
         $passCount = count($passwords);
 
         // Compare Username and Password
-        if ($nameCount = 1 && $passCount = 1) {
+        if ($nameCount > 1 && $passCount = 1) {
           // Redirect to home page
           header('Location: pages/home.php');
           exit();

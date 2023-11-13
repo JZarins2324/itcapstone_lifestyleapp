@@ -16,5 +16,6 @@
   }
   echo "Connected Successfully";
   
-  //$taskData = array($conn->query("SELECT taskDate, taskDesc FROM tasks;"));
+  $taskData = $conn->query("SELECT taskDate, taskDesc FROM tasks;");
+  $noteData = $conn->query("SELECT notesDesc FROM notes");
 ?>
