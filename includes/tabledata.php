@@ -18,4 +18,5 @@
   
   $taskData = $conn->query("SELECT taskDate, taskDesc FROM tasks;");
   $noteData = $conn->query("SELECT notesDesc FROM notes");
+  $passData = $conn->query("SELECT passName, passDesc FROM passwords;")
 ?>

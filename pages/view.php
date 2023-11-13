@@ -7,47 +7,47 @@ if(!isset($_SESSION["username"])){
     exit;
 }
 
+?> <link rel="stylesheet" type="text/css" href="../assets/css/table.css"> <?php
+
 // The view page for displaying user information
     // The view page for displaying user information
 
     echo "<h1>View Your Entries</h1>";
 
-    // Sample data array simulating fetched data from the database
-    $entries = [
-        ['id' => 1, 'type' => 'to-do', 'content' => 'Buy groceries'],
-        ['id' => 2, 'type' => 'note', 'content' => 'Meeting at 10am with team'],
-        // More entries would be fetched in a real application
-    ];
-
-    // Display the entries
-    foreach ($entries as $entry) {
-        echo "<div class='entry'>";
-        echo "<h2>" . ucfirst($entry['type']) . "</h2>";
-        echo "<p>" . $entry['content'] . "</p>";
-        // Edit and delete options for each entry
-        echo "<a href='edit.php?id=" . $entry['id'] . "'>Edit</a> | ";
-        echo "<a href='delete.php?id=" . $entry['id'] . "'>Delete</a>";
-        echo "</div>";
-    }
+    ?> <h2>Your Tasks:</h1> <?php
 
     // Display Task Data
     if ($taskData->num_rows > 0) {
       echo "<table>";
       while ($data = $taskData->fetch_assoc()) {
-        echo "<tr><td>";
-        echo "Task Data: " .$data["taskDate"]. " - Task Description: " .$data["taskDesc"];
-        echo "</td></tr>";
+        echo "<tr><th> Task Date </th><th> Task Description </th></tr>";
+        echo "<tr>";
+        echo "<tr><td>" .$data["taskDate"]. "</td><td> " .$data["taskDesc"]. "</td></tr>";
       }
       echo "</table>";
     }
     ?> <br> <?php
+
+    ?> <h2>Your Passwords:</h1> <?php
+
+    // Display Note Data
+    if ($passData->num_rows > 0) {
+        echo "<table>";
+        while ($data = $passData->fetch_assoc()) {
+          echo "<tr><th> Your Passwords: </th></tr>";
+          echo "<tr><td>" .$data["passName"]. "</td><td>" .$data["passDesc"]. "</td></tr>";
+        }
+        echo "</table>";
+      }
+
+    ?> <h2>Your Notes:</h1> <?php
+
     // Display Note Data
     if ($noteData->num_rows > 0) {
         echo "<table>";
         while ($data = $noteData->fetch_assoc()) {
-          echo "<tr><td>";
-          echo "Note Description: " .$data["notesDesc"]. "";
-          echo "</td></tr>";
+          echo "<tr><th> Your Notes: </th></tr>";
+          echo "<tr><td>" .$data["notesDesc"]. "</td></tr>";
         }
         echo "</table>";
       }
