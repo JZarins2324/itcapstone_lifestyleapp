@@ -38,6 +38,7 @@ if(!isset($_SESSION["username"])){
 		</div>
 		<div class="links-container">
     <a href='view.php'>View Entries</a> | 
+    <a href='input.php'>New Entry</a> | 
     <a href='../server/logout.php'>Logout</a>
 		</div>
 		</main>
