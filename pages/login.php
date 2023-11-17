@@ -26,7 +26,7 @@ if (isset($_SESSION['error'])) {
         <input type="password" name="password" placeholder="Password" required />
         <input id="submit" name="Login" type="submit" value="Login" />
     </form>
-    <p style="text-align:center">or click bellow to</p>
+    <p style="text-align:center">or click below to</p>
     <button id="change">Create Account</button>
     <!-- <h1>Sign Up</h1>
     <form method="post" action="../server/authenticate.php">
@@ -35,7 +35,9 @@ if (isset($_SESSION['error'])) {
         <input type="submit" value="signup" />
     </form> -->
     <?php
-        echo '<script src="../assets/js/login.js"></script>'
+        echo '<script src="../assets/js/login.js"></script>';
+        ?><br><br><?php
+        echo "*Password must contain a number";
     ?>
 </div>
 </body>

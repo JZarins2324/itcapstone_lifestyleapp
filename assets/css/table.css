@@ -1,3 +1,9 @@
+th {
+    font-weight: bold;
+}
+
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid forestgreen;
+    color: navy;
+    text-align: center;
 }
