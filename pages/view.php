@@ -35,7 +35,7 @@ if(!isset($_SESSION["username"])){
     if ($passData->num_rows > 0) {
         echo "<table>";
         while ($data = $passData->fetch_assoc()) {
-          echo "<tr><th> Your Passwords: </th></tr>";
+          echo "<tr><th> Password </th><th> Description </th></tr>";
           echo "<tr><td>" .$data["passName"]. "</td><td>" .$data["passDesc"]. "</td></tr>";
         }
         echo "</table>";
@@ -47,7 +47,6 @@ if(!isset($_SESSION["username"])){
     if ($noteData->num_rows > 0) {
         echo "<table>";
         while ($data = $noteData->fetch_assoc()) {
-          echo "<tr><th> Your Notes: </th></tr>";
           echo "<tr><td>" .$data["notesDesc"]. "</td></tr>";
         }
         echo "</table>";

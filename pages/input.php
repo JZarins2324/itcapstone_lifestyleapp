@@ -1,4 +1,4 @@
-<?php
+<?php include "../includes/inputHandler.php";
 session_start();
 
 if(!isset($_SESSION["username"])){
@@ -18,11 +18,11 @@ if(!isset($_SESSION["username"])){
 <body>
   <div id="container">
     <form action="../includes/inputhandler.php" method="post">
-      <label for="new">Add new</label>
-      <select name="new" id="new">
-        <option value="note">Note</option>
-        <option value="password">Password</option>
+      <label for="inputLabel">Add new</label>
+      <select name="userInput" id="userInput">
         <option value="task">Task</option>
+        <option value="password">Password</option>
+        <option value="note">Note</option>
       </select>
       <br><br>
 

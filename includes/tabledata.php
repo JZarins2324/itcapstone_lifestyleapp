@@ -16,7 +16,7 @@
   }
   echo "Connected Successfully";
   
-  $taskData = $conn->query("SELECT taskDate, taskDesc FROM tasks;");
+  $taskData = $conn->query("SELECT taskDate, taskDesc FROM tasks ORDER BY taskDate;");
+  $passData = $conn->query("SELECT passName, passDesc FROM passwords;");
   $noteData = $conn->query("SELECT notesDesc FROM notes");
-  $passData = $conn->query("SELECT passName, passDesc FROM passwords;")
 ?>

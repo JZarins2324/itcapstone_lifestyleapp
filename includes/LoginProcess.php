@@ -31,7 +31,7 @@
         }
       }
 
-      //Require Number
+      // Check for number
       $passChars = str_split($userPass);
 
       foreach ($passChars as $passChar) {
@@ -43,6 +43,11 @@
             $_SESSION['numberMessage'] = "Password requires number.";
           }
         }
+      }
+
+      // Check for uppercase letter
+      if ($strtolower($userPass) == $userPass) {
+        $_SESSION['upperCaseMessage'] = "Password requires an uppercase letter.";
       }
 
       // Check Login or Create Account
