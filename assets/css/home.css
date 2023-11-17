@@ -1,4 +1,5 @@
- 
+
+/* FLEX CSS ENVIRONMENT */
 .site-header {
 	background-color: #333;
 	color: white;
@@ -7,14 +8,12 @@
 	justify-content: center;
 }
 
-
 html, body {
   text-align: center;
 	margin: 0 10%;
 	padding: 0;
 }
 
-/*
 main {
 	display: flex;
 	flex-direction: column;
@@ -43,42 +42,4 @@ main {
 .links-container {
 	text-align: center;
 	width: 100%;
-} */
-
-.note-section {
-	border: 1px solid #ccc;
-	padding: 10px;
-	margin-bottom: 10px;
-}
-
-.flex-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.selectable-text {
-	flex-grow: 1;
-	margin-right: 10px;
-	padding: 10px;
-	border: 1px solid #ddd;
-	overflow: auto;
-	white-space: pre-wrap;
-	cursor: text;
-	background-color: #f9f9f9;
-}
-
-.button-group {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;/* Alignment is automatically handled by Flexbox */
-}
-
-.button-group input[type="button"] {
-	margin-left: 5px; /* Space between buttons */
-}
-
-.selected {
-	border-color: #007bff;
-	background-color: #e723e7;
 }

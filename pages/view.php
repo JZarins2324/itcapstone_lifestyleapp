@@ -10,6 +10,7 @@ if(!isset($_SESSION["username"])){
 ?> <link rel="stylesheet" type="text/css" href="../assets/css/table.css"> <?php
 
 // The view page for displaying user information
+
     // The view page for displaying user information
 
     echo "<h1>View Your Entries</h1>";
