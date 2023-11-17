@@ -42,6 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // Regenerate session ID
             session_regenerate_id();
+
+            // Admin Redirect
+            if ($_SESSION['username'] == 'admin') {
+                header('Location: ../pages/admin.php');
+                exit();
+            }
             
             // Redirect to home page
             header('Location: ../pages/home.php');
