@@ -46,6 +46,8 @@ For any inquiries or support issues, please reach out to our team at [Team Conta
 ## Changelog
 Insert Changes Here.
 
+change .env.example to .env and use your local settings. 
+
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
 
 ## Demo

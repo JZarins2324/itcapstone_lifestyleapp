@@ -13,35 +13,32 @@ if(!isset($_SESSION["username"])){
 
     // The view page for displaying user information
 
-    echo "<h1>View Your Entries</h1>";
+    echo "<h1>Your Entries</h1>";
 
-    ?> <h2>Your Tasks:</h1> <?php
+    ?> <h2>Tasks:</h2> <?php
 
     // Display Task Data
     if ($taskData->num_rows > 0) {
-      echo "<table>";
+      echo "<table><tr><th> Task Date </th><th> Task Description </th></tr>";
       while ($data = $taskData->fetch_assoc()) {
-        echo "<tr><th> Task Date </th><th> Task Description </th></tr>";
-        echo "<tr>";
         echo "<tr><td>" .$data["taskDate"]. "</td><td> " .$data["taskDesc"]. "</td></tr>";
       }
       echo "</table>";
     }
     ?> <br> <?php
 
-    ?> <h2>Your Passwords:</h1> <?php
+    ?> <h2>Passwords:</h2> <?php
 
     // Display Note Data
     if ($passData->num_rows > 0) {
-        echo "<table>";
+        echo "<table><tr><th> Password </th><th> Description </th></tr>";
         while ($data = $passData->fetch_assoc()) {
-          echo "<tr><th> Password </th><th> Description </th></tr>";
           echo "<tr><td>" .$data["passName"]. "</td><td>" .$data["passDesc"]. "</td></tr>";
         }
         echo "</table>";
       }
 
-    ?> <h2>Your Notes:</h1> <?php
+    ?> <h2>Notes:</h2> <?php
 
     // Display Note Data
     if ($noteData->num_rows > 0) {

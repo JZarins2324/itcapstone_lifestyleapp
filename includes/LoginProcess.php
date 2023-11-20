@@ -7,8 +7,6 @@
       // Initialize Variables
       $userName = '';
       $userPass = '';
-      $newUser = '';
-      $newPass = '';
 
       //Login Variables Set
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,14 +38,15 @@
             break;
           }
           else {
-            $_SESSION['numberMessage'] = "Password requires number.";
+            header('Location: ../pages/login.php');
           }
         }
       }
 
       // Check for uppercase letter
-      if ($strtolower($userPass) == $userPass) {
-        $_SESSION['upperCaseMessage'] = "Password requires an uppercase letter.";
+      if (strtolower($userPass) == $userPass) {
+        header('Location: ../pages/login.php');
+        exit();
       }
 
       // Check Login or Create Account
@@ -72,30 +71,15 @@
       
       } else if (isset($_POST["Create Account"])) {
 
-        // Database Variables
+        // Create Connection
         $serverName = "localhost";
         $username = "root";
         $password = "mysql";
         $dbname = "LifestyleDB";
-
-        // Create Connection
         $conn = new mysqli($serverName, $username, $password, $dbname);
-
-        // Check Connection
-        if ($conn->connect_error) {
-          die("Connection Failed: " . $conn->connect_error);
-        }
-        echo "Connected Successfully";
 
         // Insert New User SQL
         $addUser = "INSERT INTO users SET userName = '$newUser', userPass = '$newPass'";
-
-        // Insert New User
-        if ($conn->query($addUser) === true) {
-          echo "SQL running successfully";
-        } else {
-          echo "Error in SQL: " . $conn->error;
-        };
 
       }
     ?>

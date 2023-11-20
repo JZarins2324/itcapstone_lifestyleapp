@@ -1,3 +1,4 @@
+<?php // Author: Samuel Schmitz ?>
 <?php
 include "../includes/dbconnect.php";
 

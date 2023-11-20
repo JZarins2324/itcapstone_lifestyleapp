@@ -1,4 +1,4 @@
-<?php
+<?php include ('../includes/loginprocess.php');
 // Authenticate.php to handle login or account creation
 
 // Start the session
