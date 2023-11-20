@@ -46,7 +46,11 @@ For any inquiries or support issues, please reach out to our team at [Team Conta
 ## Changelog
 Insert Changes Here.
 
-change .env.example to .env and use your local settings. 
+change .env.example to .env and use your local settings.
+
+11/10/2023 Login page functionality
+
+11/17/2023 Homepage modifications to include buttons
 
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
 
