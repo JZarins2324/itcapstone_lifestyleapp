@@ -1,3 +1,5 @@
+<?php // Author: Samuel Schmitz ?>
+
 <?php
   $serverName = "localhost";
   $username = "root";

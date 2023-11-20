@@ -1,4 +1,4 @@
-<?php include "../includes/inputHandler.php";
+<?php
 session_start();
 
 if(!isset($_SESSION["username"])){

@@ -38,6 +38,8 @@ if (isset($_SESSION['error'])) {
         echo '<script src="../assets/js/login.js"></script>';
         ?><br><br><?php
         echo "*Password must contain a number";
+        ?><br><?php
+        echo "*Password must contain an uppercase letter";
     ?>
 </div>
 </body>
