@@ -22,6 +22,7 @@ if (isset($_SESSION['error'])) {
 <div class="login-container">
     <h1 id="formTitle">Login</h1>
     <form method="post" action="../server/authenticate.php">
+        <?= $errorMessage ?>
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
         <input id="submit" name="Login" type="submit" value="Login" />
