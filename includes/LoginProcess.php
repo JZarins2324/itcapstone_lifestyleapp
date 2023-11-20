@@ -38,14 +38,15 @@
             break;
           }
           else {
-            header('Location: pages/login.php');
+            header('Location: ../pages/login.php');
           }
         }
       }
 
       // Check for uppercase letter
-      if ($strtolower($userPass) == $userPass) {
-        header('Location: pages/login.php');
+      if (strtolower($userPass) == $userPass) {
+        header('Location: ../pages/login.php');
+        exit();
       }
 
       // Check Login or Create Account
