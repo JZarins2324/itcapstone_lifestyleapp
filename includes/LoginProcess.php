@@ -23,15 +23,20 @@
         // collect value of input field
         $userPass = $_POST['password'];
         if (empty($userPass)) {
-          echo "Name is empty";
+          echo "Password is empty";
         } else {
           echo $userPass;
         }
       }
 
+      // Check for length
+      /*if (strlen($userPass) <= 9 && strlen($userPass) >= 16) {
+        header('Location: ../pages/login.php');
+        exit();
+      };*/
+
       // Check for number
       $passChars = str_split($userPass);
-
       foreach ($passChars as $passChar) {
         for ($i = 0; $i < 10; $i++) {
           if ($passChar = $i) {
@@ -43,11 +48,40 @@
         }
       }
 
-      // Check for uppercase letter
+      // Check for uppercase
       if (strtolower($userPass) == $userPass) {
         header('Location: ../pages/login.php');
         exit();
       }
+
+      // Restrict special characters
+      /*foreach ($passChars as $passChar) {
+        if ($passChar = "," ||
+            $passChar == "." ||
+            $passChar == "/" ||
+            $passChar == "|" ||
+            $passChar == "<" ||
+            $passChar == ">" ||
+            $passChar == "{" ||
+            $passChar == "}" ||
+            $passChar == "?" ||
+            $passChar == ";" ||
+            $passChar == ":" ||
+            $passChar == "'" ||
+            $passChar == "`" ||
+            $passChar == "~" ||
+            $passChar == "@" ||
+            $passChar == "#" ||
+            $passChar == "%" ||
+            $passChar == "^" ||
+            $passChar == "&" ||
+            $passChar == "*" ||
+            $passChar == "+" ||
+            $passChar == "=") {
+              header('Location: ../pages/login.php');
+              exit();
+            }
+      }*/
 
       // Check Login or Create Account
       if (isset($_POST["Login"])) {

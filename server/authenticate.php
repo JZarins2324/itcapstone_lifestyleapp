@@ -1,4 +1,4 @@
-<?php include ('../includes/loginprocess.php');
+<?php
 // Authenticate.php to handle login or account creation
 
 // Start the session
@@ -17,6 +17,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Prepare a statement for execution
     $stmt = $pdo->prepare("SELECT * FROM users WHERE userName = ?");
     $stmt->execute([$username]);
+
+        // Check username for empty
+        if (empty($username)) {
+          echo "Name is empty";
+        } else {
+          echo $userName;
+        }
+
+        // Check password for empty
+        if (empty($username)) {
+          echo "Name is empty";
+        } else {
+          echo $username;
+        }
+
+      // Check for length
+      /*if (strlen($userPass) <= 9 && strlen($userPass) >= 16) {
+        header('Location: ../pages/login.php');
+        exit();
+      };*/
+
+      // Check for number
+      $passChars = str_split($userPass);
+      foreach ($passChars as $passChar) {
+        for ($i = 0; $i < 10; $i++) {
+          if ($passChar = $i) {
+            break;
+          }
+          else {
+            header('Location: ../pages/login.php');
+          }
+        }
+      }
+
+      // Check for uppercase
+      if (strtolower($userPass) == $userPass) {
+        header('Location: ../pages/login.php');
+        exit();
+      }
+
+      // Restrict special characters
+      /*foreach ($passChars as $passChar) {
+        if ($passChar = "," ||
+            $passChar == "." ||
+            $passChar == "/" ||
+            $passChar == "|" ||
+            $passChar == "<" ||
+            $passChar == ">" ||
+            $passChar == "{" ||
+            $passChar == "}" ||
+            $passChar == "?" ||
+            $passChar == ";" ||
+            $passChar == ":" ||
+            $passChar == "'" ||
+            $passChar == "`" ||
+            $passChar == "~" ||
+            $passChar == "@" ||
+            $passChar == "#" ||
+            $passChar == "%" ||
+            $passChar == "^" ||
+            $passChar == "&" ||
+            $passChar == "*" ||
+            $passChar == "+" ||
+            $passChar == "=") {
+              header('Location: ../pages/login.php');
+              exit();
+            }
+      }*/
     
     if ($stmt->rowCount() === 0) {
         // Username does not exist, create a new account

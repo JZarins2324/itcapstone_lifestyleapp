@@ -1,4 +1,4 @@
-<?php include "../includes/tabledata.php";
+<?php include "../includes/dbview.php";
 session_start();
 
 // Check if the user is logged in, if not then redirect to login page
@@ -31,12 +31,13 @@ if(!isset($_SESSION["username"])){
 
     // Display Note Data
     if ($passData->num_rows > 0) {
-        echo "<table><tr><th> Password </th><th> Description </th></tr>";
-        while ($data = $passData->fetch_assoc()) {
-          echo "<tr><td>" .$data["passName"]. "</td><td>" .$data["passDesc"]. "</td></tr>";
-        }
-        echo "</table>";
+      echo "<table><tr><th> Password </th><th> Description </th></tr>";
+      while ($data = $passData->fetch_assoc()) {
+        echo "<tr><td>" .$data["passName"]. "</td><td>" .$data["passDesc"]. "</td></tr>";
       }
+      echo "</table>";
+    }
+    ?> <br> <?php
 
     ?> <h2>Notes:</h2> <?php
 
