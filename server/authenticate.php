@@ -18,18 +18,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("SELECT * FROM users WHERE userName = ?");
     $stmt->execute([$username]);
 
+    // loginprocess code added here
         // Check username for empty
         if (empty($username)) {
           echo "Name is empty";
         } else {
-          echo $userName;
+          echo $username;
         }
 
         // Check password for empty
-        if (empty($username)) {
-          echo "Name is empty";
+        if (empty($password)) {
+          echo "Password is empty";
         } else {
-          echo $username;
+          echo $paswword;
         }
 
       // Check for length
