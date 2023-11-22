@@ -8,6 +8,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Create a new PDO instance
   $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
 
+    // loginprocess code added here
+        // Check username for empty
+        if (empty($username)) {
+          echo "Name is empty";
+        } else {
+          echo $username;
+        }
+
+        // Check password for empty
+        if (empty($password)) {
+          echo "Password is empty";
+        } else {
+          echo $paswword;
+        }
+
   // Get username and password from form
   $username = $_POST['username'];
   $password = $_POST['password'];

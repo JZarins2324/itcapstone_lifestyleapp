@@ -38,13 +38,13 @@ if (isset($_SESSION['error'])) {
     <?php
         echo '<script src="../assets/js/login.js"></script>';
         ?><br><br><?php
-//        echo "*Password must be 9-16 characters long"
+        // echo "*Password must be 9-16 characters long"
         ?><br><?php
         echo "*Password must contain a number";
         ?><br><?php
         echo "*Password must contain an uppercase letter";
         ?><br><?php
-//        echo "*Password may contain only the following special characters: \"!\", \"-\", \"_\"";
+        // echo "*Password may contain only the following special characters: \"!\", \"-\", \"_\"";
     ?>
 </div>
 </body>
