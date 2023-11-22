@@ -25,7 +25,12 @@ There is no need for installation since Lifestyle Companion is a web app accessi
 ## Usage
 Here's a quick look at how Lifestyle Companion can enhance your daily productivity:
 
-![Usage GIF](path_to_usage_gif)
+[![Usage GIF 1](assets/images/Screenshot_2023-11-21_182621.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182621.png)
+
+[![Usage GIF 2](assets/images/Screenshot_2023-11-21_182646.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182646.png)
+
+[![Usage GIF 3](assets/images/Screenshot_2023-11-21_182713.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182713.png)
+
 
 ## Team and Contributions
 Our team is dedicated to providing a seamless and efficient experience with Lifestyle Companion. We are open to contributions and are considering incorporating Node or Jasmine for future testing.
@@ -46,7 +51,7 @@ For any inquiries or support issues, please reach out to our team at [Team Conta
 ## Changelog
 Insert Changes Here.
 
-change .env.example to .env and use your local settings.
+Change .env.example to .env and use your local settings. Run root/dbcreate.php after the new project clone.
 
 11/10/2023 Login page functionality
 
@@ -57,4 +62,6 @@ change .env.example to .env and use your local settings.
 ## Demo
 Below is a diagrammatic representation of Lifestyle Companion's functionality:
 
-![Demo Diagram](path_to_demo_diagram)
+[![Demo Diagram](assets/images/Capstone_Image.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Capstone%20Image.PNG)
+
+[![Demo Diagram](assets/images/appLogin.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/appLogin.PNG)
