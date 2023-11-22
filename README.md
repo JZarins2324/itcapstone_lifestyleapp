@@ -25,7 +25,7 @@ There is no need for installation since Lifestyle Companion is a web app accessi
 ## Usage
 Here's a quick look at how Lifestyle Companion can enhance your daily productivity:
 
-![Usage GIF](assets/images/Screenshot 2023-11-21 182621)
+![Usage GIF](assets/images/Screenshot_2023-11-21_182621.png)
 
 ![Usage GIF](assets/images/Screenshot 2023-11-21 182646)
 
