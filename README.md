@@ -27,9 +27,9 @@ Here's a quick look at how Lifestyle Companion can enhance your daily productivi
 
 [![Usage GIF 1](assets/images/Screenshot_2023-11-21_182621.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182621.png)
 
-[![Usage GIF 1](assets/images/Screenshot_2023-11-21_182646.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182646.png)
+[![Usage GIF 2](assets/images/Screenshot_2023-11-21_182646.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182646.png)
 
-[![Usage GIF 1](assets/images/Screenshot_2023-11-21_182713.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182713.png)
+[![Usage GIF 3](assets/images/Screenshot_2023-11-21_182713.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182713.png)
 
 
 ## Team and Contributions
