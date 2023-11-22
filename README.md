@@ -27,11 +27,10 @@ Here's a quick look at how Lifestyle Companion can enhance your daily productivi
 
 [![Usage GIF](assets/images/Screenshot_2023-11-21_182621.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182621.png)
 
+[![Usage GIF](assets/images/Screenshot_2023-11-21_182646.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182646.png)
 
+[![Usage GIF](assets/images/Screenshot_2023-11-21_182713.png)](https://github.com/JZarins2324/itcapstone_lifestyleapp/blob/main/assets/images/Screenshot%202023-11-21%20182713.png)
 
-![Usage GIF](assets/images/Screenshot 2023-11-21 182646)
-
-![Usage GIF](assets/images/Screenshot 2023-11-21 182713.png)
 
 ## Team and Contributions
 Our team is dedicated to providing a seamless and efficient experience with Lifestyle Companion. We are open to contributions and are considering incorporating Node or Jasmine for future testing.
