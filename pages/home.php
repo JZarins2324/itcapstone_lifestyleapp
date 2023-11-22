@@ -18,7 +18,13 @@ if(!isset($_SESSION["username"])){
 <body>
  
 		<header class="site-header">
-    <h1>Welcome to Lifestyle Companion, <?= $_SESSION["username"] ?></h1>
+    <h1 style="color:black;">Welcome to Lifestyle Companion, <?= $_SESSION["username"]?></h1><h4>
+		<div id="links">
+		<a href='input.php'>New Entry</a> | 
+    <a href='view.php'>View Entries</a> | 
+    <a href='../server/logout.php'>Logout</a>
+	  </div>
+	</h4>
 		</header>
 		<div class="layout">
     <aside class="left-aside"></aside>
@@ -63,14 +69,21 @@ if(!isset($_SESSION["username"])){
 		</div>
 		<script src="../assets/js/toggleSelection.js"></script> 
 		<div class="links-container">
-		<a href='input.php'>New Entry</a> | 
-    <a href='view.php'>View Entries</a> | 
-    <a href='../server/logout.php'>Logout</a>
+		<footer class="site-footer">
+
+		
+		<br>
+		Developer Contact:
+		<a href="mailto:webmaster@example.com">Jacob Z.</a>
+		<a href="mailto:amorford@student.cvtc.edu">Anthony M.</a>
+		<a href="mailto:webmaster@example.com">Sam S.</a>
+
+		</footer>
 		</div>
 		</main>
 		<aside class="right-aside"></aside>
 		</div>
-		<footer class="site-footer">footer information</footer>
+		
 
 </body>
 </html>

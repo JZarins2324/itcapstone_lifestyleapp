@@ -1,16 +1,23 @@
 
 .site-header {
-	background-color: #333;
+	background-color: #f0f8ff;
 	color: white;
 	padding: 10px 20px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 html, body {
   text-align: center;
 	margin: 0 10%;
 	padding: 0;
+}
+
+.links {
+	align-items: center;
 }
 
 .links-container {
