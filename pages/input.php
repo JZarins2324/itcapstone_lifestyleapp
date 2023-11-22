@@ -20,9 +20,9 @@ if(!isset($_SESSION["username"])){
     <form action="../includes/inputhandler.php" method="post">
       <label for="inputLabel">Add new</label>
       <select name="userInput" id="userInput">
-        <option value="task">Note</option>
+        <option value="note">Note</option>
         <option value="password">Password</option>
-        <option value="note">Task</option>
+        <option value="task">Task</option>
       </select>
       <br><br>
 
