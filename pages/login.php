@@ -27,7 +27,7 @@ if (isset($_SESSION['error'])) {
         <input type="password" name="password" placeholder="Password" required />
         <input id="submit" name="Login" type="submit" value="Login" />
     </form>
-    <p style="text-align:center">or click below to</p>
+    <p style="text-align:center">or click below to toggle</p>
     <button id="change">Create Account</button>
     <!-- <h1>Sign Up</h1>
     <form method="post" action="../server/authenticate.php">
@@ -38,13 +38,13 @@ if (isset($_SESSION['error'])) {
     <?php
         echo '<script src="../assets/js/login.js"></script>';
         ?><br><br><?php
-        echo "*Password must be 9-16 characters long"
+//        echo "*Password must be 9-16 characters long"
         ?><br><?php
         echo "*Password must contain a number";
         ?><br><?php
         echo "*Password must contain an uppercase letter";
         ?><br><?php
-        echo "*Password may contain only the following special characters: \"!\", \"-\", \"_\"";
+//        echo "*Password may contain only the following special characters: \"!\", \"-\", \"_\"";
     ?>
 </div>
 </body>

@@ -34,8 +34,6 @@ if(!isset($_SESSION["username"])){
 				<div class="button-group">
 					<input type="button" value="Edit">
 					<input type="button" value="Delete">
-					<input type="button" value="Move Up">
-					<input type="button" value="Move Down">
 				</div>
 			</div>
 		</div>
@@ -47,8 +45,7 @@ if(!isset($_SESSION["username"])){
 				<div class="button-group">
 					<input type="button" value="Edit">
 					<input type="button" value="Delete">
-					<input type="button" value="Move Up">
-					<input type="button" value="Move Down">
+
 				</div>
 			</div>
 		</div>
@@ -60,8 +57,7 @@ if(!isset($_SESSION["username"])){
 				<div class="button-group">
 					<input type="button" value="Edit">
 					<input type="button" value="Delete">
-					<input type="button" value="Move Up">
-					<input type="button" value="Move Down">
+
         </div>
     	</div>
 		</div>
