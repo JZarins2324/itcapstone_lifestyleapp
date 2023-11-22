@@ -62,4 +62,5 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 ## Demo
 Below is a diagrammatic representation of Lifestyle Companion's functionality:
 
-![Demo Diagram](path_to_demo_diagram)
+![Demo Diagram](assets/images/Capstone_Image.png)
+![Demo Diagram](assets/images/appLogin.png)
