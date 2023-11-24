@@ -5,42 +5,35 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   include "../includes/dbconnect.php";
 
-  // Create a new PDO instance
-  $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-
-    // loginprocess code added here
-        // Check username for empty
-        if (empty($username)) {
-          echo "Name is empty";
-        } else {
-          echo $username;
-        }
-
-        // Check password for empty
-        if (empty($password)) {
-          echo "Password is empty";
-        } else {
-          echo $paswword;
-        }
-
   // Get username and password from form
   $username = $_POST['username'];
   $password = $_POST['password'];
 
   include "../includes/passwordChecks.php";
 
-  $stmt = $pdo->prepare("SELECT * FROM users WHERE userName = ?");
-  $stmt->execute([$username]);
+  // Create a new PDO instance
+	$mysqli = new mysqli($host, $user, $pass, $dbname);
+
+	// Check for database connection error
+  if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+  }
+
+  $stmt = $mysqli->prepare("SELECT * FROM users WHERE userName = ?");
+  $stmt->bind_param("s", $username);
+	$stmt->execute();
 
   if (isset($_POST["Create_Account"])) {
-    if ($stmt->rowCount() === 0) {
+    $result = $stmt->get_result();
+		if ($result->num_rows === 0) {
       // Username does not exist, create a new account
       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-      $createAccount = $pdo->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
-      $createAccount->execute([$username, $hashedPassword]);
+      $createAccount = $mysqli->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
+      $createAccount->bind_param("ss",$username, $hashedPassword);      
+			$createAccount->execute();
           
       // Set session variables
-      $_SESSION['user_id'] = $pdo->lastInsertId();
+      $_SESSION['user_id'] = $mysqli->insert_id;
       $_SESSION['username'] = $username;
           
       // Redirect to home page
@@ -48,12 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
     } else {
       // Username already in use
-      $_SESSION['error'] = 'Username alrady in user';
+      $_SESSION['error'] = 'Username alrady in use';
       header('Location: ../pages/login.php');
       exit();
     }
   } else if (isset($_POST['Login'])) {
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->get_result();
+		if ($user = $result->fetch_assoc()) {
     if (password_verify($password, $user['userPass'])) {
       // Set session variables
       $_SESSION['user_id'] = $user['userID'];
@@ -71,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       // Redirect to home page
       header('Location: ../pages/home.php');
       exit();
+		}
     } else {
       // Password is incorrect
       // Handle the error appropriately

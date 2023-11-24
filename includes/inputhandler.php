@@ -15,6 +15,8 @@
     $dateValue = $_POST['date'];
     $userID = $_SESSION['user_id'];
 
+    $userID = $_SESSION['user_id'];
+
     if ($inputValue == 'task') {
       $insertTask = $conn->query("INSERT INTO tasks (taskDate, taskDesc, userID) VALUES ('$dateValue', '$descValue', '$userID')");
       echo "Task Values Entered.";

@@ -30,7 +30,6 @@ if(!isset($_SESSION["username"])){
     <aside class="left-aside"></aside>
 		<main class="main-content">
 
-
 		<main class="main-content">	
   	<div class="note-section" onclick="toggleSelection(this)">
 			<div class="flex-container">
