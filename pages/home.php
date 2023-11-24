@@ -16,16 +16,19 @@ if(!isset($_SESSION["username"])){
 		<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
 </head>
 <body>
- 
-		<header class="site-header">
-    <h1 style="color:black;">Welcome to Lifestyle Companion, <?= $_SESSION["username"]?></h1><h4>
-		<div id="links">
-		<a href='input.php'>New Entry</a> | 
-    <a href='view.php'>View Entries</a> | 
-    <a href='../server/logout.php'>Logout</a>
-	  </div>
-	</h4>
-		</header>
+<header class="site-header">
+    <h1>Welcome, <?= $_SESSION["username"] ?></h1>
+    <h3>Lifestyle Companion<br>Home Page</h3>
+    <h4>
+        <div id="links">
+            <a href='input.php'>New Entry</a> | 
+            <a href='view.php'>View Entries</a> | 
+            <a href='../server/logout.php'>Logout</a>
+        </div>
+    </h4>
+</header>
+<!-- Repeat for other headers with appropriate content -->
+
 		<div class="layout">
     <aside class="left-aside"></aside>
 		<main class="main-content">

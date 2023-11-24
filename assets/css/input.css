@@ -1,33 +1,123 @@
+
+.site-header {
+    background-color: #f0f8ff;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.site-header h1, .site-header h3, .site-header h4 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+#links a {
+    color: #007bff; /* Adjust color as needed */
+    text-decoration: none;
+    padding: 5px;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+
+html, body {
+  text-align: center;
+	margin: 0 10%;
+	padding: 0;
+}
+
+.links {
+	align-items: center;
+}
+
+.links-container {
+	text-align: center;
+	width: 100%;
+}
+
+.note-section {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.selectable-text {
+	flex-grow: 1;
+	margin-right: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	overflow: auto;
+	white-space: pre-wrap;
+	cursor: text;
+	background-color: #f9f9f9;
+}
+
+.button-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.button-group input[type="button"] {
+	margin-left: 5px; /* Space between buttons */
+}
+
+.selected {
+	border-color: #007bff;
+	background-color: #e723e7;
+}
+
+/* Existing Styles */
+/* .site-header, .links, .links-container, .note-section, .flex-container, .selectable-text, .button-group, .selected { }
+	/* Existing CSS rules here */
+
+
+
+
+/* New Styles */
 #container {
-  width: 300px;
-  margin: 10rem auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+	width: 300px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 5px; 
+	/* Add any additional styles for consistency with the existing design */
 }
 
 form {
-  padding: 10px;
+	padding: 10px;
+	/* Ensure form styles are consistent with overall design */
 }
 
 label:first-child {
-  font-size: larger;
+	font-size: larger;
+	/* Specific style for the first label in a form */
 }
 
 select {
-  font-size: large;
+	font-size: large;
+	/* Specific style for select elements */
 }
 
-input,
-textarea {
-  width: 275px;
+input, textarea {
+	width: 275px;
+	/* Adjust width if needed for design consistency */
 }
 
 #submit {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #5C85AD;
-  color: white;
-  cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #5C85AD;
+	color: white;
+	cursor: pointer;
+	/* Ensure button style matches overall design theme */
 }

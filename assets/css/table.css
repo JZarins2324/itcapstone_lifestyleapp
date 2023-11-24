@@ -6,4 +6,13 @@ table, th, td {
     border: 2px solid forestgreen;
     color: navy;
     text-align: center;
+		width: auto;
+		margin: 0 auto;
+		background-color: #f0f8ff;
+		/* padding: 10px 20px; */
+		justify-content: center;
+		/* align-items: center;
+		flex-direction: column;
+		text-align: center; */
+
 }
