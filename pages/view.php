@@ -1,5 +1,5 @@
-<?php
-session_start();
+<?php session_start();
+include "../includes/dbview.php";
 
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["username"])){
