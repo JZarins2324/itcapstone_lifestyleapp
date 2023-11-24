@@ -1,5 +1,5 @@
-<?php session_start();
-include "../includes/dbview.php";
+<?php
+session_start();
 
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["username"])){
@@ -18,24 +18,23 @@ include "../includes/dbview.php";
     <link rel="stylesheet" type="text/css" href="../assets/css/view.css">
 		<title>LC - View</title>
   </head>
-
   <body>
-
-	<header class="site-header">
-    <h1>Welcome, <?= $_SESSION["username"] ?></h1>
-    <h3>Lifestyle Companion<br>Home Page</h3>
-    <h4>
+    <header class="site-header">
+      <h1>Welcome, <?= $_SESSION["username"] ?></h1>
+      <h3>Lifestyle Companion<br>Home Page</h3>
+      <h4>
         <div id="links">
-            <a href='input.php'>New Entry</a> | 
-            <a href='home.php'>Home Page</a> | 
-            <a href='../server/logout.php'>Logout</a>
+          <a href='input.php'>New Entry</a> | 
+          <a href='home.php'>Home Page</a> | 
+          <a href='../server/logout.php'>Logout</a>
         </div>
-    </h4>
-</header>
+      </h4>
+    </header>
+
     <h1>Your Entries</h1>
 
-    <h2 class='dropdown-trigger'>Tasks:</h2>
-    <div class='dropdown'><?php
+    <h2 class="dropdown-trigger">Tasks:</h2>
+    <div class="dropdown"><?php
         // Display Task Data
         if ($taskData->num_rows > 0) {
         ?> 
@@ -58,8 +57,8 @@ include "../includes/dbview.php";
       ?> 
     </div>
     
-    <h2 class='dropdown-trigger'>Passwords:</h2>
-    <div class='dropdown'><?php
+    <h2 class="dropdown-trigger">Passwords:</h2>
+    <div class="dropdown"><?php
         // Display Note Data
         if ($passData->num_rows > 0) {
       ?> 
@@ -82,8 +81,8 @@ include "../includes/dbview.php";
       ?> 
     </div>
 
-    <h2 class='dropdown-trigger'>Notes:</h2>
-    <div class='dropdown'><?php
+    <h2 class="dropdown-trigger">Notes:</h2>
+    <div class="dropdown"><?php
         // Display Note Data
         if ($noteData->num_rows > 0) {
         ?> 

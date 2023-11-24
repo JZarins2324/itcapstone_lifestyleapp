@@ -10,7 +10,6 @@
 	padding: 5px 0;
 }
 
-
 #links a:hover {
 	text-decoration: underline;
 }
@@ -27,73 +26,19 @@ html, body {
 	padding: 0;
 }
 
-
-
-
-#container {
-  width: 300px;
-  margin: 10rem auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form {
-  padding: 10px;
-}
-
-label:first-child {
-  font-size: larger;
-}
-
-select {
-  font-size: large;
-}
-
-
-#dataTasks {
-
-		text-align: center;
-		margin: 0 10%;
-		padding: 0;
-		background-color: #f0f8ff;
-		color: white;
-		padding: 10px 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-
-}
-
-#dataPasswords {
-
-		text-align: center;
-		margin: 0 10%;
-		padding: 0;
-		background-color: #f0f8ff;
-		color: white;
-		padding: 10px 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-
-}
-
+/*
+#dataTasks,
+#dataPasswords,
 #dataNotes {
-
-		text-align: center;
-		margin: 0 10%;
-		padding: 0;
-		background-color: #f0f8ff;
-		color: white;
-		padding: 10px 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-	
-}
+	text-align: center;
+	margin: 0 10%;
+	padding: 0;
+	background-color: #f0f8ff;
+	color: white;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+} */
