@@ -20,64 +20,76 @@ include "../includes/dbview.php";
   <body>
     <h1>Your Entries</h1>
 
-    <h2>Tasks:</h2><?php
-      // Display Task Data
-      if ($taskData->num_rows > 0) {
-      ?> 
-    <table>
-      <tr>
-        <th>Task Date</th>
-        <th>Task Description</th>
-      </tr><?php
-        while ($data = $taskData->fetch_assoc()) {
-      ?> 
-      <tr>
-        <td><?= $data['taskDate']; ?></td>
-        <td><?= $data['taskDesc']; ?></td>
-      <tr><?php
+    <h2 class='dropdown-trigger'>Tasks:</h2>
+    <div class='dropdown'><?php
+        // Display Task Data
+        if ($taskData->num_rows > 0) {
+        ?> 
+      <table>
+        <tr>
+          <th>Task Date</th>
+          <th>Task Description</th>
+        </tr><?php
+          while ($data = $taskData->fetch_assoc()) {
+        ?> 
+        <tr>
+          <td><?= $data['taskDate']; ?></td>
+          <td><?= $data['taskDesc']; ?></td>
+        <tr><?php
+          }
+        ?> 
+      </table>
+      <br><?php
         }
       ?> 
-    </table>
-    <br><?php
-      }
-    ?> 
+    </div>
     
-    <h2>Passwords:</h2><?php
-      // Display Note Data
-      if ($passData->num_rows > 0) {
-    ?> 
-    <table>
-      <tr>
-        <th>Password</th>
-        <th>Description</th>
-      </tr><?php
-        while ($data = $passData->fetch_assoc()) {
+    <h2 class='dropdown-trigger'>Passwords:</h2>
+    <div class='dropdown'><?php
+        // Display Note Data
+        if ($passData->num_rows > 0) {
       ?> 
-      <tr>
-        <td><?= $data['passName']; ?></td>
-        <td><?= $data['passDesc']; ?></td>
-      <tr><?php
+      <table>
+        <tr>
+          <th>Password</th>
+          <th>Description</th>
+        </tr><?php
+          while ($data = $passData->fetch_assoc()) {
+        ?> 
+        <tr>
+          <td><?= $data['passName']; ?></td>
+          <td><?= $data['passDesc']; ?></td>
+        <tr><?php
+          }
+        ?> 
+      </table>
+      <br><?php
         }
       ?> 
-    </table>
-    <br><?php
-      }
-    ?> 
+    </div>
 
-    <h2>Notes:</h2><?php
-      // Display Note Data
-      if ($noteData->num_rows > 0) {
+    <h2 class='dropdown-trigger'>Notes:</h2>
+    <div class='dropdown'><?php
+        // Display Note Data
+        if ($noteData->num_rows > 0) {
+        ?> 
+      <table><?php
+          while ($data = $noteData->fetch_assoc()) {
       ?> 
-    <table><?php
-        while ($data = $noteData->fetch_assoc()) {
-    ?> 
-      <tr>
-        <td><?= $data["notesDesc"]; ?></td>
-      </tr><?php
+        <tr>
+          <td><?= $data["notesDesc"]; ?></td>
+        </tr><?php
+          }
+        ?> 
+      </table><?php
         }
       ?> 
-    </table><?php
-      }
-    ?> 
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+      <script src='../assets/js/jquery.dropdown.js'></script>
   </body>
 </html>
