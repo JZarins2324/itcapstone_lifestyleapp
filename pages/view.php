@@ -1,5 +1,5 @@
-<?php include "../includes/dbview.php";
-session_start();
+<?php session_start();
+include "../includes/dbview.php";
 
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION["username"])){
@@ -29,7 +29,7 @@ if(!isset($_SESSION["username"])){
 
     ?> <h2>Passwords:</h2> <?php
 
-    // Display Note Data
+    // Display Password Data
     if ($passData->num_rows > 0) {
       echo "<table><tr><th> Password </th><th> Description </th></tr>";
       while ($data = $passData->fetch_assoc()) {
@@ -49,5 +49,4 @@ if(!isset($_SESSION["username"])){
         }
         echo "</table>";
       }
-
 ?>
