@@ -19,7 +19,7 @@
     if ($inputValue == 'task') {
       $insertTask = $conn->query("INSERT INTO tasks (taskDate, taskDesc, userID) VALUES ('$dateValue', '$descValue', $userID)");
       echo "Task Values Entered.";
-    } else if ($inputValue == 'pass') {
+    } else if ($inputValue == 'password') {
       $insertTask = $conn->query("INSERT INTO passwords (passName, passDesc, userID) VALUES ('$nameValue', '$descValue', $userID)");
       echo "Pass Values Entered.";
     } else if ($inputValue == 'note') {
