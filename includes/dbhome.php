@@ -1,9 +1,5 @@
 <?php // Author: Samuel Schmitz ?>
 <?php
-  if (!($_SERVER['REQUEST_METHOD'] == 'POST')) {
-    header('Location: ../pages/home.php');
-    exit();
-  }
   // Recent Data?
   // Most recent piece of data the user interacted with?
 

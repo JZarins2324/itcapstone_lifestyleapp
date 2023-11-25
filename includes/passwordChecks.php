@@ -1,8 +1,4 @@
 <?php
-  if (!($_SERVER['REQUEST_METHOD'] == 'POST')) {
-    header('Location: ../pages/home.php');
-    exit();
-  }
   // Check username for empty
   if (empty($username)) {
     $_SESSION['error'] = "Name is empty";

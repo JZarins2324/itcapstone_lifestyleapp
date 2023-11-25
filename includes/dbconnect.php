@@ -1,8 +1,7 @@
 <?php
-// if (!($_SERVER['REQUEST_METHOD'] == 'POST')) {
-//   header('Location: ../pages/home.php');
-//   exit();
-// }
+if ($requestedByView) {
+
+}
 
 // Setup dotenv functionality
 require_once realpath(__DIR__ . "../../lib/phpdotenv/vendor/autoload.php");

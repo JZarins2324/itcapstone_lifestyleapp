@@ -3,11 +3,6 @@
 <?php
   session_start();
 
-  if (!($_SERVER['REQUEST_METHOD'] == 'POST')) {
-    header('Location: ../pages/home.php');
-    exit();
-  }
-
   $serverName = "localhost";
   $username = "root";
   $password = "mysql";
