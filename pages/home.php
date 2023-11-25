@@ -17,7 +17,7 @@ if(!isset($_SESSION["username"])){
 </head>
 <body>
 <header class="site-header">
-    <h1>Welcome, <?= $_SESSION["username"] ?></h1>
+    <h1>Welcome, <?= htmlspecialchars($_SESSION["username"]); ?></h1>
     <h3>Lifestyle Companion<br>Home Page</h3>
     <h4>
         <div id="links">
