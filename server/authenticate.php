@@ -1,19 +1,13 @@
 <?php
 session_start();
 
-// Check if the form is submitted
-if (!$_SERVER['REQUEST_METHOD'] === 'POST') {
-  header('Location: ../pages/home.php');
-  exit();
-}
+include "../includes/dbconnect.php";
 
 // Get username and password from form
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 include "../includes/passwordChecks.php";
-
-include "../includes/dbconnect.php";
 
 // Create a new mysqli instance
 $mysqli = new mysqli($host, $user, $pass, $dbname);
