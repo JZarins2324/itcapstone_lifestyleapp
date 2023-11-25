@@ -1,4 +1,5 @@
 <?php
+  $connectionRequestedByApp = true;
   include "../includes/dbgetuser.php";
 ?>
 <!DOCTYPE html>

@@ -3,17 +3,16 @@
 <?php
   session_start();
 
-  $serverName = "localhost";
-  $username = "root";
-  $password = "mysql";
-  $dbname = "LifestyleDB";
-  $conn = new mysqli($serverName, $username, $password, $dbname);
+  if (isset($_POST['isValidRequest'])) {
+    $connectionRequestedByApp = $_POST['isValidRequest'];
+  }
+  include "dbconnect.php";
+  $conn = new mysqli($host, $user, $pass, $dbname);
 
     $inputValue = $_POST['userInput'];
     $descValue = $_POST['desc'];
     $nameValue = $_POST['name'];
     $dateValue = $_POST['date'];
-    $userID = $_SESSION['user_id'];
 
     $userID = $_SESSION['user_id'];
 

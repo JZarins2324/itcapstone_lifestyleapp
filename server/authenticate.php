@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $connectionRequestedByApp = true;
+}
+
 include "../includes/dbconnect.php";
 
 // Get username and password from form

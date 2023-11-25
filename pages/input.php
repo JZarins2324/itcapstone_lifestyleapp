@@ -50,6 +50,8 @@ if(!isset($_SESSION["username"])){
       <label id="dateLabel" for="date" style="display:none">Date</label>
       <input type="date" name="date" id="date" style="display:none"><br><br>
 
+      <input type="hidden" name="isValidRequest" value="true">
+
       <input id="submit" type="submit" value="Add">
     </form>
   <div>

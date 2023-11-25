@@ -1,6 +1,7 @@
 <?php
-if ($requestedByView) {
-
+if (!$connectionRequestedByApp) {
+  header('Location: ../pages/home.php');
+  exit();
 }
 
 // Setup dotenv functionality

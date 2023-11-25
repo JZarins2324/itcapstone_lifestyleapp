@@ -7,6 +7,7 @@ if(!isset($_SESSION["username"])){
   exit;
 }
 
+$connectionRequestedByApp= true;
 include "../includes/dbview.php";
 ?> 
 <!DOCTYPE html>
