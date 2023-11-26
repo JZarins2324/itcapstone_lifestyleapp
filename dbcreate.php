@@ -4,7 +4,8 @@
 <html>
   <body>
     <header>This is used to create the database.</header>
-    <?php include "includes/dbconnect.php";
+    <?php
+		 include "includes/dbconnect.php";
       // Create Connection
       $conn = new mysqli($host, $user, $pass, $dbname);
       // Check Connection
