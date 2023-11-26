@@ -29,27 +29,8 @@ include '../includes/header.php';
 					</div>
 				</div>
 			</div>
-			<div class="note-section" onclick="toggleSelection(this)">
-				<div class="flex-container">
-					<div class="selectable-text" contenteditable="false">New User Widget, Tasks and Notes</div>
-					<div class="button-group">
-						<input type="button" value="Edit">
-						<input type="button" value="Delete">
-
-					</div>
-				</div>
-			</div>
-			<div class="note-section" onclick="toggleSelection(this)">
-				<div class="flex-container">
-					<div class="selectable-text" contenteditable="false">Old User Widget, Tasks and Notes</div>
-					<div class="button-group">
-						<input type="button" value="Edit">
-						<input type="button" value="Delete">
-
-					</div>
-				</div>
-			</div>
-		</div>
+			
+			
 		<div class="note-section" onclick="toggleSelection(this)">
 			<div class="flex-container">
 				<div class="selectable-text" contenteditable="false">
@@ -115,6 +96,9 @@ include '../includes/header.php';
 				</div>
 			</div>
 		</div>
+
+		</div>
+
 
 		<?php
 		include '../includes/footer.php';
