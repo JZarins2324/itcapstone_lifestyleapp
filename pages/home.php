@@ -1,4 +1,4 @@
-<?php
+<?php include ("../includes/dbhome.php");
 session_start();
 
 if(!isset($_SESSION["username"])){
@@ -47,6 +47,71 @@ include '../includes/header.php';
 						<input type="button" value="Delete">
 
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="note-section" onclick="toggleSelection(this)">
+			<div class="flex-container">
+				<div class="selectable-text" contenteditable="false">
+				<!-- Display Newest Tasks -->
+                <?php
+				  // Display Task Data
+				  if ($newTask->num_rows > 0) {
+				?> 
+				<table>
+				  <tr>
+				    <th>Task Date</th>
+					<th>Task Description</th>
+				  </tr><?php
+				    while ($data = $newTask->fetch_assoc()) {
+				  ?> 
+				  <tr>
+					<td><?= $data['taskDate']; ?></td>
+					<td><?= $data['taskDesc']; ?></td>
+				  <tr><?php
+					}
+				  ?> 
+				</table>
+				<br><?php
+					}
+				?>
+        </div>
+				<div class="button-group">
+					<input type="button" value="Edit">
+					<input type="button" value="Delete">
+
+				</div>
+			</div>
+		</div>
+		<div class="note-section" onclick="toggleSelection(this)">
+			<div class="flex-container">
+				<div class="selectable-text" contenteditable="false">
+                <!-- Display oldest Tasks -->
+                <?php
+				  // Display Task Data
+				  if ($oldTask->num_rows > 0) {
+				?> 
+				<table>
+				  <tr>
+				    <th>Task Date</th>
+					<th>Task Description</th>
+				  </tr><?php
+				    while ($data = $oldTask->fetch_assoc()) {
+				  ?> 
+				  <tr>
+					<td><?= $data['taskDate']; ?></td>
+					<td><?= $data['taskDesc']; ?></td>
+				  <tr><?php
+					}
+				  ?> 
+				</table>
+				<br><?php
+					}
+				?>
+        </div>
+				<div class="button-group">
+					<input type="button" value="Edit">
+					<input type="button" value="Delete">
 				</div>
 			</div>
 		</div>

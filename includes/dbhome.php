@@ -1,11 +1,21 @@
 <?php // Author: Samuel Schmitz ?>
 <?php
+
+  // Create Connection
+  $serverName = "localhost";
+  $username = "root";
+  $password = "mysql";
+  $dbname = "LifestyleDB";
+  $conn = new mysqli($serverName, $username, $password, $dbname);
+
   // Recent Data?
-  // Most recent piece of data the user interacted with?
+  if (isset($recentData)) {
+  $recentTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate WHERE taskDate = $recentData;");
+  }
 
   // New Data?
-  $newData = "SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate ASC;";
+  $newTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate DESC LIMIT 3;");
 
   // Old Data?
-  $oldData = "SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate DESC;";
+  $oldTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate ASC LIMIT 3;");
 ?>
