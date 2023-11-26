@@ -1,9 +1,10 @@
-
 .site-header {
 	background-color: #f0f8ff;
 	color: black;
 	padding: 10px 20px;
+	padding-bottom: 50px;
 	text-align: center;
+	position: relative; /* Needed for absolute positioning of children */
 }
 
 .site-header h1, .site-header h3, .site-header h4 {
@@ -11,59 +12,98 @@
 	padding: 5px 0;
 }
 
+#links {
+position: absolute;
+bottom: 10px;
+top: 75%; /* Adjust these values as needed */
+left: 50%;
+transform: translate(-50%, -50%); /* Center the links */
+white-space: nowrap; /* Prevent wrapping */
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 #links a:hover {
 	text-decoration: underline;
 }
 
+#links a, #links .separator {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+}
 
 #links a {
-	color: #007bff; /* Adjust color as needed */
+	color: #007bff;
 	text-decoration: none;
 	padding: 5px;
 }
 
-html, body {
-  text-align: center;
-	margin: 0 10%;
-	padding: 0;
+.separator {
+	width: 20px;
 }
 
+html, body {
+	text-align: center;
+	margin: 0 10%;
+	padding: 0;
+	font-family: Arial, sans-serif; /* Adding a default font */
+}
 
 .note-section {
-	border: 1px solid #ccc;
+	border: 10px solid #ccc;
 	padding: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px; /* Increased for better spacing */
+	border-radius: 8px; /* Rounded corners */
+	display: flex;
+	justify-content: center;
+	cursor: pointer; /* Changed to pointer */
+
 }
 
 .flex-container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	max-width: 100%;
 }
 
 .selectable-text {
 	flex-grow: 1;
-	margin-right: 10px;
-	padding: 10px;
+	flex-shrink: 1;
+	margin-right: 10px; /* Adjusted for spacing */
+	padding: 10px; /* Added padding */
 	border: 1px solid #ddd;
-	overflow: auto;
-	white-space: pre-wrap;
-	cursor: text;
+	overflow-wrap: break-word;
+	max-width: calc(100% - 100px);
 	background-color: #f9f9f9;
+	border-radius: 4px; /* Rounded corners for text area */
+	text-align: center;
 }
 
 .button-group {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: flex-end; /* Align to right */
+	flex-shrink: 0;
 }
 
 .button-group input[type="button"] {
-	margin-left: 5px; /* Space between buttons */
+	margin-bottom: 5px; /* Space between buttons */
+	padding: 5px 10px; /* Padding for buttons */
+	border: 1px solid #007bff;
+	background-color: #e7f1ff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.button-group input[type="button"]:hover {
+	background-color: #007bff;
+	color: white;
 }
 
 .selected {
 	border-color: #007bff;
-	background-color: #e723e7;
+	background-color: #e7f1ff; /* Adjusted to a lighter shade for better readability */
 }

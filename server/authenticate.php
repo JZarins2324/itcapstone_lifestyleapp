@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include "../includes/dbconnect.php";
 
 // Get username and password from form
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = filter_var(trim($_POST['username']), FILTER_SANITIZE_STRING);
+$password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
 include "../includes/passwordChecks.php";
 

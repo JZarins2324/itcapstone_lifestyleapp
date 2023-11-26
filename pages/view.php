@@ -8,6 +8,7 @@ if(!isset($_SESSION["username"])){
 }
 
 $connectionRequestedByApp= true;
+
 include "../includes/dbview.php";
 ?> 
 <!DOCTYPE html>
@@ -20,17 +21,14 @@ include "../includes/dbview.php";
 		<title>LC - View</title>
   </head>
   <body>
-    <header class="site-header">
-      <h1>Welcome, <?= $_SESSION["username"] ?></h1>
-      <h3>Lifestyle Companion<br>Home Page</h3>
-      <h4>
-        <div id="links">
-          <a href='input.php'>New Entry</a> | 
-          <a href='home.php'>Home Page</a> | 
-          <a href='../server/logout.php'>Logout</a>
-        </div>
-      </h4>
-    </header>
+
+
+	<?php
+	$currentPage = 'view';
+	$pageTitle = "View Entries";
+include '../includes/header.php';
+?>
+
 
     <h1>Your Entries</h1>
 
