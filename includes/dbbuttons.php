@@ -5,22 +5,22 @@
     $editedTaskValue = "";
     $editedTaskDate = "";
     $editedTaskDesc = "";
-    $editTask = "UPDATE tasks SET taskDate = $editedTaskDate, taskDesc = $editedTaskDesc WHERE taskDesc = $editedTaskValue;";
+    $editTask = $conn->query("UPDATE tasks SET taskDate = $editedTaskDate, taskDesc = $editedTaskDesc WHERE taskDesc = $editedTaskValue;");
 
     // Delete Task
     $deletedTaskValue = "";
-    $deleteTask = "DELETE FROM tasks WHERE taskDesc = $deletedTaskValue;";
+    $deleteTask = $conn->query("DELETE FROM tasks WHERE taskDesc = $deletedTaskValue;");
 
   // Password Edit/Delete
     // Edit Pass
     $editedPassValue = "";
     $editedPassName = "";
     $editedPassDesc = "";
-    $editTask = "UPDATE passwords SET passDate = $editedPassName, passDesc = $editedPassDesc WHERE passDesc = $editedPassValue;";
+    $editTask = $conn->query("UPDATE passwords SET passDate = $editedPassName, passDesc = $editedPassDesc WHERE passDesc = $editedPassValue;");
 
     // Delete Pass
     $deletedPassValue = "";
-    $deletePass = "DELETE FROM passwords WHERE passDesc = $deletedPassValue;";
+    $deletePass = $conn->query("DELETE FROM passwords WHERE passDesc = $deletedPassValue;");
 
   // Note Edit/Delete
     // Edit Note

@@ -36,25 +36,25 @@ include "../includes/dbview.php";
 
     <h2 class="dropdown-trigger">Tasks:</h2>
     <div class="dropdown"><?php
-        // Display Task Data
-        if ($taskData->num_rows > 0) {
+      // Display Task Data
+      if ($taskData->num_rows > 0) {
         ?> 
-      <table>
-        <tr>
-          <th>Task Date</th>
-          <th>Task Description</th>
-        </tr><?php
-          while ($data = $taskData->fetch_assoc()) {
-        ?> 
-        <tr>
-          <td><?= $data['taskDate']; ?></td>
-          <td><?= $data['taskDesc']; ?></td>
-        <tr><?php
-          }
-        ?> 
-      </table>
-      <br><?php
-        }
+        <table>
+          <tr>
+            <th>Task Date</th>
+            <th>Task Description</th>
+          </tr><?php
+            while ($data = $taskData->fetch_assoc()) {
+          ?> 
+          <tr>
+            <td><?= $data['taskDate']; ?></td>
+            <td><?= $data['taskDesc']; ?></td>
+          <tr><?php
+            }
+          ?> 
+        </table>
+        <br><?php
+      }
       ?> 
     </div>
     
