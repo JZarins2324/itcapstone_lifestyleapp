@@ -24,16 +24,21 @@
       $safePass = '';
       $i = 0;
       $hintChars = str_split($nameValue);
+      // Print first 2 characters
       foreach ($hintChars as $frontChar) {
         $i++;
         if ($i < 3) {
           $safePass .= $frontChar;
         }
       }
+    
+      // Print asterisk
       $astLength = strlen($nameValue) - 4;
       for ($i = 0; $i < $astLength; $i++) {
         $safePass .= '*';
       }
+
+      // Print last 2 characters
       $i = 0;
       $passLength = strlen($nameValue);
       foreach ($hintChars as $backChar) {
@@ -44,6 +49,8 @@
       }
       $insertTask = $conn->query("INSERT INTO passwords (passName, passDesc, userID) VALUES ('$safePass', '$descValue', '$userID')");
       echo "Pass Values Entered.";
+      // Cleanse Value
+      echo $nameValue = '';
     } else if ($inputValue == 'note') {
       $insertTask = $conn->query("INSERT INTO notes (noteName, noteDesc, userID) VALUES ('$nameValue', '$descValue', '$userID')");
       echo "Note Values Entered.";
@@ -55,5 +62,5 @@
     echo "$key => #$value";?><br><?php
   }
 
-  header("location: home.php");
+  header("location: ../pages/view.php");
 ?>
