@@ -4,9 +4,9 @@
 <html>
   <body>
     <header>This is used to create the database.</header>
-    <?php
-			$connectionRequestedByApp = true;
-		  include "includes/dbconnect.php";
+    <?PHP
+      $connectionRequestedByApp = true;
+      include "includes/dbconnect.php";
       // Create Connection
       $conn = new mysqli($host, $user, $pass, $dbname);
       // Check Connection
