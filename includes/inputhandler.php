@@ -54,4 +54,6 @@
   foreach ($_POST as $key => $value) {
     echo "$key => #$value";?><br><?php
   }
+
+  header("location: home.php");
 ?>
