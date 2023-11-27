@@ -49,6 +49,8 @@
       }
       $insertTask = $conn->query("INSERT INTO passwords (passName, passDesc, userID) VALUES ('$safePass', '$descValue', '$userID')");
       echo "Pass Values Entered.";
+      // Cleanse Value
+      echo $nameValue = '';
     } else if ($inputValue == 'note') {
       $insertTask = $conn->query("INSERT INTO notes (noteName, noteDesc, userID) VALUES ('$nameValue', '$descValue', '$userID')");
       echo "Note Values Entered.";
