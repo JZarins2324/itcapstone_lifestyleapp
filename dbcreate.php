@@ -17,6 +17,14 @@
       // Create Tables
       $createLifestyleDB = "CREATE DATABASE IF NOT EXISTS LifestyleDB;";
       
+			if ($conn->query($createLifestyleDB) === true) {
+				echo "database LifestyleDB created successfully<br>";
+			} else {
+				echo "Error creating database: " . $conn->error . "<br>";
+			}
+
+			$conn->select_db("LifestyleDB");
+
       $createUsers = "CREATE TABLE IF NOT EXISTS users (
           userID INT AUTO_INCREMENT,
           userName VARCHAR(128) NOT NULL,
