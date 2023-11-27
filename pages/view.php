@@ -45,8 +45,11 @@ include '../includes/header.php';
             while ($data = $taskData->fetch_assoc()) {
           ?> 
           <tr>
-            <td><?= $data['taskDate']; ?></td>
+            <td><?= $data['taskName']; ?></td>
             <td><?= $data['taskDesc']; ?></td>
+            <td><?= $data['taskDate']; ?></td>
+            <td><?= $data['taskCreate']; ?></td>
+            <td><?= $data['taskModify']; ?></td>
           <tr><?php
             }
           ?> 
@@ -71,6 +74,8 @@ include '../includes/header.php';
         <tr>
           <td><?= $data['passName']; ?></td>
           <td><?= $data['passDesc']; ?></td>
+          <td><?= $data['passCreate']; ?></td>
+          <td><?= $data['passModify']; ?></td>
         <tr><?php
           }
         ?> 
@@ -89,7 +94,10 @@ include '../includes/header.php';
           while ($data = $noteData->fetch_assoc()) {
       ?> 
         <tr>
-          <td><?= $data["notesDesc"]; ?></td>
+        <td><?= $data["noteName"]; ?></td>
+          <td><?= $data["noteDesc"]; ?></td>
+          <td><?= $data["noteCreate"]; ?></td>
+          <td><?= $data["noteModify"]; ?></td>
         </tr><?php
           }
         ?> 
