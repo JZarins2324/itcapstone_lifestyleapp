@@ -52,6 +52,11 @@ html, body {
 
 }
 
+.dropdown-trigger {
+	border: 4px solid black;
+	cursor: pointer;
+}
+
 /*
 #dataTasks,
 #dataPasswords,

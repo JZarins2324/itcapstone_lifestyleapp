@@ -36,8 +36,8 @@ include '../includes/header.php';
 					<div class="selectable-text" contenteditable="false">
 						<!-- Display oldest Tasks -->
 						<?php 
-						if ($oldTask->num_rows > 0) { 
-							$data = $oldTask->fetch_assoc();
+						if ($newTask->num_rows > 0) { 
+							$data = $newTask->fetch_assoc();
 							if ($data) {
 								$taskId = $data['taskID']; ?>
 								<table>
