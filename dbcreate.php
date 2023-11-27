@@ -4,9 +4,9 @@
 <html>
   <body>
     <header>This is used to create the database.</header>
-    <?php
-			$connectionRequestedByApp = true;
-		  include "includes/dbconnect.php";
+    <?PHP
+      // $connectionRequestedByApp = true;
+      // include "includes/dbconnect.php";
       // Create Connection
       $conn = new mysqli($host, $user, $pass, $dbname);
       // Check Connection
@@ -17,6 +17,14 @@
       // Create Tables
       $createLifestyleDB = "CREATE DATABASE IF NOT EXISTS LifestyleDB;";
       
+			if ($conn->query($createLifestyleDB) === true) {
+				echo "database LifestyleDB created successfully<br>";
+			} else {
+				echo "Error creating database: " . $conn->error . "<br>";
+			}
+
+			$conn->select_db("LifestyleDB");
+
       $createUsers = "CREATE TABLE IF NOT EXISTS users (
           userID INT(6) AUTO_INCREMENT,
           userName VARCHAR(128) NOT NULL,
