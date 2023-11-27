@@ -55,5 +55,5 @@
     echo "$key => #$value";?><br><?php
   }
 
-  header("location: home.php");
+  header("location: ../pages/view.php");
 ?>
