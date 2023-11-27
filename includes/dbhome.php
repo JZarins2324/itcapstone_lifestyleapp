@@ -10,12 +10,15 @@
 
   // Recent Data?
   if (isset($recentData)) {
-  $recentTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate WHERE taskDate = $recentData;");
+  $recentTask = $conn->query("SELECT taskID, taskName, taskDesc, taskDate, taskCreate, taskModify, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskCreate WHERE taskCreate = $recentData;");
+  $recentNote = $conn->query("SELECT noteID, noteName, noteDesc, noteCreate, noteModify, userID, userName FROM users INNER JOIN notes USING (userID) ORDER BY noteCreate WHERE noteCreate = $recentData;");
   }
 
   // New Data?
-  $newTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate DESC LIMIT 3;");
+  $newTask = $conn->query("SELECT taskID, taskName, taskDesc, taskDate, taskCreate, taskModify, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskCreate DESC LIMIT 3;");
+  $newNote = $conn->query("SELECT noteID, noteName, noteDesc, noteCreate, noteModify, userID, userName FROM users INNER JOIN notes USING (userID) ORDER BY noteCreate DESC LIMIT 3;");
 
   // Old Data?
-  $oldTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate ASC LIMIT 3;");
+  $oldTask = $conn->query("SELECT taskID, taskName, taskDesc, taskDate, taskCreate, taskModify, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskCreate ASC LIMIT 3;");
+  $oldNote = $conn->query("SELECT noteID, noteName, noteDesc, noteCreate, noteModify, userID, userName FROM users INNER JOIN notes USING (userID) ORDER BY noteCreate ASC LIMIT 3;");
 ?>

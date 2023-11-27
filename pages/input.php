@@ -39,6 +39,9 @@ include '../includes/header.php';
       <input id="submit" type="submit" value="Add">
     </form>
   <div>
+  <?php echo "*Password name should be the password itself"; ?>
+  <br>
+  <?php echo "*Password only partially stored for protection"; ?>
   <?= '<script src="../assets/js/input.js"></script>'; ?>
 </body>
 </html>
