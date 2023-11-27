@@ -30,7 +30,8 @@ include '../includes/header.php';
 	<aside class="left-aside"></aside>
 	<main class="main-content">
 		<div id="contentSelection">
-		<div class="note-section">
+		
+<div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
 						<!-- Display oldest Tasks -->
@@ -65,7 +66,8 @@ include '../includes/header.php';
 							<?php } //end if ?>			
 				</div>			 
 			</div>
-			<div class="note-section">
+			
+<div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
 						<!-- Display oldest Tasks -->
@@ -100,7 +102,8 @@ include '../includes/header.php';
 							<?php } //end if ?>			
 				</div>			 
 			</div>
-			<div class="note-section">
+			
+<div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
 						<!-- Display oldest Tasks -->
@@ -121,7 +124,7 @@ include '../includes/header.php';
 								</table>
 								<?php } else { ?>
 									<p>no task found</p>
-							<?php }	 
+							<?php }	
 						} else { ?>
 								<p>no task to display</p>
 							<?php } ?>
