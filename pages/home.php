@@ -121,7 +121,7 @@ include '../includes/header.php';
 								</table>
 								<?php } else { ?>
 									<p>no task found</p>
-							<?php }	
+							<?php }	 
 						} else { ?>
 								<p>no task to display</p>
 							<?php } ?>
