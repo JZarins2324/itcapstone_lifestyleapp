@@ -24,16 +24,21 @@
       $safePass = '';
       $i = 0;
       $hintChars = str_split($nameValue);
+      // Print first 2 characters
       foreach ($hintChars as $frontChar) {
         $i++;
         if ($i < 3) {
           $safePass .= $frontChar;
         }
       }
+    
+      // Print asterisk
       $astLength = strlen($nameValue) - 4;
       for ($i = 0; $i < $astLength; $i++) {
         $safePass .= '*';
       }
+
+      // Print last 2 characters
       $i = 0;
       $passLength = strlen($nameValue);
       foreach ($hintChars as $backChar) {
