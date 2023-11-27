@@ -60,14 +60,40 @@ include '../includes/header.php';
 				?> 
 				<table>
 				  <tr>
-				    <th>Task Date</th>
+				    <th>Task Name</th>
 					<th>Task Description</th>
+					<th>Task Date</th>
 				  </tr><?php
 				    while ($data = $newTask->fetch_assoc()) {
 				  ?> 
 				  <tr>
-					<td><?= $data['taskDate']; ?></td>
+					<td><?= $data['taskName']; ?></td>
 					<td><?= $data['taskDesc']; ?></td>
+					<td><?= $data['taskDate']; ?></td>
+				  <tr><?php
+					}
+				  ?> 
+				</table>
+				<br><?php
+					}
+				?>
+				<!-- Display Newest Notes -->
+                <?php
+				  // Display Task Data
+				  if ($newNote->num_rows > 0) {
+				?> 
+				<table>
+				  <tr>
+				    <th>Note Name</th>
+					<th>Note Description</th>
+					<th>Note Date</th>
+				  </tr><?php
+				    while ($data = $newNotes->fetch_assoc()) {
+				  ?> 
+				  <tr>
+					<td><?= $data['noteName']; ?></td>
+					<td><?= $data['noteDesc']; ?></td>
+					<td><?= $data['noteDate']; ?></td>
 				  <tr><?php
 					}
 				  ?> 
@@ -99,8 +125,33 @@ include '../includes/header.php';
 				    while ($data = $oldTask->fetch_assoc()) {
 				  ?> 
 				  <tr>
-					<td><?= $data['taskDate']; ?></td>
+					<td><?= $data['taskName']; ?></td>
 					<td><?= $data['taskDesc']; ?></td>
+					<td><?= $data['taskDate']; ?></td>
+				  <tr><?php
+					}
+				  ?> 
+				</table>
+				<br><?php
+					}
+				?>
+				<!-- Display Oldest Notes -->
+                <?php
+				  // Display Task Data
+				  if ($oldNote->num_rows > 0) {
+				?> 
+				<table>
+				  <tr>
+				    <th>Note Name</th>
+					<th>Note Description</th>
+					<th>Note Date</th>
+				  </tr><?php
+				    while ($data = $oldNotes->fetch_assoc()) {
+				  ?> 
+				  <tr>
+					<td><?= $data['noteName']; ?></td>
+					<td><?= $data['noteDesc']; ?></td>
+					<td><?= $data['noteDate']; ?></td>
 				  <tr><?php
 					}
 				  ?> 
