@@ -14,8 +14,8 @@
   }
 
   // New Data?
-  $newTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate DESC LIMIT 3;");
+  $newTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate DESC LIMIT 1;");
 
   // Old Data?
-  $oldTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate ASC LIMIT 3;");
+  $oldTask = $conn->query("SELECT taskID, taskDate, taskDesc, userID, userName FROM users INNER JOIN tasks USING (userID) ORDER BY taskDate ASC LIMIT 1;");
 ?>

@@ -58,7 +58,6 @@ html, body {
 	border-radius: 8px; /* Rounded corners */
 	display: flex;
 	justify-content: center;
-	cursor: pointer; /* Changed to pointer */
 
 }
 
