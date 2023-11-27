@@ -74,7 +74,6 @@ include '../includes/header.php';
 				  <tr>
 					<td><?= $data['noteName']; ?></td>
 					<td><?= $data['noteDesc']; ?></td>
-					<td><?= $data['noteDate']; ?></td>
 				  <tr><?php
 					}
 				  ?> 
@@ -132,7 +131,6 @@ include '../includes/header.php';
 				  <tr>
 					<td><?= $data['noteName']; ?></td>
 					<td><?= $data['noteDesc']; ?></td>
-					<td><?= $data['noteDate']; ?></td>
 				  <tr><?php
 					}
 				  ?> 
