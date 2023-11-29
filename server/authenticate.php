@@ -67,10 +67,10 @@ if (isset($_POST["Create_Account"])) {
       header('Location: ../pages/home.php');
       exit();
     }
-  } else {
-    // Password is incorrect
-    $_SESSION['error'] = 'Incorrect username or password.';
-		header('Location: ../pages/login.php');
-		exit();
   }
+  
+  // Password is incorrect
+  $_SESSION['error'] = 'Incorrect username or password.';
+	header('Location: ../pages/login.php');
+	exit();
 }
