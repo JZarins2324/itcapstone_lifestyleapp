@@ -34,10 +34,13 @@ include '../includes/header.php';
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display oldest Tasks -->
-						<?php 
-						if ($oldTask->num_rows > 0) { 
-							$data = $oldTask->fetch_assoc();
+						<!-- Display recent Tasks -->
+						<?php
+						// Initialize taskId
+						$taskId = '';
+						
+						if ($recentTask->num_rows > 0) { 
+							$data = $recentTask->fetch_assoc();
 							if ($data) {
 								$taskId = $data['taskID']; ?>
 								<table>
@@ -45,9 +48,12 @@ include '../includes/header.php';
 										<th>Task Date</th>
 										<th>Task Description</th>
 									</tr>
+									<form action="../includes/dbbuttons.php" method="POST">
+									<input type="hidden" name="hiddenName" id="hiddenId" value="">
+									<input type="hidden" name="taskId" id="taskId" value="<?php echo $taskId ?>">
 									<tr>
 										<td><?= htmlspecialchars($data['taskDate']); ?></td>
-										<td id="taskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
+										<td id="recentTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 								</table>
 								<?php } else { ?>
@@ -60,7 +66,45 @@ include '../includes/header.php';
 							</div>
 							<?php if (isset($taskId)) { ?>
 								<div class="button-group">
-									<input type="button" value="Edit" id="editButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'editButton-<?= $taskId; ?>')">
+									<input type="button" value="Edit" id="recentEditButton-<?= $taskId; ?>" onclick="toggleEdit('recentTaskDesc-<?= $taskId; ?>', 'recentEditButton-<?= $taskId; ?>');">
+									<input type="button" value="Delete">					 
+								</div>		
+			
+							<?php } //end if ?>		
+							</form>
+				</div>			 
+			</div>
+			
+<div class="note-section">
+				<div class="flex-container">
+					<div class="selectable-text" contenteditable="false">
+						<!-- Display newest Tasks -->
+						<?php 
+						if ($newTask->num_rows > 0) { 
+							$data = $newTask->fetch_assoc();
+							if ($data) {
+								$taskId = $data['taskID']; ?>
+								<table>
+									<tr>
+										<th>Task Date</th>
+										<th>Task Description</th>
+									</tr>
+									<tr>
+										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+										<td id="newTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
+									</tr>
+								</table>
+								<?php } else { ?>
+									<p>no task found</p>
+							<?php }	
+						} else { ?>
+								<p>no task to display</p>
+							<?php } ?>
+
+							</div>
+							<?php if (isset($taskId)) { ?>
+								<div class="button-group">
+									<input type="button" value="Edit" id="newEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'newEditButton-<?= $taskId; ?>')">
 									<input type="button" value="Delete">					 
 								</div>								
 							<?php } //end if ?>			
@@ -83,8 +127,9 @@ include '../includes/header.php';
 									</tr>
 									<tr>
 										<td><?= htmlspecialchars($data['taskDate']); ?></td>
-										<td id="taskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
+										<td id="oldTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
+							        </form>
 								</table>
 								<?php } else { ?>
 									<p>no task found</p>
@@ -96,43 +141,7 @@ include '../includes/header.php';
 							</div>
 							<?php if (isset($taskId)) { ?>
 								<div class="button-group">
-									<input type="button" value="Edit" id="editButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'editButton-<?= $taskId; ?>')">
-									<input type="button" value="Delete">					 
-								</div>								
-							<?php } //end if ?>			
-				</div>			 
-			</div>
-			
-<div class="note-section">
-				<div class="flex-container">
-					<div class="selectable-text" contenteditable="false">
-						<!-- Display oldest Tasks -->
-						<?php 
-						if ($oldTask->num_rows > 0) { 
-							$data = $oldTask->fetch_assoc();
-							if ($data) {
-								$taskId = $data['taskID']; ?>
-								<table>
-									<tr>
-										<th>Task Date</th>
-										<th>Task Description</th>
-									</tr>
-									<tr>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
-										<td id="taskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
-									</tr>
-								</table>
-								<?php } else { ?>
-									<p>no task found</p>
-							<?php }	
-						} else { ?>
-								<p>no task to display</p>
-							<?php } ?>
-
-							</div>
-							<?php if (isset($taskId)) { ?>
-								<div class="button-group">
-									<input type="button" value="Edit" id="editButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'editButton-<?= $taskId; ?>')">
+									<input type="button" value="Edit" id="oldEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'oldEditButton-<?= $taskId; ?>')">
 									<input type="button" value="Delete">					 
 								</div>								
 							<?php } //end if ?>			
@@ -147,6 +156,7 @@ include '../includes/header.php';
 		</div>
 
 		<?php
+		include("../includes/dbbuttons.php");
 		include '../includes/footer.php';
 		?>
 

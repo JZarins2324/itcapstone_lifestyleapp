@@ -18,3 +18,5 @@ $dbname = $_ENV['DB_NAME']; // your database name
 $user = $_ENV['DB_USER']; // your database username
 $pass = $_ENV['DB_PASSWORD']; // your database password
 // $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+
+$conn = new mysqli($host, $user, $pass, $dbname);

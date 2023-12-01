@@ -29,7 +29,7 @@
           userID INT AUTO_INCREMENT,
           userName VARCHAR(128) NOT NULL,
           userPass VARCHAR(128) NOT NULL,
-          currentTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+          currentTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           PRIMARY KEY (userID)
         );";
         
@@ -38,8 +38,8 @@
           taskName VARCHAR(32) NOT NULL,
           taskDesc VARCHAR(128) NOT NULL,
           taskDate DATETIME NOT NULL,
-          taskCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-          taskModify TIMESTAMP,
+          taskCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          taskModify TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           userID INT,
           PRIMARY KEY (taskID),
           FOREIGN KEY (userID) REFERENCES users(userID)
@@ -49,8 +49,7 @@
           passID INT NOT NULL AUTO_INCREMENT,
           passName VARCHAR(32) NOT NULL,
           passDesc VARCHAR(128) NOT NULL,
-          passCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-          passModify TIMESTAMP,
+          passCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           userID INT,
           PRIMARY KEY (passID),
           FOREIGN KEY (userID) REFERENCES users(userID)
@@ -60,8 +59,7 @@
           noteID INT NOT NULL AUTO_INCREMENT,
           noteName VARCHAR(32) NOT NULL,
           noteDesc VARCHAR(256) NOT NULL,
-          noteCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-          noteModify TIMESTAMP,
+          noteCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           userID INT,
           PRIMARY KEY (noteID),
           FOREIGN KEY (userID) REFERENCES users(userID)
