@@ -48,7 +48,7 @@ include '../includes/header.php';
 										<th>Task Date</th>
 										<th>Task Description</th>
 									</tr>
-									<form action="../includes/dbbuttons.php" method="POST">
+									<form action="../includes/dbedit.php" method="POST">
 									<input type="hidden" name="hiddenName" id="hiddenId" value="">
 									<input type="hidden" name="taskId" id="taskId" value="<?php echo $taskId ?>">
 									<tr>
@@ -67,7 +67,7 @@ include '../includes/header.php';
 							<?php if (isset($taskId)) { ?>
 								<div class="button-group">
 									<input type="button" value="Edit" id="recentEditButton-<?= $taskId; ?>" onclick="toggleEdit('recentTaskDesc-<?= $taskId; ?>', 'recentEditButton-<?= $taskId; ?>');">
-									<input type="button" value="Delete">					 
+									<input type="submit" value="Delete" name="Delete">					 
 								</div>		
 			
 							<?php } //end if ?>		
@@ -156,7 +156,7 @@ include '../includes/header.php';
 		</div>
 
 		<?php
-		include("../includes/dbbuttons.php");
+		include("../includes/dbedit.php");
 		include '../includes/footer.php';
 		?>
 
