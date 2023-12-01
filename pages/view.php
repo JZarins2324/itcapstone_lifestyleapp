@@ -2,12 +2,12 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["username"])) {
   header("location: login.php");
   exit;
 }
 
-$connectionRequestedByApp= true;
+$connectionRequestedByApp = true;
 
 include "../includes/dbview.php";
 ?> 
