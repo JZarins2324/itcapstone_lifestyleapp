@@ -1,6 +1,19 @@
 <?php
-  $connectionRequestedByApp = true;
-  include "../includes/dbgetuser.php";
+session_start();
+
+// Check if the user is logged in, if not then redirect to login page
+if(!isset($_SESSION["username"])) {
+  header("location: login.php");
+  exit;
+}
+
+if (!($_SESSION["username"] == "admin")) {
+  header("location: home.php");
+  exit;
+}
+
+$connectionRequestedByApp = true;
+include "../includes/dbgetuser.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +35,19 @@
       </tr><?php
         while ($data = $userData->fetch_assoc()) {
         ?> 
-      <tr>
-        <td><?= $data['userID']; ?></td>
-        <td><?= $data['userName']; ?></td>
-        <td><?= $data['currentTimestamp']; ?></td>
-        <td>DELETE</td>
-      </tr><?php
+      <form action="edit.php" method="post">
+        <input type="hidden" name="id" value="<?= $data['userID']; ?>">
+        <input type="hidden" name="table" value="user">
+        <tr>
+          <td><?= $data['userID']; ?></td>
+          <td><?= $data['userName']; ?></td>
+          <td><?= $data['currentTimestamp']; ?></td>
+          <td><input type="submit" name="Delete" value="Delete"></td>
+        </tr>
+      <form><?php
         }
-        echo PHP_EOL . "    </table>";
+      ?> 
+    </table><?php
       }
     ?> 
   </body>
