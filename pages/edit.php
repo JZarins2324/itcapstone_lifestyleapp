@@ -7,12 +7,6 @@ if(!isset($_SESSION["username"])) {
   exit;
 }
 
-foreach ($_POST as $key => $value) {
-    echo "<p>$key => $value</p>";
-}
-
-// echo $_SERVER['HTTP_REFERER'];
-
 // Get Proper Table Name
 $tableName = "";
 
@@ -30,29 +24,49 @@ if ($_POST['table'] == 'task') {
 if (isset($_POST['Edit'])) {
     // Populate Form
 ?> 
-<form action="../server/updatehandler.php" method="post">
-    <input type="hidden" name="table" value="<?= $_POST['table']; ?>">
-    <input type="hidden" name="id" value="<?= $_POST['id']; ?>">
-    <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lifestyle Companion - Edit</title>
+    </head>
+    <body>
+        <form action="../server/viewupdatehandler.php" method="post">
+            <input type="hidden" name="table" value="<?= $_POST['table']; ?>">
+            <input type="hidden" name="id" value="<?= $_POST['id']; ?>">
+            <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>"><?php
+            $nameTitle = "Name: ";
+            $descTitle = "Description: ";
 
-    <label for="name">Name: </label>
-    <input type="text" name="name" value="<?= $_POST['name']; ?>"><br><br>
+            if ($_POST['table'] == 'pass') {
+                $nameTitle = "Password: ";
+                $descTitle = "Account: ";
+            }
+                
+            ?> 
 
-    <label for="desc">Description: </label>
-    <input type="text" name="desc" value="<?= $_POST['desc']; ?>"><br><br><?php
-    // Display Date feild
-    if ($tableName == 'tasks') {
-        // Populate date feild with default value
-        list($day, $time) = explode(" ", $_POST['date']);
-?> 
-    <label for="date">Date: </label>
-    <input type="date" name="date" value="<?= $day; ?>"><br><br><?php
+            <label for="name"><?= $nameTitle; ?></label>
+            <input type="text" name="name" value="<?= $_POST['name']; ?>"><br><br>
 
-    }
-?> 
+            <label for="desc"><?= $descTitle; ?></label>
+            <input type="text" name="desc" value="<?= $_POST['desc']; ?>"><br><br><?php
+            // Display Date feild
+            if ($tableName == 'tasks') {
+                // Populate date feild with default value
+                list($day, $time) = explode(" ", $_POST['date']);
+            ?> 
+            <label for="date">Date: </label>
+            <input type="date" name="date" value="<?= $day; ?>"><br><br><?php
 
-    <input type="submit" name="submit" value="Submit">
-</form><?php
+            }
+            ?> 
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html><?php
 } else if (isset($_POST['Delete'])) {
-    include "../server/deletehandler.php";
+    include "../server/viewdeletehandler.php";
 }
+?> 
