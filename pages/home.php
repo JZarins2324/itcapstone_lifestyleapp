@@ -156,7 +156,6 @@ include '../includes/header.php';
 		</div>
 
 		<?php
-		include("../includes/dbedit.php");
 		include '../includes/footer.php';
 		?>
 
