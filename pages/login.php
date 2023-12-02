@@ -14,38 +14,23 @@ if (isset($_SESSION['error'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/app.css"> -->
+    <title>Login/Register</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body>
 <div class="login-container">
-    <h1 id="formTitle">Login</h1>
+    <h1 id="formTitle">Login/Register</h1>
     <form method="post" action="../server/authenticate.php">
         <?= $errorMessage ?>
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
-        <input id="submit" name="Login" type="submit" value="Login" />
+        <input id="firstSubmit" name="login" type="submit" value="Login" />
+        <p style="text-align:center">or</p>
+        <input name="create" type="submit" value="Register">
     </form>
-    <p style="text-align:center">or click below to toggle</p>
-    <button id="change">Create Account</button>
-    <!-- <h1>Sign Up</h1>
-    <form method="post" action="../server/authenticate.php">
-        <input type="text" name="newUsername" placeholder="Username" required />
-        <input type="password" name="newPassword" placeholder="Password" required />
-        <input type="submit" value="signup" />
-    </form> -->
-    <?php
-        echo '<script src="../assets/js/login.js"></script>';
-        ?><br><br><?php
-        // echo "*Password must be 9-16 characters long"
-        ?><br><?php
-        echo "*Password must contain a number";
-        ?><br><?php
-        echo "*Password must contain an uppercase letter";
-        ?><br><?php
-        // echo "*Password may contain only the following special characters: \"!\", \"-\", \"_\"";
-    ?>
+    <p>*Password must contain a number</p>
+    <p>*Password must contain an uppercase letter</p>
+    <!-- <p>*Password may contain only the following special characters: "!", "-", "_"</p> -->
 </div>
 </body>
 </html>

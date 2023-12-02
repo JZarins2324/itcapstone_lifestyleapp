@@ -25,7 +25,7 @@ $stmt = $mysqli->prepare("SELECT * FROM users WHERE userName = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 
-if (isset($_POST["Create_Account"])) {
+if (isset($_POST["create"])) {
   $result = $stmt->get_result();
 	if ($result->num_rows === 0) {
     // Username does not exist, create a new account
@@ -47,7 +47,7 @@ if (isset($_POST["Create_Account"])) {
     header('Location: ../pages/login.php');
     exit();
   }
-} else if (isset($_POST['Login'])) {
+} else if (isset($_POST['login'])) {
   $result = $stmt->get_result();
 	if ($user = $result->fetch_assoc()) {
     if (password_verify($password, $user['userPass'])) {
