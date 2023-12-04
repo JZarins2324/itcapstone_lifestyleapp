@@ -14,7 +14,7 @@
   }
 
   // Check for length
-  /*if (strlen($userPass) <= 9 && strlen($userPass) >= 16) {
+  /*if (strlen($userPass) <= 8) {
     header('Location: ../pages/login.php');
     exit();
   };*/
@@ -42,32 +42,3 @@
     header('Location: ../pages/login.php');
     exit();
   }
-
-      // Restrict special characters
-      /*foreach ($passChars as $passChar) {
-        if ($passChar = "," ||
-            $passChar == "." ||
-            $passChar == "/" ||
-            $passChar == "|" ||
-            $passChar == "<" ||
-            $passChar == ">" ||
-            $passChar == "{" ||
-            $passChar == "}" ||
-            $passChar == "?" ||
-            $passChar == ";" ||
-            $passChar == ":" ||
-            $passChar == "'" ||
-            $passChar == "`" ||
-            $passChar == "~" ||
-            $passChar == "@" ||
-            $passChar == "#" ||
-            $passChar == "%" ||
-            $passChar == "^" ||
-            $passChar == "&" ||
-            $passChar == "*" ||
-            $passChar == "+" ||
-            $passChar == "=") {
-              header('Location: ../pages/login.php');
-              exit();
-            }
-      }*/

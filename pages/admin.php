@@ -1,20 +1,21 @@
 <?php
-session_start();
+  session_start();
 
-// Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION["username"])) {
-  header("location: login.php");
-  exit;
-}
+  // Check if the user is logged in, if not then redirect to login page
+  if(!isset($_SESSION["username"])) {
+    header("location: login.php");
+    exit;
+  }
 
-if (!($_SESSION["username"] == "admin")) {
-  header("location: home.php");
-  exit;
-}
+  if (!($_SESSION["username"] == "admin")) {
+    header("location: home.php");
+    exit;
+  }
 
-$connectionRequestedByApp = true;
-include "../includes/dbgetuser.php";
+  $connectionRequestedByApp = true;
+  include "../includes/dbgetuser.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

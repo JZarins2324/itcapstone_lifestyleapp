@@ -155,10 +155,7 @@ include '../includes/header.php';
 		<aside class="right-aside"></aside>
 		</div>
 
-		<?php
-		include("../includes/dbedit.php");
-		include '../includes/footer.php';
-		?>
+		<?php include '../includes/footer.php'; ?>
 
 <script src="../assets/js/toggleSelection.js"></script> 
 <script src="../assets/js/toggleEdit.js"></script>							

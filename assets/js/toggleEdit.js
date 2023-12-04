@@ -4,7 +4,6 @@ function toggleEdit(taskDescId, buttonId) {
 
   var taskDesc = document.getElementById(taskDescId);
   var editButton = document.getElementById(buttonId);
-	var noteSection = editButton.closest('.note-section');
 
 	console.log(taskDesc.innerHTML);
 

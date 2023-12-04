@@ -106,3 +106,7 @@ html, body {
 	border-color: #007bff;
 	background-color: #e7f1ff; /* Adjusted to a lighter shade for better readability */
 }
+
+table {
+  text-align: center;
+}

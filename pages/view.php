@@ -1,15 +1,15 @@
 <?php
-session_start();
+  session_start();
 
-// Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION["username"])) {
-  header("location: login.php");
-  exit;
-}
+  // Check if the user is logged in, if not then redirect to login page
+  if(!isset($_SESSION["username"])) {
+    header("location: login.php");
+    exit;
+  }
 
-$connectionRequestedByApp = true;
+  $connectionRequestedByApp = true;
 
-include "../includes/dbview.php";
+  include "../includes/dbview.php";
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +22,11 @@ include "../includes/dbview.php";
   </head>
   <body>
 
-
-	<?php
-	$currentPage = 'view';
-	$pageTitle = "View Entries";
-include '../includes/header.php';
-?>
+	  <?php
+	    $currentPage = 'view';
+	    $pageTitle = "View Entries";
+      include '../includes/header.php';
+    ?>
 
 
     <h1>Your Entries</h1>

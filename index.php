@@ -1,5 +1,5 @@
 <?php
-// Redirect to home page
-header('Location: pages/home.php');
-exit();
+  // Redirect to home page
+  header('Location: pages/home.php');
+  exit();
 ?>
