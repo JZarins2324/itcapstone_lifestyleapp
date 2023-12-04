@@ -7,7 +7,6 @@
     $connectionRequestedByApp = $_POST['isValidRequest'];
   }
   include "dbconnect.php";
-  $conn = new mysqli($host, $user, $pass, $dbname);
 
     $inputValue = $_POST['userInput'];
     $nameValue = $_POST['name'];
@@ -57,10 +56,6 @@
     } else {
       echo "Type not selected.";
     }
-
-  foreach ($_POST as $key => $value) {
-    echo "$key => #$value";?><br><?php
-  }
 
   header("location: ../pages/view.php");
 ?>

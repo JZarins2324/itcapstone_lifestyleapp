@@ -1,8 +1,4 @@
 <?php
-// foreach ($_POST as $key => $value) {
-//     echo "<p>$key => $value</p>";
-// }
-
 if (!isset($_POST['submit'])) {
     header("Location: ../pages/home.php");
     exit();
@@ -37,15 +33,24 @@ if ($tableName == "tasks") {
     // Sanitize date
     $date = filter_var(trim($_POST['date']), FILTER_SANITIZE_STRING);
 
-    $sql = "UPDATE $tableName SET taskName = '$name', taskDesc = '$desc', taskDate = '$date', taskModify = CURRENT_TIMESTAMP WHERE $idColumn = $id";
-    echo $sql;
+    $sql = "UPDATE $tableName SET taskName = '$name', taskDesc = '$desc', taskDate = '$date' WHERE $idColumn = $id";
 } else if ($tableName == "passwords") {
-    // TODO asterisks
-    $sql = "UPDATE $tableName SET passName = '$name', passDesc = '$desc', passModify = CURRENT_TIMESTAMP WHERE $idColumn = $id";
-    echo $sql;
+    // Asterisks
+    $characters = str_split($name);
+    $asteriskPassword = "";
+
+    for ($i = 0; $i < count($characters); $i++) {
+        // Reveal the first 2 and last 2 characters
+        if ($i < 2  || $i > count($characters) - 3) {
+            $asteriskPassword .= $characters[$i];
+        } else {
+            $asteriskPassword .= "*";
+        }
+    }
+
+    $sql = "UPDATE $tableName SET passName = '$asteriskPassword', passDesc = '$desc' WHERE $idColumn = $id";
 } else if ($tableName == "notes") {
-    $sql = "UPDATE $tableName SET noteName = '$name', noteDesc = '$desc', noteModify = CURRENT_TIMESTAMP WHERE $idColumn = $id";
-    echo $sql;
+    $sql = "UPDATE $tableName SET noteName = '$name', noteDesc = '$desc' WHERE $idColumn = $id";
 }
 
 // Query the DB
@@ -55,3 +60,5 @@ include "../includes/dbconnect.php";
 $conn = new mysqli($host, $user, $pass, $dbname);
 
 $conn->query($sql);
+
+header("Location: " . $_POST['redirect']);

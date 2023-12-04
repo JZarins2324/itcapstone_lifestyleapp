@@ -14,8 +14,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/app.css"> -->
+    <title>Login/Register</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
   <body>

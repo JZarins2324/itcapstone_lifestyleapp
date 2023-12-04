@@ -29,8 +29,4 @@ $query = $conn->prepare("DELETE FROM $tableName WHERE $idColumn = ?");
 $query->bind_param("i", $_POST['id']);
 $query->execute();
 
-
-// $sql = "DELETE FROM $tableName WHERE $idColumn = " . $_POST['id'];
-// echo $sql;
-
 header("Location: " . $_SERVER['HTTP_REFERER']);
