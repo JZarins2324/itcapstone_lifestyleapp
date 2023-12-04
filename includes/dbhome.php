@@ -2,11 +2,8 @@
 <?php
 
   // Create Connection
-  $serverName = "localhost";
-  $username = "root";
-  $password = "mysql";
-  $dbname = "LifestyleDB";
-  $conn = new mysqli($serverName, $username, $password, $dbname);
+  $connectionRequestedByApp = true;
+  include "../includes/dbconnect.php";
 
   // Recent Data?
   $recentTask = $conn->query("SELECT taskID, taskName, taskDesc, taskDate, taskCreate, taskModify, userID, userName FROM users INNER JOIN tasks USING (userID);");
