@@ -1,20 +1,18 @@
-<?php include("../includes/dbhome.php");
+<?php
 session_start();
+include("../includes/dbhome.php");
 
 if (!isset($_SESSION["username"])) {
 	header("location: login.php");
 	exit;
 }
 ?>
-<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add other stylesheets or scripts here -->
-
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
     <title>Lifestyle Companion</title>
 </head>
 

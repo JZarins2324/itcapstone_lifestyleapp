@@ -1,0 +1,46 @@
+.site-header {
+	background-color: #1D617A;
+	border-radius: 0 0 .9rem .9rem;
+	color: #61C2A2;
+	padding: 10px 20px;
+	padding-bottom: 50px;
+	position: relative; /* Needed for absolute positioning of children */
+	text-align: center;
+}
+
+.site-header h1, .site-header h3, .site-header h4 {
+	margin: 0;
+	padding: 5px 0;
+}
+
+#links {
+	align-items: center;
+	bottom: 10px;
+	display: flex;
+	justify-content: center;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%); /* Center the links */
+	top: 75%; /* Adjust these values as needed */
+	white-space: nowrap; /* Prevent wrapping */
+}
+
+#links a:hover {
+	text-decoration: underline;
+}
+
+#links a, #links .separator {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+}
+
+#links a {
+	color: #CCE0D2;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.separator {
+	width: 20px;
+}

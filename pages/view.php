@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/css/table.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/view.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/header.css">
     <title>Lifestyle Companion - View</title>
   </head>
   <body><?php
