@@ -45,7 +45,7 @@
           <td><?= $data['currentTimestamp']; ?></td>
           <td><input type="submit" name="Delete" value="Delete"></td>
         </tr>
-      <form><?php
+        </form><?php
         }
       ?> 
     </table><?php
