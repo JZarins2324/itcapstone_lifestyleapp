@@ -19,17 +19,16 @@ if (isset($_SESSION['error'])) {
 </head>
 <body>
 <div class="login-container">
-    <h1 id="formTitle">Login/Register</h1>
+    <h1 id="formTitle">Login or Register</h1>
     <form method="post" action="../server/authenticate.php">
         <?= $errorMessage ?>
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
+        <p>*Password must contain an uppercase letter and a number</p>
         <input id="firstSubmit" name="login" type="submit" value="Login" />
         <p style="text-align:center">or</p>
         <input name="create" type="submit" value="Register">
     </form>
-    <p>*Password must contain a number</p>
-    <p>*Password must contain an uppercase letter</p>
     <!-- <p>*Password may contain only the following special characters: "!", "-", "_"</p> -->
 </div>
 </body>

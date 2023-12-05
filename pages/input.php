@@ -15,11 +15,12 @@
 
   include '../includes/header.php';
 ?>
-
-    <div id="container">
+    <br>
+    <div id="container" class="input-container">
       <form action="../includes/inputhandler.php" method="post">
         <label for="inputLabel">Add new</label>
         <select name="userInput" id="userInput">
+          
           <option value="note">Note</option>
           <option value="password">Password</option>
           <option value="task">Task</option>
@@ -27,7 +28,9 @@
         <br><br>
 
         <label for="name">Name</label><br>
-        <input type="text" name="name" id="name" placeholder="Name"><br><br>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <h5>*For password protection only place password in the 'Name' field</h5>
+        <br>
 
         <label for="desc">Description</label><br>
         <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Description..."></textarea><br><br>
@@ -39,8 +42,7 @@
 
         <input id="submit" type="submit" value="Add">
       </form>
-    <div>
-    <h5>*Password name should be the password itself<br>*Password only partially stored for protection</h5>
-    <?= '<script src="../assets/js/input.js"></script>'; ?>
+    </div>
+      <?= '<script src="../assets/js/input.js"></script>'; ?>
   </body>
 </html>

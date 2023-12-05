@@ -13,15 +13,15 @@
 }
 
 #links {
-position: absolute;
-bottom: 10px;
-top: 75%; /* Adjust these values as needed */
-left: 50%;
-transform: translate(-50%, -50%); /* Center the links */
-white-space: nowrap; /* Prevent wrapping */
-display: flex;
-justify-content: center;
-align-items: center;
+	position: absolute;
+	bottom: 10px;
+	top: 75%; /* Adjust these values as needed */
+	left: 50%;
+	transform: translate(-50%, -50%); /* Center the links */
+	white-space: nowrap; /* Prevent wrapping */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #links a:hover {
@@ -62,12 +62,6 @@ html, body {
 	width: 100%;
 }
 
-.note-section {
-	border: 1px solid #ccc;
-	padding: 10px;
-	margin-bottom: 10px;
-}
-
 .flex-container {
 	display: flex;
 	justify-content: space-between;
@@ -96,8 +90,8 @@ html, body {
 }
 
 .selected {
-	border-color: #007bff;
 	background-color: #e723e7;
+	border-color: #007bff;
 }
 
 /* Existing Styles */
@@ -147,6 +141,52 @@ input, textarea {
 	/* Ensure button style matches overall design theme */
 }
 
-h5 {
-  color: red;
+#links {
+	align-items: center;
+	bottom: 10px;
+	display: flex;
+	justify-content: center;
+	left: 50%;
+	position: absolute;
+	top: 75%; /* Adjust these values as needed */
+	transform: translate(-50%, -50%); /* Center the links */
+	white-space: nowrap; /* Prevent wrapping */
+}
+
+#links a:hover {
+	text-decoration: underline;
+}
+
+#links a, #links .separator {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+}
+
+#links a {
+	color: #CCE0D2;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.site-header {
+	background-color: #1D617A;
+	border-radius: 0 0 .9rem .9rem;
+	color: #61C2A2;
+	padding: 10px 20px;
+	padding-bottom: 50px;
+	position: relative; /* Needed for absolute positioning of children */
+	text-align: center;
+}
+
+html, body {
+	background-color: #CCE0D2;
+}
+
+html, div {
+	color: white;
+}
+
+html, form {
+	background-color: #61C2A2;
 }

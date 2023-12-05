@@ -3,12 +3,12 @@
 
 .site-header {
 	background-color: #1D617A;
+	border-radius: 0 0 .9rem .9rem;
 	color: #61C2A2;
 	padding: 10px 20px;
 	padding-bottom: 50px;
-	text-align: center;
 	position: relative; /* Needed for absolute positioning of children */
-	border-radius: 0 0 .9rem .9rem;
+	text-align: center;
 }
 
 .site-header h1, .site-header h3, .site-header h4 {
@@ -17,15 +17,15 @@
 }
 
 #links {
-	position: absolute;
+	align-items: center;
 	bottom: 10px;
-	top: 75%; /* Adjust these values as needed */
-	left: 50%;
-	transform: translate(-50%, -50%); /* Center the links */
-	white-space: nowrap; /* Prevent wrapping */
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%); /* Center the links */
+	top: 75%; /* Adjust these values as needed */
+	white-space: nowrap; /* Prevent wrapping */
 }
 
 #links a:hover {
@@ -40,8 +40,8 @@
 
 #links a {
 	color: #CCE0D2;
-	text-decoration: none;
 	padding: 5px;
+	text-decoration: none;
 }
 
 .separator {
@@ -49,11 +49,11 @@
 }
 
 html, body {
-  text-align: center;
+	background-color: #CCE0D2;
+	font-family: Arial, sans-serif;
 	margin: 0 10% 2rem 10%;
 	padding: 0;
-	font-family: Arial, sans-serif;
-	background-color: #CCE0D2;
+	text-align: center;
 }
 
 .dropdown-trigger {
@@ -67,11 +67,11 @@ html, body {
 }
 
 input[type=submit] {
-	color: #007bff;
-	text-decoration: none;
-	border: none;
 	background-color: aliceblue;
+	border: none;
+	color: #007bff;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 input[type=submit]:hover {

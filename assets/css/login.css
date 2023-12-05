@@ -38,6 +38,15 @@ p {
   text-align: center;
 }
 
-h5 {
-  color: red;
+html, h1 {
+  color: white;
+  text-align: center;
+}
+
+html, body {
+  background-color: #CCE0D2;
+}
+
+.login-container {
+	background-color: #1D617A;
 }
