@@ -102,6 +102,20 @@ html, body {
 	color: white;
 }
 
+.button-group input[type="submit"] {
+	margin-bottom: 5px; /* Space between buttons */
+	padding: 5px 10px; /* Padding for buttons */
+	border: 1px solid #007bff;
+	background-color: #e7f1ff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.button-group input[type="submit"]:hover {
+	background-color: #007bff;
+	color: white;
+}
+
 .selected {
 	border-color: #007bff;
 	background-color: #e7f1ff; /* Adjusted to a lighter shade for better readability */

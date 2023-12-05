@@ -52,7 +52,7 @@ include '../includes/header.php';
 									<input type="hidden" name="hiddenName" id="hiddenId" value="">
 									<input type="hidden" name="taskId" id="taskId" value="<?php echo $taskId ?>">
 									<tr>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+									<td><?= (new DateTime($data['taskDate']))->format('Y-m-d'); ?></td>
 										<td id="recentTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 								</table>
@@ -114,6 +114,9 @@ include '../includes/header.php';
 				</div>			 
 			</div>
 			
+*/ 
+?>
+
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
@@ -124,11 +127,11 @@ include '../includes/header.php';
 								$taskId = $data['taskID']; ?>
 								<table>
 									<tr>
-										<th>Task Date</th>
-										<th>Task Description</th>
+										<th>Oldest Task Date</th>
+										<th>Oldest Task Description</th>
 									</tr>
 									<tr>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+									<td><?= (new DateTime($data['taskDate']))->format('Y-m-d'); ?></td>
 										<td id="oldTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 							        </form>
@@ -143,14 +146,18 @@ include '../includes/header.php';
 							</div>
 							<?php if (isset($taskId)) { ?>
 								<div class="button-group">
-									<input type="button" value="Edit" id="oldEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'oldEditButton-<?= $taskId; ?>')">
+								<?php /*	
+								<input type="button" value="Edit" id="oldEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'oldEditButton-<?= $taskId; ?>')">
 									<input type="button" value="Delete">					 
+								*/?>
+								
+								
 								</div>								
 							<?php } ?>			
 				</div>			 
 			</div>
 
-*/ ?>
+<?php /* */ ?>
 
 
 		<script src="../assets/js/toggleEdit.js"></script>							
