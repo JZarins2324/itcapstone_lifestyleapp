@@ -57,7 +57,9 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 
 11/17/2023 Homepage modifications to include buttons
 
-11/24/2023 view page drop down functionality 
+11/24/2023 View page drop-down functionality
+
+12/05/2023 Home page buttons functionality and view page CSS update
 
 
 

@@ -45,8 +45,8 @@ include '../includes/header.php';
 								$taskId = $data['taskID']; ?>
 								<table>
 									<tr>
-										<th>Task Date</th>
-										<th>Task Description</th>
+										<th>Recent Task Date</th>
+										<th>Recent Task Description</th>
 									</tr>
 									<form action="../includes/dbedit.php" method="POST">
 									<input type="hidden" name="hiddenName" id="hiddenId" value="">
@@ -70,15 +70,18 @@ include '../includes/header.php';
 									<input type="submit" value="Delete" name="Delete">					 
 								</div>		
 			
-							<?php } //end if ?>		
+							<?php } ?>		
 							</form>
 				</div>			 
 			</div>
 			
+
+			<?php /*comment out 
+
+
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display newest Tasks -->
 						<?php 
 						if ($newTask->num_rows > 0) { 
 							$data = $newTask->fetch_assoc();
@@ -107,14 +110,13 @@ include '../includes/header.php';
 									<input type="button" value="Edit" id="newEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'newEditButton-<?= $taskId; ?>')">
 									<input type="button" value="Delete">					 
 								</div>								
-							<?php } //end if ?>			
+							<?php } ?>			
 				</div>			 
 			</div>
 			
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display oldest Tasks -->
 						<?php 
 						if ($oldTask->num_rows > 0) { 
 							$data = $oldTask->fetch_assoc();
@@ -144,9 +146,12 @@ include '../includes/header.php';
 									<input type="button" value="Edit" id="oldEditButton-<?= $taskId; ?>" onclick="toggleEdit('taskDesc-<?= $taskId; ?>', 'oldEditButton-<?= $taskId; ?>')">
 									<input type="button" value="Delete">					 
 								</div>								
-							<?php } //end if ?>			
+							<?php } ?>			
 				</div>			 
 			</div>
+
+*/ ?>
+
 
 		<script src="../assets/js/toggleEdit.js"></script>							
 		

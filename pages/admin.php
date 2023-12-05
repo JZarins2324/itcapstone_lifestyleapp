@@ -22,12 +22,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='../assets/css/table.css'>
+    <link rel='stylesheet' href='../assets/css/view.css'>
     <title>Admin Page</title>
   </head>
   <body><?php
+
+    $currentPage = 'admin';
+    $pageTitle = "Admin Page";
+    include '../includes/header.php';
+
       if ($userData->num_rows > 0) {
     ?> 
-    <table>
+    <table style="margin: 1.5rem auto 0;">
       <tr>
         <th>User ID</th>
         <th>Username</th>
@@ -45,7 +51,7 @@
           <td><?= $data['currentTimestamp']; ?></td>
           <td><input type="submit" name="Delete" value="Delete"></td>
         </tr>
-      <form><?php
+        </form><?php
         }
       ?> 
     </table><?php

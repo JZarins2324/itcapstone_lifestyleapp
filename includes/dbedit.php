@@ -1,17 +1,40 @@
 <?php // Author: Samuel Schmitz ?>
 <?php 
-  $connectionRequestedByApp = true;
-  include("dbconnect.php");
+$connectionRequestedByApp = true;
+include("dbconnect.php");
 
-  // Set taskId
-  $taskId = $_POST['taskId'];
+// Check if the taskId is set
+if (isset($_POST['taskId'])) {
+    $taskId = $_POST['taskId'];
 
-  // Delete Check
-  if (isset($_POST['Delete'])) {
-    include('dbdelete.php');
-  }
+    // Delete Check
+    if (isset($_POST['Delete'])) {
+        include('dbdelete.php');
+    } else {
+        // Edit Task
+        if (isset($_POST['hiddenName'])) {
+            $updatedDesc = $_POST['hiddenName'];
 
-  // Edit Task
-  $updatedDesc = $_POST['hiddenName'];
-  $editTask = $conn->query("UPDATE tasks SET taskDesc = '$updatedDesc' WHERE taskID = $taskId;");
+            // Prepare the SQL statement to update taskDesc and taskModify
+            $stmt = $conn->prepare("UPDATE tasks SET taskDesc = ?, taskModify = NOW() WHERE taskID = ?");
+            $stmt->bind_param("si", $updatedDesc, $taskId);
+
+            // Execute and check for errors
+            if ($stmt->execute()) {
+                // Success, redirect to home.php
+                header("Location: ../pages/home.php");
+                exit();
+            } else {
+                // Handle error, maybe redirect to an error page or show an error message
+                echo "Error: " . $conn->error;
+            }
+
+            // Close the statement
+            $stmt->close();
+        }
+    }
+}
+
+// Close the database connection
+$conn->close();
 ?>
