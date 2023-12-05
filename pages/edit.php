@@ -24,7 +24,7 @@ if(!isset($_SESSION["username"])) {
   if (isset($_POST['Edit'])) {
     // Populate Form
 ?> 
-<form action="../server/updatehandler.php" method="post">
+<form action="../server/viewupdatehandler.php" method="post">
     <input type="hidden" name="table" value="<?= $_POST['table']; ?>">
     <input type="hidden" name="id" value="<?= $_POST['id']; ?>">
     <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>">
@@ -48,5 +48,5 @@ if(!isset($_SESSION["username"])) {
     <input type="submit" name="submit" value="Submit">
 </form><?php
 } else if (isset($_POST['Delete'])) {
-    include "../server/deletehandler.php";
+    include "../server/viewdeletehandler.php";
 }

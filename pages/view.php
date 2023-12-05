@@ -20,14 +20,11 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/view.css">
     <title>Lifestyle Companion - View</title>
   </head>
-  <body>
-
-	  <?php
+  <body><?php
 	    $currentPage = 'view';
 	    $pageTitle = "View Entries";
       include '../includes/header.php';
-    ?>
-
+    ?> 
 
     <h1>Your Entries</h1>
 
@@ -40,6 +37,7 @@
           <tr>
             <th>Task Name</th>
             <th>Task Description</th>
+            <th>Due Date</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr><?php
@@ -52,8 +50,12 @@
             <input type="hidden" name="desc" value="<?= $data['taskDesc']; ?>">
             <input type="hidden" name="date" value="<?= $data['taskDate']; ?>">
             <tr>
-              <td><?= $data['taskName']; ?></td>
+              <td><?= $data['taskName']; ?></td><?php
+                // Ignore the 00:00:00 after the date
+                list($date, $time) = explode(" ", $data['taskDate']);
+              ?> 
               <td><?= $data['taskDesc']; ?></td>
+              <td><?= $date; ?></td>
               <td><input type="submit" name="Edit" value="Edit"></td>
               <td><input type="submit" name="Delete" value="Delete"></td>
             <tr>
@@ -81,7 +83,7 @@
           while ($data = $passData->fetch_assoc()) {
         ?> 
         <form action="edit.php" method="post">
-        <input type="hidden" name="table" value="pass">
+          <input type="hidden" name="table" value="pass">
             <input type="hidden" name="id" value="<?= $data['passID']; ?>">
             <input type="hidden" name="name" value="<?= $data['passName']; ?>">
             <input type="hidden" name="desc" value="<?= $data['passDesc']; ?>">
@@ -137,6 +139,6 @@
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
-      <script src='../assets/js/jquery.dropdown.js'></script>
+    <script src='../assets/js/jquery.dropdown.js'></script>
   </body>
 </html>
