@@ -52,7 +52,7 @@ include '../includes/header.php';
 									<input type="hidden" name="taskId" id="taskId" value="<?= $taskId ?>">
 									<tr>
 										<td><?= $data['taskName']; ?></td>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+										<td><?= (new DateTime($data['taskDate']))->format('Y-m-d'); ?></td>
 										<td id="recentTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 								</table>
@@ -95,7 +95,7 @@ include '../includes/header.php';
 									<input type="hidden" name="taskId" id="taskId" value="<?= $taskId ?>">
 									<tr>
 										<td><?= $data['taskName']; ?></td>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+										<td><?= (new DateTime($data['taskDate']))->format('Y-m-d'); ?></td>
 										<td id="newTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 								</table>
@@ -137,7 +137,7 @@ include '../includes/header.php';
 									<input type="hidden" name="taskId" id="taskId" value="<?= $taskId ?>">
 									<tr>
 										<td><?= $data['taskName']; ?></td>
-										<td><?= htmlspecialchars($data['taskDate']); ?></td>
+										<td><?= (new DateTime($data['taskDate']))->format('Y-m-d'); ?></td>
 										<td id="oldTaskDesc-<?= $taskId; ?>" class="task-desc" contenteditable="false"><?= $data['taskDesc']; ?></td>
 									</tr>
 								</table>
