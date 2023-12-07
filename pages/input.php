@@ -5,11 +5,21 @@
     header("location: login.php");
     exit;
   }
+
+  // Error Message  
+  $errorMessage = '';
+
+  if (isset($_SESSION['error'])) {
+    $errorMessage = htmlspecialchars($_SESSION['error']);
+    // Unset the error message after displaying it so it doesn't persist
+    $_SESSION['error'] = '';
+  }
 ?>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/input.css">
 
 <?php
+
 	$pageTitle = "New Entry";
 	$currentPage = 'input';
 
@@ -21,12 +31,14 @@
         <label for="inputLabel">Add new</label>
         <select name="userInput" id="userInput">
           
-          <option value="note">Note</option>
           <option value="password">Password</option>
+          <option value="note">Note</option>
           <option value="task">Task</option>
         </select>
         <br><br>
 
+        <h4><?php echo $errorMessage; ?></h4>
+        <br>
         <label for="name">Name</label><br>
         <input type="text" name="name" id="name" placeholder="Name">
         <h5>*For password protection only place password in the 'Name' field</h5>

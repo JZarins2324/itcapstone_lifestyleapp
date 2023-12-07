@@ -19,6 +19,13 @@
       $insertTask = $conn->query("INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', '$dateValue', '$userID')");
       echo "Task Values Entered.";
     } else if ($inputValue == 'password') {
+      // Check Password is 5 or greater
+      if (strlen($nameValue) < 5) {
+        $_SESSION['error'] = 'Password must be more than 4 characters.';
+	      header('Location: ../pages/input.php');
+	      exit();
+      }
+
       // Password Safety
       $safePass = '';
       $i = 0;
@@ -57,5 +64,5 @@
       echo "Type not selected.";
     }
 
-  header("location: ../pages/view.php");
+  header("location: ../includes/inputhandler.php");
 ?>
