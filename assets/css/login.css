@@ -39,6 +39,11 @@ p {
 }
 
 html, h1 {
+  color: #1D617A;
+  text-align: center;
+}
+
+html, h2 {
   color: white;
   text-align: center;
 }

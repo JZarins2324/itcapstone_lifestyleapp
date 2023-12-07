@@ -18,8 +18,9 @@ if (isset($_SESSION['error'])) {
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body>
+<h1><bold>WELCOME TO LIFESTYLE COMPANION!!</bold></h1>
 <div class="login-container">
-    <h1 id="formTitle">Login or Register</h1>
+    <h2 id="formTitle">Login or Register</h2>
     <form method="post" action="../server/authenticate.php">
         <?= $errorMessage ?>
         <input type="text" name="username" placeholder="Username" required />
