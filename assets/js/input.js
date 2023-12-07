@@ -7,7 +7,17 @@ select.addEventListener('change', function () {
   } else {
     document.querySelector('#date').style.display = "none";
     document.querySelector('#dateLabel').style.display = "none";
-    // document.querySelector('#date').style.display = "none";
-    // document.querySelector('#dateLabel').style.display = "none";
+  }
+
+  if (select.options[select.selectedIndex].value === "password") {
+    document.querySelector('#lblName').innerHTML = "Password";
+    document.querySelector('#lblDesc').innerHTML = "Account Info";
+    document.querySelector('#name').placeholder = "Password";
+    document.querySelector('#desc').placeholder = "Account Info...";
+  } else {
+    document.querySelector('#lblName').innerHTML = "Name";
+    document.querySelector('#lblDesc').innerHTML = "Description";
+    document.querySelector('#name').placeholder = "Name";
+    document.querySelector('#desc').placeholder = "Description...";
   }
 });
