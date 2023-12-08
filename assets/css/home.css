@@ -117,8 +117,12 @@ table {
 }
 
 th, td {
-	padding: 12px 15px; /* Added padding */
-	border-bottom: 1px solid #dddddd; /* Border for each cell */
+	padding: 12px 15px; /* Padding inside each cell */
+	text-align: left; /* Aligns text to the left; adjust as needed */
+}
+
+td {
+	border: 1px solid #dddddd; /* Adds border to table data cells */
 }
 
 th {
