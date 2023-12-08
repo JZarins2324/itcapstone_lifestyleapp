@@ -23,7 +23,6 @@ include '../includes/header.php';
 ?> 
 
 <div class="layout">
-	<aside class="left-aside"></aside>
 	<main class="main-content">
 		<div id="contentSelection">
 			<div class="note-section">
@@ -41,7 +40,7 @@ include '../includes/header.php';
 							<tr>
 								<th>Task Name</th>
 								<th>Task Date</th>
-								<th>Task Description</th>
+								<th>Recently Modified Task Description</th>
 							</tr>
 							<tr>
 								<td><?= $data['taskName']; ?></td>
@@ -85,7 +84,7 @@ include '../includes/header.php';
 							<tr>
 								<th>Task Name</th>
 								<th>Task Date</th>
-								<th>Task Description</th>
+								<th>Newest Task Description</th>
 							</tr>
 
 							<tr>
@@ -131,7 +130,7 @@ include '../includes/header.php';
 							<tr>
 								<th>Task Name</th>
 								<th>Task Date</th>
-								<th>Task Description</th>
+								<th>Oldest Task Description</th>
 							</tr>
 							<tr>
 								<td><?= $data['taskName']; ?></td>
@@ -163,7 +162,6 @@ include '../includes/header.php';
 			</div>
 		</div> 
 	</main>
-	<aside class="right-aside"></aside><?php
 	include '../includes/footer.php';
 	?> 
 
