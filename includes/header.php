@@ -10,7 +10,7 @@
 			<a href='view.php'>View Entries</a><span class="separator">|</span>
 			<?php endif; ?>
 			<?php if($currentPage != 'input'): ?>
-				<a href='input.php'>New Entry</a><span class="separator">|</span>
+				<a href='input.php'>Add Entry</a><span class="separator">|</span>
 			<?php endif; ?>
 			<?php if($currentPage != 'home'): ?>
 				<a href='home.php'>Home Page</a><span class="separator">|</span>
