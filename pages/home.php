@@ -162,7 +162,7 @@ include '../includes/header.php';
 			</div>
 		</div> 
 	</main>
-	include '../includes/footer.php';
+	<?php include '../includes/footer.php';
 	?> 
 
 	<script src="../assets/js/toggleSelection.js"></script>
