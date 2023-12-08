@@ -9,10 +9,18 @@
 
   include "dbconnect.php";
 
-  $inputValue = $_POST['userInput'];
-  $nameValue = $_POST['name'];
-  $descValue = $_POST['desc'];
-  $dateValue = $_POST['date'];
+  if (isset($_POST['userInput'])) {
+    $inputValue = $_POST['userInput'];
+  }
+  if (isset($_POST['name'])) {
+    $nameValue = $_POST['name'];
+  }
+  if (isset($_POST['desc'])) {
+    $descValue = $_POST['desc'];
+  }
+  if (isset($_POST['date'])) {
+    $dateValue = $_POST['date'];
+  }
 
   $userID = $_SESSION['user_id'];
   $sql = '';

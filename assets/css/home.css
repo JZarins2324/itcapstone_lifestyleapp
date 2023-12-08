@@ -28,7 +28,7 @@ html, body {
 .selectable-text {
 	background-color: #f9f9f9;
 	border: 1px solid #ddd;
-	border-radius: 4px; /* Rounded corners for text area */
+	border-radius: 40px; /* Rounded corners for text area */
 	flex-grow: 1;
 	flex-shrink: 1;
 	margin-bottom: 20px; /* Increased for better spacing */
@@ -36,6 +36,9 @@ html, body {
 	max-width: calc(100% - 100px);
 	overflow-wrap: break-word;
 	padding: 10px; /* Added padding */
+	overflow-wrap: break-word;
+	max-width: calc(100% - 100px);
+	border-radius: 40px; /* Rounded corners for text area */
 	text-align: center;
 }
 
@@ -67,12 +70,6 @@ html, body {
 	border-radius: 4px;
 	color: white;
 	cursor: pointer;
-	margin: 10px 0 5px 0px; /* Space between buttons */
-	padding: 5px 10px; /* Padding for buttons */
-}
-
-.button-group input[type="submit"]:hover {
-	background-color: #61C2A2;
 	color: white;
 }
 
@@ -101,7 +98,6 @@ html, body {
 }
 
 .selected {
-	background-color: #e7f1ff; /* Adjusted to a lighter shade for better readability */
 	border-color: #007bff;
 }
 
@@ -110,7 +106,40 @@ table {
 		
 }
 
-td, tr {
-	margin-bottom: 20px; /* Increased for better spacing */
+/* Additional table styling */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0; /* Added margin for spacing */
+	font-size: 0.9em; /* Adjusted font size */
+}
 
+th, td {
+	padding: 12px 15px; /* Padding inside each cell */
+	text-align: left; /* Aligns text to the left; adjust as needed */
+}
+
+td {
+	border: 1px solid #dddddd; /* Adds border to table data cells */
+}
+
+th {
+	background-color: #1D617A; /* Header background color */
+	color: white;
+	text-align: left;
+}
+
+tr:nth-of-type(even) {
+	background-color: #f3f3f3; /* Alternate row coloring */
+}
+
+tr:hover {
+	background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+/* Responsive table */
+@media screen and (max-width: 600px) {
+	.table-container {
+			overflow-x: auto; /* Horizontal scrolling for small screens */
+	}
 }
