@@ -1,4 +1,15 @@
+html, body {
+  background-color: #CCE0D2;
+  font-family: Arial, sans-serif;
+}
+
+html, h1 {
+  color: white;
+  text-align: center;
+}
+
 .login-container {
+  background-color: #1D617A;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 100px auto;
@@ -36,18 +47,4 @@ p {
 .error-message {
   color: red;
   text-align: center;
-}
-
-html, h1 {
-  color: white;
-  text-align: center;
-}
-
-html, body {
-  background-color: #CCE0D2;
-  font-family: Arial, sans-serif;
-}
-
-.login-container {
-	background-color: #1D617A;
 }

@@ -15,7 +15,6 @@ html, body {
 	margin-bottom: 20px; /* Increased for better spacing */
 	margin-top: 20px; /* Increased for better spacing */
 	padding: 10px;
-
 }
 
 .flex-container {
@@ -74,8 +73,7 @@ html, body {
 
 /* Targeting the 'Edit' buttons */
 .button-group input[type="button"][value="Edit"] {
-	/* Styles for 'Edit' buttons */
-	background-color: #1D617A; /* Example: Green background */
+	background-color: #1D617A;
 	color: white;
 }
 
@@ -86,8 +84,7 @@ html, body {
 
 /* Targeting the 'Delete' buttons */
 .button-group input[type="submit"][value="Delete"] {
-	/* Styles for 'Delete' buttons */
-	background-color: #1D617A; /* Example: Red background */
+	background-color: #1D617A;
 	color: white;
 }
 
@@ -100,14 +97,10 @@ html, body {
 	border-color: #007bff;
 }
 
-table {
-    text-align: center;
-		
-}
-
 /* Additional table styling */
 table {
 	border-collapse: collapse;
+	text-align: center;
 	font-size: 0.9em; /* Adjusted font size */
 	margin: 20px 0; /* Added margin for spacing */
 	width: 100%;
@@ -128,9 +121,14 @@ th {
 	text-align: left;
 }
 
-tr:nth-of-type(even) {
-	background-color: #f3f3f3; /* Alternate row coloring */
+tr {
+	background-color: #f3f3f3;
 }
+
+ /* Alternate row coloring */
+/* tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+} */
 
 tr:hover {
 	background-color: #f1f1f1; /* Hover effect for rows */
