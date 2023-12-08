@@ -45,15 +45,15 @@ include '../includes/header.php';
       <h4><?php echo $errorMessage; ?></h4>
       <br>
       <label id="lblName" for="name">Password</label><br>
-      <input type="text" name="name" id="name" placeholder="Password">
-      <h5>*For password protection only place password in the 'Name' field</h5>
-      <br>
+      <input type="text" name="name" id="name" placeholder="Password"><br><br>
 
       <label id="lblDesc" for="desc">Account Info</label><br>
       <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Account Info..."></textarea><br><br>
 
       <label id="dateLabel" for="date" style="display:none">Date</label>
-      <input type="date" name="date" id="date" style="display:none"><br><br>
+      <input type="date" name="date" id="date" style="display:none">
+
+      <small>*Password only partially stored for protection</small><br><br>
 
       <input type="hidden" name="isValidRequest" value="true">
 

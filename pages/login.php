@@ -25,7 +25,7 @@ if (isset($_SESSION['error'])) {
       <?= $errorMessage ?>
       <input type="text" name="username" placeholder="Username" required />
       <input type="password" name="password" placeholder="Password" required />
-      <p>*Password must contain an uppercase letter and a number</p>
+      <small>*Password must contain an uppercase letter and a number</small>
       <input id="firstSubmit" name="login" type="submit" value="Login" />
       <p style="text-align:center">or</p>
       <input name="create" type="submit" value="Register">
