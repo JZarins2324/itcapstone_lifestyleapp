@@ -1,23 +1,23 @@
 <?php
 if (!isset($_POST['Delete'])) {
-    header("Location: ../pages/home.php");
-    exit();
+  header("Location: ../pages/home.php");
+  exit();
 }
 
 // Get id Column name
 $idColumn = '';
 if ($tableName == 'tasks') {
-    $idColumn = 'taskID';
+  $idColumn = 'taskID';
 } else if ($tableName == 'passwords') {
-    $idColumn = 'passID';
+  $idColumn = 'passID';
 } else if ($tableName == 'notes') {
-    $idColumn = 'noteID';
+  $idColumn = 'noteID';
 } else if ($tableName == 'users') {
-    $idColumn = 'userID';
+  $idColumn = 'userID';
 } else {
-    // Table name invalid
-    header("Location: ../pages/home.php");
-    exit();
+  // Table name invalid
+  header("Location: ../pages/home.php");
+  exit();
 }
 
 $connectionRequestedByApp = true;

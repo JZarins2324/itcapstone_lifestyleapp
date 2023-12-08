@@ -32,7 +32,7 @@
     $pageTitle = "Admin Page";
     include '../includes/header.php';
 
-      if ($userData->num_rows > 0) {
+    if ($userData->num_rows > 0) {
     ?> 
     <table style="margin: 1.5rem auto 0;">
       <tr>
@@ -52,7 +52,7 @@
           <td><?= $data['currentTimestamp']; ?></td>
           <td><input type="submit" name="Delete" value="Delete"></td>
         </tr>
-        </form><?php
+      </form><?php
         }
       ?> 
     </table><?php

@@ -2,13 +2,13 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION["username"])) {
-  header("location: login.php");
+if(!isset($_SESSION['username'])) {
+  header('location: login.php');
   exit;
 }
 
 if (!isset($_POST['table'])) {
-  header("location: home.php");
+  header('location: home.php');
   exit;
 }
 
