@@ -15,10 +15,10 @@
   $dateValue = $_POST['date'];
 
   $userID = $_SESSION['user_id'];
+  $sql = '';
 
   if ($inputValue == 'task') {
-    $insertTask = $conn->query("INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', '$dateValue', '$userID')");
-    echo "Task Values Entered.";
+    $sql = "INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', '$dateValue', '$userID')";
   } else if ($inputValue == 'password') {
     // Check Password is 5 or greater
     if (strlen($nameValue) < 5) {
@@ -55,16 +55,24 @@
       }
     }
 
-    $insertTask = $conn->query("INSERT INTO passwords (passName, passDesc, userID) VALUES ('$safePass', '$descValue', '$userID')");
-    echo "Pass Values Entered.";
-    // Cleanse Value
-    echo $nameValue = '';
+    $sql = "INSERT INTO passwords (passName, passDesc, userID) VALUES ('$safePass', '$descValue', '$userID')";
+    
   } else if ($inputValue == 'note') {
-    $insertTask = $conn->query("INSERT INTO notes (noteName, noteDesc, userID) VALUES ('$nameValue', '$descValue', '$userID')");
-    echo "Note Values Entered.";
+    $sql = "INSERT INTO notes (noteName, noteDesc, userID) VALUES ('$nameValue', '$descValue', '$userID')";
   } else {
-    echo "Type not selected.";
+    $_SESSION['error'] = "Entry type note selected";
+    header("locaiton: ../pages/input.php");
+    exit();
   }
+
+  try {
+    $conn->query($sql);
+  } catch (Exception $e) {
+    $_SESSION['error'] = "Failed to add entry to database";
+    header("location: ../pages/input.php");
+    exit();
+  }
+  
 
   header("location: ../pages/view.php");
 ?>

@@ -33,7 +33,7 @@ include '../includes/header.php';
 ?> 
   <br>
   <div id="container" class="input-container">
-    <form action="../includes/inputhandler.php" method="post">`
+    <form action="../includes/inputhandler.php" method="post">
       <label for="inputLabel">Add new</label>
       <select name="userInput" id="userInput">
         <option value="password">Password</option>
