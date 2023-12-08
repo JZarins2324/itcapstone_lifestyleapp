@@ -1,11 +1,12 @@
 <?php
 session_start();
-include("../includes/dbhome.php");
 
 if (!isset($_SESSION["username"])) {
 	header("location: login.php");
 	exit;
 }
+
+include("../includes/dbhome.php");
 ?> 
 <!DOCTYPE html>
 <html lang="en">

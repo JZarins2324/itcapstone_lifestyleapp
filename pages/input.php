@@ -22,7 +22,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../assets/css/input.css">
-  <title>Document</title>
+  <title>Add Entry</title>
 </head>
 <body><?php
 
@@ -44,7 +44,7 @@ include '../includes/header.php';
       <h4><?php echo $errorMessage; ?></h4>
       <br>
       <label id="lblName" for="name">Password</label><br>
-      <input type="text" name="name" id="name" placeholder="Password">
+      <input type="text" name="name" id="name" placeholder="Password" required>
       <h5>*For password protection only place password in the 'Name' field</h5>
       <br>
 
