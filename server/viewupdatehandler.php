@@ -33,7 +33,7 @@ if ($tableName == "tasks") {
   // Sanitize date
   $date = filter_var(trim($_POST['date']), FILTER_SANITIZE_STRING);
 
-  $sql = "UPDATE $tableName SET taskName = '$name', taskDesc = '$desc', taskDate = '$date' WHERE $idColumn = $id";
+  $sql = "UPDATE $tableName SET taskName = '$name', taskDesc = '$desc', taskDate = '$date', taskModify = NOW() WHERE $idColumn = $id";
 } else if ($tableName == "passwords") {
   // Asterisks
   $characters = str_split($name);
