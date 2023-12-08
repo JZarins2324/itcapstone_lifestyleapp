@@ -57,8 +57,6 @@ if ($tableName == "tasks") {
 $connectionRequestedByApp = true;
 include "../includes/dbconnect.php";
 
-$conn = new mysqli($host, $user, $pass, $dbname);
-
 $conn->query($sql);
 
 header("Location: " . $_POST['redirect']);

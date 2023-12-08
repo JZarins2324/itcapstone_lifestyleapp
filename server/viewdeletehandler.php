@@ -23,8 +23,6 @@ if ($tableName == 'tasks') {
 $connectionRequestedByApp = true;
 include "../includes/dbconnect.php";
 
-$conn = new mysqli($host, $user, $pass, $dbname);
-
 $query = $conn->prepare("DELETE FROM $tableName WHERE $idColumn = ?");
 $query->bind_param("i", $_POST['id']);
 $query->execute();

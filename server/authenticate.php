@@ -14,14 +14,13 @@ $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 include "../includes/passwordChecks.php";
 
 // Create a new mysqli instance
-$mysqli = new mysqli($host, $user, $pass, $dbname);
 
 // Check for database connection error
-if ($mysqli->connect_error) {
-  die("Connection failed: " . $mysqli->connect_error);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = $mysqli->prepare("SELECT * FROM users WHERE userName = ?");
+$stmt = $conn->prepare("SELECT * FROM users WHERE userName = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 
@@ -30,12 +29,12 @@ if (isset($_POST["create"])) {
 	if ($result->num_rows === 0) {
     // Username does not exist, create a new account
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $createAccount = $mysqli->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
+    $createAccount = $conn->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
     $createAccount->bind_param("ss",$username, $hashedPassword);      
 		$createAccount->execute();
       
     // Set session variables
-    $_SESSION['user_id'] = $mysqli->insert_id;
+    $_SESSION['user_id'] = $conn->insert_id;
     $_SESSION['username'] = $username;
           
     // Redirect to home page
