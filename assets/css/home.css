@@ -66,7 +66,8 @@ html, body {
 }
 
 .button-group input[type="submit"] {
-	margin-bottom: 5px; /* Space between buttons */
+	margin: 10px 0 5px 0px; /* Space between buttons */
+
 	padding: 5px 10px; /* Padding for buttons */
 	background-color: #1D617A;
 	border: 1px solid #e7f1ff;
@@ -77,6 +78,30 @@ html, body {
 
 .button-group input[type="submit"]:hover {
 	background-color: #61C2A2;
+	color: white;
+}
+
+/* Targeting the 'Edit' buttons */
+.button-group input[type="button"][value="Edit"] {
+	/* Styles for 'Edit' buttons */
+	background-color: #1D617A; /* Example: Green background */
+	color: white;
+}
+
+.button-group input[type="button"]:hover {
+	background-color: #e7f1ff;
+	color: black;
+}
+
+/* Targeting the 'Delete' buttons */
+.button-group input[type="submit"][value="Delete"] {
+	/* Styles for 'Delete' buttons */
+	background-color: #1D617A; /* Example: Red background */
+	color: white;
+}
+
+.button-group input[type="submit"]:hover {
+	background-color: #f44336;
 	color: white;
 }
 

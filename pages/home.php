@@ -161,7 +161,7 @@ include '../includes/header.php';
 					</form>
 				</div>
 			</div>
-		</div>
+		</div> 
 	</main>
 	<aside class="right-aside"></aside><?php
 	include '../includes/footer.php';
