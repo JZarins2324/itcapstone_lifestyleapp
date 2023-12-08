@@ -187,6 +187,7 @@ html, div {
 	color: white;
 }
 
-html, form {
+.input-container {
 	background-color: #61C2A2;
+	color: black;
 }

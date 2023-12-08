@@ -25,7 +25,7 @@ include '../includes/header.php';
 <div class="layout">
 	<main class="main-content">
 		<div id="contentSelection">
-			<div class="note-section">
+			<div class="task-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false"><?php
 						// Recent Tasks
@@ -72,7 +72,7 @@ include '../includes/header.php';
 				</div>
 			</div>
 			
-			<div class="note-section">
+			<div class="task-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false"><?php
 						// Display newest Tasks
@@ -118,7 +118,7 @@ include '../includes/header.php';
 				</div>
 			</div>
 
-			<div class="note-section">
+			<div class="task-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false"><?php
 						// Display oldest Tasks

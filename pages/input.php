@@ -39,8 +39,7 @@ include '../includes/header.php';
         <option value="password">Password</option>
         <option value="note">Note</option>
         <option value="task">Task</option>
-      </select>
-      <br><br>
+      </select><br>
 
       <h4><?php echo $errorMessage; ?></h4>
       <br>

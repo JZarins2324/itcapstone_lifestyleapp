@@ -18,14 +18,13 @@ if (isset($_SESSION['error'])) {
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body>
-  <h1><bold>WELCOME TO LIFESTYLE COMPANION!!</bold></h1>
   <div class="login-container">
-    <h2 id="formTitle">Login or Register</h2>
+    <h1 id="formTitle">Login or Register</h1>
     <form method="post" action="../server/authenticate.php">
       <?= $errorMessage ?>
       <input type="text" name="username" placeholder="Username" required />
       <input type="password" name="password" placeholder="Password" required />
-      <small>*Password must contain an uppercase letter and a number</small>
+      <small>*Password must contain uppercase and number</small><br><br>
       <input id="firstSubmit" name="login" type="submit" value="Login" />
       <p style="text-align:center">or</p>
       <input name="create" type="submit" value="Register">
