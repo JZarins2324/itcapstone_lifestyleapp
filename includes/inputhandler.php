@@ -64,5 +64,5 @@
       echo "Type not selected.";
     }
 
-  header("location: ../includes/inputhandler.php");
+  header("location: ../pages/view.php");
 ?>

@@ -6,8 +6,12 @@ html, body {
 }
 
 .note-section {
-	border: 10px solid #ccc;
+	background-color: #61C2A2;
+
+	border: 10px solid #1D617A;
 	padding: 10px;
+	margin-top: 20px; /* Increased for better spacing */
+
 	margin-bottom: 20px; /* Increased for better spacing */
 	border-radius: 8px; /* Rounded corners */
 	display: flex;
@@ -16,6 +20,7 @@ html, body {
 }
 
 .flex-container {
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -23,6 +28,8 @@ html, body {
 }
 
 .selectable-text {
+	margin-bottom: 20px; /* Increased for better spacing */
+
 	flex-grow: 1;
 	flex-shrink: 1;
 	margin-right: 10px; /* Adjusted for spacing */
@@ -40,33 +47,36 @@ html, body {
 	flex-direction: column;
 	align-items: flex-end; /* Align to right */
 	flex-shrink: 0;
+	
 }
 
 .button-group input[type="button"] {
 	margin-bottom: 5px; /* Space between buttons */
 	padding: 5px 10px; /* Padding for buttons */
-	border: 1px solid #007bff;
-	background-color: #e7f1ff;
+	border: 1px solid #e7f1ff;
+	background-color: #1D617A;
+	color: white;
 	border-radius: 4px;
 	cursor: pointer;
 }
 
 .button-group input[type="button"]:hover {
-	background-color: #007bff;
+	background-color: #61C2A2;
 	color: white;
 }
 
 .button-group input[type="submit"] {
 	margin-bottom: 5px; /* Space between buttons */
 	padding: 5px 10px; /* Padding for buttons */
-	border: 1px solid #007bff;
-	background-color: #e7f1ff;
+	background-color: #1D617A;
+	border: 1px solid #e7f1ff;
 	border-radius: 4px;
 	cursor: pointer;
+	color: white;
 }
 
 .button-group input[type="submit"]:hover {
-	background-color: #007bff;
+	background-color: #61C2A2;
 	color: white;
 }
 
@@ -77,4 +87,10 @@ html, body {
 
 table {
     text-align: center;
+		
+}
+
+td, tr {
+	margin-bottom: 20px; /* Increased for better spacing */
+
 }
