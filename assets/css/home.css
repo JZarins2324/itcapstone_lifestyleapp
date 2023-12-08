@@ -26,9 +26,9 @@ html, body {
 }
 
 .selectable-text {
-	background-color: #f9f9f9;
-	border: 1px solid #ddd;
-	border-radius: 40px; /* Rounded corners for text area */
+	/* background-color: #f9f9f9; */
+	/* border: 1px solid #ddd; */
+	border-radius: 20px; /* Rounded corners for text area */
 	flex-grow: 1;
 	flex-shrink: 1;
 	margin-bottom: 20px; /* Increased for better spacing */
@@ -63,12 +63,14 @@ html, body {
 }
 
 .button-group input[type="submit"] {
-	background-color: #1D617A;
-	border: 1px solid #e7f1ff;
-	border-radius: 4px;
-	color: white;
-	cursor: pointer;
+    background-color: #1D617A;
+    border: 1px solid #e7f1ff;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px; /* Increase padding to provide more space around the text */
 }
+
 
 /* Targeting the 'Edit' buttons */
 .button-group input[type="button"][value="Edit"] {
