@@ -46,10 +46,10 @@ if (isset($_POST['Edit'])) {
       <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>">
 
       <label for="name">Name: </label>
-      <input type="text" name="name" value="<?= $_POST['name']; ?>"><br><br>
+      <input type="text" name="name" value="<?= $_POST['name']; ?>" required><br><br>
 
       <label for="desc">Description: </label>
-      <input type="text" name="desc" value="<?= $_POST['desc']; ?>"><br><br><?php
+      <input type="text" name="desc" value="<?= $_POST['desc']; ?>" required><br><br><?php
       // Display Date feild
       if ($tableName == 'tasks') {
         // Populate date feild with default value

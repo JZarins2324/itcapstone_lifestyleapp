@@ -14,6 +14,29 @@ if ($tableName == 'tasks') {
   $idColumn = 'noteID';
 } else if ($tableName == 'users') {
   $idColumn = 'userID';
+
+  $connectionRequestedByApp = true;
+  include "../includes/dbconnect.php";
+
+  $query = $conn->prepare("DELETE FROM notes WHERE $idColumn = ?");
+  $query->bind_param("i", $_POST['id']);
+  $query->execute();
+
+  $query = $conn->prepare("DELETE FROM tasks WHERE $idColumn = ?");
+  $query->bind_param("i", $_POST['id']);
+  $query->execute();
+
+  $query = $conn->prepare("DELETE FROM passwords WHERE $idColumn = ?");
+  $query->bind_param("i", $_POST['id']);
+  $query->execute();
+
+  $query = $conn->prepare("DELETE FROM users WHERE $idColumn = ?");
+  $query->bind_param("i", $_POST['id']);
+  $query->execute();
+
+  header("Location: " . $_SERVER['HTTP_REFERER']);
+  exit();
+
 } else {
   // Table name invalid
   header("Location: ../pages/home.php");
