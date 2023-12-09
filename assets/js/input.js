@@ -1,5 +1,6 @@
 select = document.querySelector('select');
 
+// Change Name of Input Fields
 select.addEventListener('change', function () {
   if (select.options[select.selectedIndex].value === "task") {
     document.querySelector('#date').style.display = "block";

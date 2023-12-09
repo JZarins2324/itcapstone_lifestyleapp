@@ -13,12 +13,6 @@
     exit();
   }
 
-  // Check for length
-  /*if (strlen($userPass) <= 8) {
-    header('Location: ../pages/login.php');
-    exit();
-  };*/
-
   // Check for number
   $passChars = str_split($password);
   $passwordHasNumber = false;
