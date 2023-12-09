@@ -26,6 +26,7 @@
   $sql = '';
 
   if ($inputValue == 'task') {
+    // Store Task
     $sql = "INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', '$dateValue', '$userID')";
   } else if ($inputValue == 'password') {
     // Check Password is 5 or greater
@@ -39,6 +40,7 @@
     $safePass = '';
     $i = 0;
     $hintChars = str_split($nameValue);
+
     // Print first 2 characters
     foreach ($hintChars as $frontChar) {
       $i++;
@@ -63,9 +65,11 @@
       }
     }
 
+    // Store Safe Password
     $sql = "INSERT INTO passwords (passName, passDesc, userID) VALUES ('$safePass', '$descValue', '$userID')";
     
   } else if ($inputValue == 'note') {
+    // Store Note
     $sql = "INSERT INTO notes (noteName, noteDesc, userID) VALUES ('$nameValue', '$descValue', '$userID')";
   } else {
     $_SESSION['error'] = "Entry type note selected";

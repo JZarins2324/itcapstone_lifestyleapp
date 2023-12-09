@@ -1,33 +1,34 @@
-// //viewEntries.spec.js
+// viewEntries.spec.js
+const { getDriver } = require('./support/webdriver');
+const { By, until } = require('selenium-webdriver');
 
-// const { getDriver, closeDriver } = require('./support/webdriver');
+describe("View Entries Page Tests", function() {
+    let driver;
 
-// describe("Page Specific Tests", function() {
-// 	let driver;
+    beforeAll(async () => {
+        driver = await getDriver();
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+    });
 
-// 	beforeAll(async () => {
-// 			// Assuming driver is already initialized in login.spec.js
-// 			// Navigate to the specific page from the home page
-// 			// Example for newEntry.spec.js
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/newEntry");
-// 	});
+    it("should display dropdown triggers and tables for each section", async function() {
+        // Expand each dropdown section
+        const dropdownTriggers = await driver.findElements(By.className('dropdown-trigger'));
+        for (const trigger of dropdownTriggers) {
+            await trigger.click();
+        }
 
-// 	afterAll(() => {
-// 			// Do not close the driver if there are subsequent tests
-// 	});
+        // Wait for the tables to be located and visible
+        const toDoListTable = await driver.wait(until.elementLocated(By.xpath("//h2[contains(text(), 'To Do List')]/following-sibling::div//table")), 10000);
+        const passwordsTable = await driver.wait(until.elementLocated(By.xpath("//h2[contains(text(), 'Passwords')]/following-sibling::div//table")), 10000);
+        const notesTable = await driver.wait(until.elementLocated(By.xpath("//h2[contains(text(), 'Notes')]/following-sibling::div//table")), 10000);
 
-// 	beforeEach(() => {
-// 			// Setup for individual tests, if needed
-// 	});
+        // Verify the tables are displayed
+        expect(await toDoListTable.isDisplayed()).toBe(true);
+        expect(await passwordsTable.isDisplayed()).toBe(true);
+        expect(await notesTable.isDisplayed()).toBe(true);
+    });
 
-// 	it("should test specific elements or functionalities", async function() {
-// 			// Your test logic
-// 	});
-
-// 	// Additional tests...
-
-// 	afterAll(async () => {
-// 			// Navigate back to the home page if needed
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/home");
-// 	});
-// });
+    afterAll(async () => {
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/home.php");
+    });
+});

@@ -26,12 +26,13 @@ describe("Home Page Tests", function() {
 
     // If there are any other tests for the home page, include them here
 
-    afterAll(async () => {
-        // Navigate to the New Entry page
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
-
-        // Note: Do not quit the driver here if you have subsequent tests
-        // If this is the last test in your suite, then you can close the driver
-        // await driver.quit();
-    });
+    it("should navigate to the Home page when clicking 'View Entries Page'", async function() {
+			const newEntryLink = await driver.findElement(By.linkText('View Entries'));
+			await newEntryLink.click();
+	
+			await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/view.php"), 10000);
+	
+			const currentURL = await driver.getCurrentUrl();
+			expect(currentURL).toBe("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+	});
 });

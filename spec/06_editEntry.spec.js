@@ -21,5 +21,30 @@ describe("Edit Entry Page Tests", function() {
         // The test simply confirms the page and does nothing else
     });
 
-    // afterAll block is not needed if there are no actions to perform after the test
+		
+    
+    it("should verify the presence and functionality of the date input", async function() {
+			const editPageHeader = await driver.findElement(By.tagName('h1'));
+			expect(await editPageHeader.getText()).toContain('Edit Entry');
+
+			const dateInput = await driver.findElement(By.name('date'));
+			if (await dateInput.isDisplayed()) {
+					// Directly setting the date value using JavaScript
+					await driver.executeScript("arguments[0].setAttribute('value', '2024-01-01')", dateInput);
+
+					// Adding a delay to allow any JavaScript processing
+					await driver.sleep(500);
+
+					const dateValue = await dateInput.getAttribute('value');
+					console.log("Date set to:", dateValue); // Debugging output
+					expect(dateValue).toBe('2024-01-01');
+			} else {
+					console.log("Date input not displayed. Skipping date input test.");
+			}
+	});
+
+    afterAll(async () => {
+        // Navigate back to the view page after the test is complete
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+    });
 });
