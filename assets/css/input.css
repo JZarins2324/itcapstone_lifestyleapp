@@ -1,49 +1,49 @@
 html, body {
-	font-family: Arial, sans-serif; /* Adding a default font */
-	margin: 0 10%;
-	padding: 0;
-	text-align: center;
-	background-color: #CCE0D2;
+  background-color: #CCE0D2;
+  font-family: Arial, sans-serif; /* Adding a default font */
+  margin: 0 10%;
+  padding: 0;
+  text-align: center;
 }
 
 html, div {
-	color: white;
+  color: white;
 }
 
 #container {
-	border: 1px solid black;
-	border-radius: 5px; 
-	margin: 0 auto;
-	width: 300px;
+  border: 1px solid black;
+  border-radius: 5px; 
+  margin: 0 auto;
+  width: 300px;
 }
 
 .input-container {
-	background-color: #61C2A2;
-	color: black;
+  background-color: #61C2A2;
+  color: black;
 }
 
 form {
-	padding: 10px;
+  padding: 10px;
 }
 
 label:first-child {
-	font-size: larger;
+  font-size: larger;
 }
 
 select {
-	font-size: large;
+  font-size: large;
 }
 
 input, textarea {
-	width: 275px;
+  width: 275px;
 }
 
 #submit {
-	background-color: #5C85AD;
-	border: none;
-	border-radius: 5px;
-	color: white;
-	cursor: pointer;
-	padding: 10px;
-	width: 100%;
+  background-color: #5C85AD;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
 }

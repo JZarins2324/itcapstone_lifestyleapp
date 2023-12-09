@@ -1,16 +1,16 @@
 tr {
-    background-color: aliceblue;
-    width: 10rem;
+  background-color: aliceblue;
+  width: 10rem;
 }
 
 td, th {
-    border: 1px solid black;
-    padding: .5rem 1rem;
+  border: 1px solid black;
+  padding: .5rem 1rem;
 }
 
 table {
-    background-color: #1D617A;
-    margin: 0 auto;
-    text-align: center;
-    width: auto;
+  background-color: #1D617A;
+  margin: 0 auto;
+  text-align: center;
+  width: auto;
 }
