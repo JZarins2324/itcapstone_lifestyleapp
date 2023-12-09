@@ -46,7 +46,7 @@ include '../includes/header.php';
       <br>
       <label id="lblName" for="name">Password</label><br>
       <input type="text" name="name" id="name" placeholder="Password" required>
-      <small>*For password protection only place password in the 'Name' field</small><br><br>
+      <small>*For password protection only place password in the 'Name' field</small><br>
 
       <label id="lblDesc" for="desc">Account Info</label><br>
       <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Account Info..." required></textarea><br><br>
