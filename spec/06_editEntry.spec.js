@@ -1,32 +1,25 @@
-// const { getDriver, closeDriver } = require('./support/webdriver');
+// 06_editEntry.spec.js
+const { getDriver } = require('./support/webdriver');
+const { By, until } = require('selenium-webdriver');
 
+describe("Edit Entry Page Tests", function() {
+    let driver;
 
-// describe("Page Specific Tests", function() {
-// 	let driver;
+    beforeAll(async () => {
+        driver = await getDriver();
+        // Assuming the navigation to the edit page is already done in the previous test
+        // Ensure you are on the edit page
+        await driver.wait(until.urlContains('edit'), 10000);
+    });
 
-// 	beforeAll(async () => {
-// 			// Assuming driver is already initialized in login.spec.js
-// 			// Navigate to the specific page from the home page
-// 			// Example for newEntry.spec.js
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/newEntry");
-// 	});
+    it("should remain on the edit page without performing any actions", async function() {
+        // Verify that the current page is indeed the edit page
+        const editPageHeader = await driver.findElement(By.tagName('h1'));
+        const headerText = await editPageHeader.getText();
+        expect(headerText).toContain('Edit Entry');
 
-// 	afterAll(() => {
-// 			// Do not close the driver if there are subsequent tests
-// 	});
+        // The test simply confirms the page and does nothing else
+    });
 
-// 	beforeEach(() => {
-// 			// Setup for individual tests, if needed
-// 	});
-
-// 	it("should test specific elements or functionalities", async function() {
-// 			// Your test logic
-// 	});
-
-// 	// Additional tests...
-
-// 	afterAll(async () => {
-// 			// Navigate back to the home page if needed
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/home");
-// 	});
-// });
+    // afterAll block is not needed if there are no actions to perform after the test
+});

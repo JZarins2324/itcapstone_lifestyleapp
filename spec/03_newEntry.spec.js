@@ -1,34 +1,35 @@
-// //newEntry.spec.js
+// 03_newEntry.spec.js
 
-// const { getDriver, closeDriver } = require('./support/webdriver');
+const { getDriver } = require('./support/webdriver');
+const { By, until } = require('selenium-webdriver');
 
-// describe("Page Specific Tests", function() {
-// 	let driver;
+describe("New Entry Page Tests", function() {
+    let driver;
 
-// 	beforeAll(async () => {
-// 			driver = await getDriver(); // Use the shared WebDriver instance
-// 			// Assuming driver is already initialized in login.spec.js
-// 			// Navigate to the specific page from the home page
-// 			// Example for newEntry.spec.js
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/newEntry");
-// 	});
+    beforeAll(async () => {
+        driver = await getDriver(); // Use the shared WebDriver instance
+        // Navigate to the New Entry page
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/input.php");
+    });
 
-// 	afterAll(() => {
-// 			// Do not close the driver if there are subsequent tests
-// 	});
+    it("should display the new entry form", async function() {
+        // Wait until the form is located
+        const form = await driver.wait(until.elementLocated(By.css('form')), 10000);
 
-// 	beforeEach(() => {
-// 			// Setup for individual tests, if needed
-// 	});
+        // Verify that the form is displayed
+        const isFormDisplayed = await form.isDisplayed();
+        expect(isFormDisplayed).toBe(true);
+    });
 
-// 	it("should test specific elements or functionalities", async function() {
-// 			// Your test logic
-// 	});
+    it("should display the submit button", async function() {
+        // Wait until the submit button is located
+        const submitButton = await driver.wait(until.elementLocated(By.id('submit')), 10000);
 
-// 	// Additional tests...
+        // Verify that the submit button is displayed
+        const isSubmitButtonDisplayed = await submitButton.isDisplayed();
+        expect(isSubmitButtonDisplayed).toBe(true);
+    });
 
-// 	afterAll(async () => {
-// 			// Navigate back to the home page if needed
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/home");
-// 	});
-// });
+    // You can add more tests specific to the functionalities of your New Entry page
+
+});

@@ -1,56 +1,37 @@
-// //home.spec.js
-// const { getDriver } = require('./support/webdriver');
-// const { By, until } = require('selenium-webdriver');
+// 04_home.spec.js
+const { getDriver } = require('./support/webdriver');
+const { By, until } = require('selenium-webdriver');
 
-// describe("Home Page Tests", function() {
-//     let driver;
+describe("Home Page Tests", function() {
+    let driver;
 
-//     beforeAll(async () => {
-//         driver = await getDriver();
-//         await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/home");
-//     });
+    beforeAll(async () => {
+        driver = await getDriver();
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/home.php");
+    });
 
-//     it("should display the recent task section", async function() {
-//         const recentTaskSection = await driver.findElement(By.css('.note-section .flex-container .selectable-text'));
-//         expect(recentTaskSection).toBeDefined();
-//     });
+    it("should allow editing in the recent task section", async function() {
+        // Wait until the recent task edit button is located
+        const editButton = await driver.wait(until.elementLocated(By.css('input[type="button"][value="Edit"]')), 10000);
 
-//     it("should display task details in recent tasks", async function() {
-//         const recentTaskDetails = await driver.findElement(By.id("recentTaskDesc-1")); // Assuming taskID is 1 for demonstration
-//         expect(recentTaskDetails).toBeDefined();
-//     });
+        // Verify that the edit button is displayed
+        const isEditButtonDisplayed = await editButton.isDisplayed();
+        expect(isEditButtonDisplayed).toBe(true);
 
-//     it("should have edit and delete buttons for recent tasks", async function() {
-//         const editButton = await driver.findElement(By.id("recentEditButton-1")); // Assuming taskID is 1
-//         const deleteButton = await driver.findElement(By.xpath("//input[@value='Delete' and @name='Delete']"));
-//         expect(editButton).toBeDefined();
-//         expect(deleteButton).toBeDefined();
-//     });
+        // Click the edit button
+        await editButton.click();
 
-//     it("should display the newest task section", async function() {
-//         const newestTaskSection = await driver.findElement(By.css('.note-section .flex-container .selectable-text'));
-//         expect(newestTaskSection).toBeDefined();
-//     });
+        // Add additional assertions to verify the editing functionality
+    });
 
-//     it("should display task details in newest tasks", async function() {
-//         const newestTaskDetails = await driver.findElement(By.id("newTaskDesc-1")); // Modify as per actual IDs
-//         expect(newestTaskDetails).toBeDefined();
-//     });
+    // If there are any other tests for the home page, include them here
 
-//     it("should display the oldest task section", async function() {
-//         const oldestTaskSection = await driver.findElement(By.css('.note-section .flex-container .selectable-text'));
-//         expect(oldestTaskSection).toBeDefined();
-//     });
+    afterAll(async () => {
+        // Navigate to the New Entry page
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
 
-//     it("should display task details in oldest tasks", async function() {
-//         const oldestTaskDetails = await driver.findElement(By.id("oldTaskDesc-1")); // Modify as per actual IDs
-//         expect(oldestTaskDetails).toBeDefined();
-//     });
-
-//     // More tests as needed...
-
-//     afterAll(async () => {
-//         // Navigate to the new entry page for the next set of tests
-//         await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/newEntry");
-//     });
-// });
+        // Note: Do not quit the driver here if you have subsequent tests
+        // If this is the last test in your suite, then you can close the driver
+        // await driver.quit();
+    });
+});

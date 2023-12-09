@@ -1,33 +1,39 @@
-// //viewEntries.spec.js
+// 05_viewEntries.spec.js
+const { getDriver } = require('./support/webdriver');
+const { By, until } = require('selenium-webdriver');
 
-// const { getDriver, closeDriver } = require('./support/webdriver');
+describe("View Entries Page Tests", function() {
+    let driver;
 
-// describe("Page Specific Tests", function() {
-// 	let driver;
+    beforeAll(async () => {
+        driver = await getDriver();
+        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+    });
 
-// 	beforeAll(async () => {
-// 			// Assuming driver is already initialized in login.spec.js
-// 			// Navigate to the specific page from the home page
-// 			// Example for newEntry.spec.js
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/newEntry");
-// 	});
+    it("should navigate to the edit page for a specific item", async function() {
+        // Expand all dropdowns
+        const dropdownTriggers = await driver.findElements(By.className('dropdown-trigger'));
+        for (const trigger of dropdownTriggers) {
+            await trigger.click();
+        }
 
-// 	afterAll(() => {
-// 			// Do not close the driver if there are subsequent tests
-// 	});
+        // Wait for an edit button to be visible and clickable
+        const editButton = await driver.wait(until.elementLocated(By.xpath("//input[@type='submit' and @value='Edit']")), 10000);
+        await driver.wait(until.elementIsVisible(editButton), 10000);
+        await driver.wait(until.elementIsEnabled(editButton), 10000);
 
-// 	beforeEach(() => {
-// 			// Setup for individual tests, if needed
-// 	});
+        // Scroll to the edit button if necessary
+        await driver.executeScript("arguments[0].scrollIntoView(true);", editButton);
 
-// 	it("should test specific elements or functionalities", async function() {
-// 			// Your test logic
-// 	});
+        // Click on the edit button
+        await editButton.click();
 
-// 	// Additional tests...
+        // Wait for the URL to change to the edit page
+        await driver.wait(until.urlContains('edit'), 10000);
+        
+        // Verify navigation to the edit page
+        const currentURL = await driver.getCurrentUrl();
+        expect(currentURL).toContain('edit');
+    });
 
-// 	afterAll(async () => {
-// 			// Navigate back to the home page if needed
-// 			await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/home");
-// 	});
-// });
+});

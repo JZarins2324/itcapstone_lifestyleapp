@@ -1,7 +1,9 @@
-// login.spec.js
+// 01_login.spec.js
 
 const { getDriver } = require('./support/webdriver');
 const { By, until } = require('selenium-webdriver');
+
+// describe("Application Tests", function() {
 
 describe("Login Page", function() {
     let driver;
@@ -35,8 +37,17 @@ describe("Login Page", function() {
 			expect(formText).toContain("Incorrect username or password");
 	});
 
-    afterAll(async () => {
-        // Close the browser after tests
-        await driver.quit();
-    });
+	it("should successfully log in with valid credentials", async function() {
+		const usernameField = await driver.findElement(By.name("username"));
+		const passwordField = await driver.findElement(By.name("password"));
+		const submitButton = await driver.findElement(By.id("firstSubmit"));
+
+		await usernameField.sendKeys("artidyno"); // Replace with valid username
+		await passwordField.sendKeys("aaaAAA111"); // Replace with valid password
+		await submitButton.click();
+
+		// Wait for redirection or confirmation of successful login
+		await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/home.php"), 10000);
+});
+
 });
