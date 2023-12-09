@@ -1,44 +1,38 @@
 <?php
-  // Check username for empty
-  if (empty($username)) {
-    $_SESSION['error'] = "Name is empty";
-    header('Location: ../pages/login.php');
-    exit();
-  }
+// Assuming $password is passed to this script from the main authentication script
 
-  // Check password for empty
-  if (empty($password)) {
-    $_SESSION['error'] = "Password is empty";
-    header('Location: ../pages/login.php');
-    exit();
-  }
+function validatePassword($password) {
+    $errors = [];
 
-  // Check for length
-  /*if (strlen($userPass) <= 8) {
-    header('Location: ../pages/login.php');
-    exit();
-  };*/
-
-  // Check for number
-  $passChars = str_split($password);
-  $passwordHasNumber = false;
-
-  foreach ($passChars as $char) {
-    if (is_numeric($char)) {
-      $passwordHasNumber = true;
-      break;
+    // Check for empty password
+    if (empty($password)) {
+        $errors[] = "Password is empty";
     }
-  }
 
-  if (!$passwordHasNumber) {
-    $_SESSION['error'] = 'Password must include a number';
-    header('Location: ../pages/login.php');
-    exit();
-  }
+    // Check for minimum length
+    if (strlen($password) <= 8) {
+        $errors[] = "Password must be more than 8 characters";
+    }
 
-  // Check for uppercase
-  if (strtolower($password) == $password) {
-    $_SESSION['error'] = 'Password must include an uppercase letter';
-    header('Location: ../pages/login.php');
-    exit();
-  }
+    // Check for number
+    if (!preg_match('/\d/', $password)) {
+        $errors[] = "Password must include a number";
+    }
+
+    // Check for uppercase
+    if (!preg_match('/[A-Z]/', $password)) {
+        $errors[] = "Password must include an uppercase letter";
+    }
+
+    // Check for special characters (optional)
+    // if (!preg_match('/[!-_]/', $password)) {
+    //     $errors[] = "Password may contain only the following special characters: ! - _";
+    // }
+
+    return $errors;
+}
+
+// Perform the password validation
+$passwordErrors = validatePassword($password);
+
+?>

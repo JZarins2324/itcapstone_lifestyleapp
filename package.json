@@ -1,0 +1,30 @@
+{
+  "name": "itcapstone_lifestyleapp",
+  "version": "1.0.0",
+  "description": "lifestyle management application",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine spec/01_login.spec.js spec/02_home.spec.js spec/03_newEntry.spec.js spec/04_home.spec.js spec/05_viewEntries.spec.js spec/06_editEntry.spec.js spec/07_viewEntries.spec.js spec/08_home.spec.js"  
+	},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JZarins2324/itcapstone_lifestyleapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JZarins2324/itcapstone_lifestyleapp/issues"
+  },
+  "homepage": "https://github.com/JZarins2324/itcapstone_lifestyleapp#readme",
+  "devDependencies": {
+    "chromedriver": "^119.0.1",
+    "concurrently": "^8.2.2",
+    "jasmine": "^5.1.0",
+    "jsdom": "^23.0.1",
+    "selenium-webdriver": "^4.16.0"
+  }
+}

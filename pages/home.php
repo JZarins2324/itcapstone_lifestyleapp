@@ -24,15 +24,15 @@ $currentPage = 'home';
 include '../includes/header.php';
 ?>
 
+<!-- TASK LAYOUT -->
 <div class="layout">
-	<aside class="left-aside"></aside>
 	<main class="main-content">
 		<div id="contentSelection">
 		
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display recent Tasks -->
+						<!-- Display Recently Modified Task -->
 						<?php
 						// Initialize taskId
 						$taskId = '';
@@ -61,7 +61,7 @@ include '../includes/header.php';
 							<?php }	
 						} else { ?>
 								<p>no task to display</p>
-							<?php } ?>
+							<?php } //end if, else, else ?>
 
 							</div>
 							<?php if (isset($taskId)) { ?>
@@ -78,7 +78,7 @@ include '../includes/header.php';
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display newest Tasks -->
+						<!-- Display Newest Created Task -->
 						<?php 
 						if ($newTask->num_rows > 0) { 
 							$data = $newTask->fetch_assoc();
@@ -104,7 +104,7 @@ include '../includes/header.php';
 							<?php }	
 						} else { ?>
 								<p>no task to display</p>
-							<?php } ?>
+								<?php } //end if, else, else ?>
 
 							</div>
 							<?php if (isset($taskId)) { ?>
@@ -120,7 +120,7 @@ include '../includes/header.php';
 <div class="note-section">
 				<div class="flex-container">
 					<div class="selectable-text" contenteditable="false">
-						<!-- Display oldest Tasks -->
+						<!-- Display Oldest Task -->
 						<?php 
 						if ($oldTask->num_rows > 0) { 
 							$data = $oldTask->fetch_assoc();
@@ -146,7 +146,7 @@ include '../includes/header.php';
 							<?php }	
 						} else { ?>
 								<p>no task to display</p>
-							<?php } ?>
+							<?php } //end if, else, else ?>
 
 							</div>
 							<?php if (isset($taskId)) { ?>
@@ -158,17 +158,12 @@ include '../includes/header.php';
 							</form>	
 				</div>			 
 			</div>
-
-		<script src="../assets/js/toggleEdit.js"></script>							
-		
 	</main>
-	 
-		<aside class="right-aside"></aside>
-		</div>
+	 		</div>
+<!-- TASK LAYOUT END -->
 
 		<?php include '../includes/footer.php'; ?>
 
-<script src="../assets/js/toggleSelection.js"></script> 
 <script src="../assets/js/toggleEdit.js"></script>							
 
 </body>
