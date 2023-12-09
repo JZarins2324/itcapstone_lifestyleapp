@@ -7,7 +7,7 @@ describe("View Entries Page Tests", function() {
 
     beforeAll(async () => {
         driver = await getDriver();
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/view.php");
     });
 
     it("should expand all dropdowns", async function() {

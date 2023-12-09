@@ -21,8 +21,6 @@ describe("Edit Entry Page Tests", function() {
         // The test simply confirms the page and does nothing else
     });
 
-		
-    
     it("should verify the presence and functionality of the date input", async function() {
 			const editPageHeader = await driver.findElement(By.tagName('h1'));
 			expect(await editPageHeader.getText()).toContain('Edit Entry');
@@ -45,6 +43,6 @@ describe("Edit Entry Page Tests", function() {
 
     afterAll(async () => {
         // Navigate back to the view page after the test is complete
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/view.php");
     });
 });

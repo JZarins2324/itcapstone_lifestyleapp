@@ -3,14 +3,12 @@
 const { getDriver } = require('./support/webdriver');
 const { By, until } = require('selenium-webdriver');
 
-// describe("Application Tests", function() {
-
 describe("Login Page", function() {
     let driver;
 
     beforeAll(async () => {
         driver = await getDriver(); // Use the shared WebDriver instance
-        await driver.get("http://localhost/itcapstone_lifestyleapp/");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com");
     });
 
     it("should display the login form", async function() {
@@ -34,7 +32,7 @@ describe("Login Page", function() {
 
 			// Assuming error messages are displayed within the '.login-container'
 			const formText = await driver.findElement(By.css('.login-container')).getText();
-			expect(formText).toContain("Incorrect username or password");
+			expect(formText).toContain("Password must include a number");
 	});
 
 	it("should successfully log in with valid credentials", async function() {
@@ -47,7 +45,7 @@ describe("Login Page", function() {
 		await submitButton.click();
 
 		// Wait for redirection or confirmation of successful login
-		await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/home.php"), 10000);
+		await driver.wait(until.urlIs("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/home.php"), 10000);
 });
 
 });

@@ -7,7 +7,7 @@ describe("Home Page Tests", function() {
 
     beforeAll(async () => {
         driver = await getDriver();
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/home.php");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/home.php");
     });
 
     it("should allow editing in the recent task section", async function() {
@@ -21,18 +21,15 @@ describe("Home Page Tests", function() {
         // Click the edit button
         await editButton.click();
 
-        // Add additional assertions to verify the editing functionality
     });
-
-    // If there are any other tests for the home page, include them here
 
     it("should navigate to the Home page when clicking 'View Entries Page'", async function() {
 			const newEntryLink = await driver.findElement(By.linkText('View Entries'));
 			await newEntryLink.click();
 	
-			await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/view.php"), 10000);
+			await driver.wait(until.urlIs("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/view.php"), 10000);
 	
 			const currentURL = await driver.getCurrentUrl();
-			expect(currentURL).toBe("http://localhost/itcapstone_lifestyleapp/pages/view.php");
+			expect(currentURL).toBe("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/view.php");
 	});
 });

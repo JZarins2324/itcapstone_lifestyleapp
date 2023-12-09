@@ -8,7 +8,7 @@ describe("New Entry Page Tests", function() {
 
     beforeAll(async () => {
         driver = await getDriver();
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/input.php");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/input.php");
     });
 
     it("should display the new entry form elements", async function() {
@@ -39,9 +39,9 @@ describe("New Entry Page Tests", function() {
 			const newEntryLink = await driver.findElement(By.linkText('Home Page'));
 			await newEntryLink.click();
 	
-			await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/home.php"), 10000);
+			await driver.wait(until.urlIs("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/home.php"), 10000);
 	
 			const currentURL = await driver.getCurrentUrl();
-			expect(currentURL).toBe("http://localhost/itcapstone_lifestyleapp/pages/home.php");
+			expect(currentURL).toBe("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/home.php");
 	});
 });

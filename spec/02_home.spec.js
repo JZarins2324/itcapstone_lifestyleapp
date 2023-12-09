@@ -7,7 +7,7 @@ describe("Home Page Tests", function() {
 
     beforeAll(async () => {
         driver = await getDriver();
-        await driver.get("http://localhost/itcapstone_lifestyleapp/pages/home.php");
+        await driver.get("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/home.php");
     });
 
     it("should allow editing in the recent task section", async function() {
@@ -24,15 +24,13 @@ describe("Home Page Tests", function() {
         // Add additional assertions to verify the editing functionality
     });
 
-    // If there are any other tests for the home page, include them here
-
-    it("should navigate to the New Entry page when clicking 'Add Entry'", async function() {
-			const newEntryLink = await driver.findElement(By.linkText('Add Entry'));
+    it("should navigate to the New Entry page when clicking 'New Entry'", async function() {
+			const newEntryLink = await driver.findElement(By.linkText('New Entry'));
 			await newEntryLink.click();
 	
-			await driver.wait(until.urlIs("http://localhost/itcapstone_lifestyleapp/pages/input.php"), 10000);
+			await driver.wait(until.urlIs("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/input.php"), 10000);
 	
 			const currentURL = await driver.getCurrentUrl();
-			expect(currentURL).toBe("http://localhost/itcapstone_lifestyleapp/pages/input.php");
+			expect(currentURL).toBe("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/input.php");
 	});
 });
