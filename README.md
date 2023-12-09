@@ -61,7 +61,7 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 
 12/05/2023 Home page buttons functionality and view page CSS update
 
-12/09/2023 With local Apache server and MySQL server running, "npm test" command in git bash or other terminals should run tests on the project
+12/09/2023 With all dependencies installed (project used node, npm, jasmine, and selenium), "npm test" command in git bash or other terminals should run tests on the project.
 
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
 
