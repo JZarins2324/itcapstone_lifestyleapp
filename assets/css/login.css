@@ -1,28 +1,39 @@
+html, body {
+  background-color: #CCE0D2;
+  font-family: Arial, sans-serif;
+}
+
+html, h1 {
+  color: white;
+  text-align: center;
+}
+
 .login-container {
-  width: 300px;
-  padding: 20px;
-  margin: 100px auto;
+  background-color: #1D617A;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 100px auto;
+  padding: 20px;
+  width: 300px;
 }
 
 input[type="text"],
 input[type="password"] {
-  width: 90%;
-  padding: 5px 14px;
-  margin: 5px 0px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  margin: 5px 0px;
+  padding: 5px 14px;
+  width: 90%;
 }
 
 input[type="submit"] {
-  width: 100%;
-  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #5C85AD;
   color: white;
   cursor: pointer;
+  padding: 10px;
+  width: 100%;
 }
 
 #firstSubmit {
@@ -36,17 +47,4 @@ p {
 .error-message {
   color: red;
   text-align: center;
-}
-
-html, h1 {
-  color: white;
-  text-align: center;
-}
-
-html, body {
-  background-color: #CCE0D2;
-}
-
-.login-container {
-	background-color: #1D617A;
 }

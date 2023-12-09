@@ -1,164 +1,142 @@
-.site-header {
-	background-color: #f0f8ff;
-	color: black;
-	padding: 10px 20px;
-	padding-bottom: 50px;
-	text-align: center;
-	position: relative; /* Needed for absolute positioning of children */
-}
-
-.site-header h1, .site-header h3, .site-header h4 {
-	margin: 0;
-	padding: 5px 0;
-}
-
-#links {
-position: absolute;
-bottom: 10px;
-top: 75%; /* Adjust these values as needed */
-left: 50%;
-transform: translate(-50%, -50%); /* Center the links */
-white-space: nowrap; /* Prevent wrapping */
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-#links a:hover {
-	text-decoration: underline;
-}
-
-#links a, #links .separator {
-	display: inline-block;
-	text-align: center;
-	width: 100px;
-}
-
-#links a {
-	color: #007bff;
-	text-decoration: none;
-	padding: 5px;
-}
-
-.separator {
-	width: 20px;
-}
-
 html, body {
-	text-align: center;
-	margin: 0 10%;
-	padding: 0;
+	background-color: #CCE0D2;
 	font-family: Arial, sans-serif; /* Adding a default font */
+	padding: 0;
+	margin: 0 10%;
+	text-align: center;
 }
 
-.note-section {
-	border: 10px solid #ccc;
-	padding: 10px;
-	margin-bottom: 20px; /* Increased for better spacing */
+.task-section {
+	background-color: #61C2A2;
+	border: 10px solid #1D617A;
 	border-radius: 8px; /* Rounded corners */
 	display: flex;
 	justify-content: center;
-
+	margin-bottom: 20px; /* Increased for better spacing */
+	margin-top: 20px; /* Increased for better spacing */
+	padding: 10px;
 }
 
 .flex-container {
+	align-items: center;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	max-width: 100%;
 }
 
 .selectable-text {
+	/* background-color: #f9f9f9; */
+	/* border: 1px solid #ddd; */
+	border-radius: 20px; /* Rounded corners for text area */
 	flex-grow: 1;
 	flex-shrink: 1;
+	margin-bottom: 20px; /* Increased for better spacing */
 	margin-right: 10px; /* Adjusted for spacing */
-	padding: 10px; /* Added padding */
-	border: 1px solid #ddd;
-	overflow-wrap: break-word;
 	max-width: calc(100% - 100px);
-	background-color: #f9f9f9;
-	border-radius: 4px; /* Rounded corners for text area */
+	overflow-wrap: break-word;
+	padding: 10px; /* Added padding */
+	overflow-wrap: break-word;
 	text-align: center;
 }
 
 .button-group {
+	align-items: flex-end; /* Align to right */
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end; /* Align to right */
 	flex-shrink: 0;
 }
 
 .button-group input[type="button"] {
+	background-color: #1D617A;
+	border: 1px solid #e7f1ff;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
 	margin-bottom: 5px; /* Space between buttons */
 	padding: 5px 10px; /* Padding for buttons */
-	border: 1px solid #007bff;
-	background-color: #e7f1ff;
-	border-radius: 4px;
-	cursor: pointer;
 }
 
 .button-group input[type="button"]:hover {
-	background-color: #007bff;
+	background-color: #61C2A2;
 	color: white;
 }
 
 .button-group input[type="submit"] {
-	margin-bottom: 5px; /* Space between buttons */
-	padding: 5px 10px; /* Padding for buttons */
-	border: 1px solid #007bff;
+    background-color: #1D617A;
+    border: 1px solid #e7f1ff;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px; /* Increase padding to provide more space around the text */
+}
+
+
+/* Targeting the 'Edit' buttons */
+.button-group input[type="button"][value="Edit"] {
+	background-color: #1D617A;
+	color: white;
+}
+
+.button-group input[type="button"]:hover {
 	background-color: #e7f1ff;
-	border-radius: 4px;
-	cursor: pointer;
+	color: black;
+}
+
+/* Targeting the 'Delete' buttons */
+.button-group input[type="submit"][value="Delete"] {
+	background-color: #1D617A;
+	color: white;
 }
 
 .button-group input[type="submit"]:hover {
-	background-color: #007bff;
+	background-color: #f44336;
 	color: white;
 }
 
 .selected {
 	border-color: #007bff;
-	background-color: #e7f1ff; /* Adjusted to a lighter shade for better readability */
 }
 
+/* Additional table styling */
 table {
-    text-align: center;
-}
-
-#links {
-	align-items: center;
-	bottom: 10px;
-	display: flex;
-	justify-content: center;
-	left: 50%;
-	position: absolute;
-	top: 75%; /* Adjust these values as needed */
-	transform: translate(-50%, -50%); /* Center the links */
-	white-space: nowrap; /* Prevent wrapping */
-}
-
-#links a:hover {
-	text-decoration: underline;
-}
-
-#links a, #links .separator {
-	display: inline-block;
+	border-collapse: collapse;
 	text-align: center;
-	width: 100px;
+	font-size: 0.9em; /* Adjusted font size */
+	margin: 20px 0; /* Added margin for spacing */
+	width: 100%;
 }
 
-#links a {
-	color: #CCE0D2;
-	padding: 5px;
-	text-decoration: none;
+th, td {
+	padding: 12px 15px; /* Padding inside each cell */
+	text-align: left; /* Aligns text to the left; adjust as needed */
 }
 
-.site-header {
-	background-color: #1D617A;
-	border-radius: 0 0 .9rem .9rem;
-	color: #61C2A2;
-	padding: 10px 20px;
-	padding-bottom: 50px;
-	position: relative; /* Needed for absolute positioning of children */
-	text-align: center;
+td {
+	border: 1px solid #dddddd; /* Adds border to table data cells */
+}
+
+th {
+	background-color: #1D617A; /* Header background color */
+	color: white;
+	text-align: left;
+}
+
+tr {
+	background-color: #f3f3f3;
+}
+
+ /* Alternate row coloring */
+/* tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+} */
+
+tr:hover {
+	background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+/* Responsive table */
+@media screen and (max-width: 600px) {
+	.table-container {
+			overflow-x: auto; /* Horizontal scrolling for small screens */
+	}
 }

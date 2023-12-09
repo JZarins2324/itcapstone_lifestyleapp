@@ -5,44 +5,63 @@
     header("location: login.php");
     exit;
   }
-?>
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/input.css">
+  // Error Message  
+  $errorMessage = '';
 
-<?php
-	$pageTitle = "New Entry";
-	$currentPage = 'input';
+  if (isset($_SESSION['error'])) {
+    $errorMessage = htmlspecialchars($_SESSION['error']);
+    // Unset the error message after displaying it so it doesn't persist
+    $_SESSION['error'] = '';
+  }
+?> 
 
-  include '../includes/header.php';
-?>
-    <br>
-    <div id="container" class="input-container">
-      <form action="../includes/inputhandler.php" method="post">
-        <label for="inputLabel">Add new</label>
-        <select name="userInput" id="userInput">
-          
-          <option value="note">Note</option>
-          <option value="password">Password</option>
-          <option value="task">Task</option>
-        </select>
-        <br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/css/input.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/header.css">
+  <title>Add Entry</title>
+</head>
+<body><?php
 
-        <label for="name">Name</label><br>
-        <input type="text" name="name" id="name" placeholder="Name">
-        <h5>*For password protection only place password in the 'Name' field</h5>
-        <br>
+$pageTitle = "New Entry";
+$currentPage = 'input';
 
-        <label for="desc">Description</label><br>
-        <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Description..."></textarea><br><br>
+include '../includes/header.php';
+?> 
+  <br>
+  <div id="container" class="input-container">
+    <form action="../includes/inputhandler.php" method="post">
+      <label for="inputLabel">Add new</label>
+      <select name="userInput" id="userInput">
+        <option value="password">Password</option>
+        <option value="note">Note</option>
+        <option value="task">Task</option>
+      </select><br>
 
-        <label id="dateLabel" for="date" style="display:none">Date</label>
-        <input type="date" name="date" id="date" style="display:none"><br><br>
+      <h4><?php echo $errorMessage; ?></h4>
+      <br>
+      <label id="lblName" for="name">Password</label><br>
+      <input type="text" name="name" id="name" placeholder="Password" required>
+      <h5>*For password protection only place password in the 'Name' field</h5>
+      <br>
 
-        <input type="hidden" name="isValidRequest" value="true">
+      <label id="lblDesc" for="desc">Account Info</label><br>
+      <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Account Info..." required></textarea><br><br>
 
-        <input id="submit" type="submit" value="Add">
-      </form>
-    </div>
-      <?= '<script src="../assets/js/input.js"></script>'; ?>
-  </body>
+      <label id="dateLabel" for="date" style="display:none">Date</label>
+      <input type="date" name="date" id="date" style="display:none">
+
+      <small>*Password only partially stored for protection</small><br><br>
+
+      <input type="hidden" name="isValidRequest" value="true">
+
+      <input id="submit" type="submit" value="Add">
+    </form>
+  </div>
+  <?= '<script src="../assets/js/input.js"></script>'; ?>
+</body>
 </html>

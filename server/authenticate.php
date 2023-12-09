@@ -12,33 +12,28 @@ $username = filter_var(trim($_POST['username']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
 // Create a new mysqli instance
-$mysqli = new mysqli($host, $user, $pass, $dbname);
 
 // Check for database connection error
-if ($mysqli->connect_error) {
-  die("Connection failed: " . $mysqli->connect_error);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = $mysqli->prepare("SELECT * FROM users WHERE userName = ?");
+$stmt = $conn->prepare("SELECT * FROM users WHERE userName = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 
 if (isset($_POST["create"])) {
   $result = $stmt->get_result();
-  if ($result->num_rows === 0) {
-    include "../includes/passwordChecks.php"; 
-		// Include the password validation script
-
-    if (empty($passwordErrors)) { // Proceed only if there are no password errors
-      // Username does not exist, create a new account
-      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-      $createAccount = $mysqli->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
-      $createAccount->bind_param("ss", $username, $hashedPassword);      
-      $createAccount->execute();
+	if ($result->num_rows === 0) {
+    // Username does not exist, create a new account
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $createAccount = $conn->prepare("INSERT INTO users (userName, userPass) VALUES (?, ?)");
+    $createAccount->bind_param("ss",$username, $hashedPassword);      
+		$createAccount->execute();
       
-      // Set session variables
-      $_SESSION['user_id'] = $mysqli->insert_id;
-      $_SESSION['username'] = $username;
+    // Set session variables
+    $_SESSION['user_id'] = $conn->insert_id;
+    $_SESSION['username'] = $username;
           
       // Redirect to home page
       header('Location: ../pages/home.php');
