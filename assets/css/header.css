@@ -1,7 +1,7 @@
 .site-header {
-	background-color: #1D617A;
-	border-radius: 0 0 .9rem .9rem;
-	color: #61C2A2;
+  background-color: #1D617A;
+  border-radius: 0 0 .9rem .9rem;
+  color: #61C2A2;
 	padding: 10px 20px;
 	padding-bottom: 50px;
 	position: relative; /* Needed for absolute positioning of children */
