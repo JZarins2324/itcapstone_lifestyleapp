@@ -24,8 +24,8 @@ describe("Home Page Tests", function() {
         // Add additional assertions to verify the editing functionality
     });
 
-    it("should navigate to the New Entry page when clicking 'New Entry'", async function() {
-			const newEntryLink = await driver.findElement(By.linkText('New Entry'));
+    it("should navigate to the New Entry page when clicking 'Add Entry'", async function() {
+			const newEntryLink = await driver.findElement(By.linkText('Add Entry'));
 			await newEntryLink.click();
 	
 			await driver.wait(until.urlIs("http://itcapstonelifestyleapp.infinityfreeapp.com/pages/input.php"), 10000);
