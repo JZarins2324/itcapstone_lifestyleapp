@@ -27,7 +27,7 @@
 
   if ($inputValue == 'task') {
     // Store Task
-    $sql = "INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', $dateValue, '$userID')";
+    $sql = "INSERT INTO tasks (taskName, taskDesc, taskDate, userID) VALUES ('$nameValue', '$descValue', '$dateValue', '$userID')";
   } else if ($inputValue == 'password') {
     // Check Password is 5 or greater
     if (strlen($nameValue) < 5) {
