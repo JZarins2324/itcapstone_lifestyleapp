@@ -42,7 +42,7 @@
       exit();
     } else {
       // Username already in use
-      $_SESSION['error'] = 'Username alrady in use';
+      $_SESSION['error'] = 'Username already in use';
       header('Location: ../pages/login.php');
       exit();
     }
