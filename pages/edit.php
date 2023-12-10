@@ -43,13 +43,25 @@
       <form action="../server/viewupdatehandler.php" method="post">
         <input type="hidden" name="table" value="<?= $_POST['table']; ?>">
         <input type="hidden" name="id" value="<?= $_POST['id']; ?>">
-        <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>">
+        <input type="hidden" name="redirect" value="<?= $_SERVER['HTTP_REFERER']; ?>"><?php
 
+        if ($tableName == "passwords") {
+            ?> 
+        <label for="name">Password: </label>
+        <input type="text" name="name" value="<?= $_POST['name']; ?>" required><br><br>
+
+        <label for="desc">Account Info: </label>
+        <input type="text" name="desc" value="<?= $_POST['desc']; ?>" required><br><br><?php
+        } else {
+            ?> 
         <label for="name">Name: </label>
         <input type="text" name="name" value="<?= $_POST['name']; ?>" required><br><br>
 
         <label for="desc">Description: </label>
         <input type="text" name="desc" value="<?= $_POST['desc']; ?>" required><br><br><?php
+        }
+
+        
           // Display Date feild
           if ($tableName == 'tasks') {
             // Populate date feild with default value
