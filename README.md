@@ -63,6 +63,8 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 
 12/09/2023 With all dependencies installed (project uses node, npm, jasmine, and selenium), "npm test" command in git bash or other terminals should run tests on the project.
 
+12/10/2023 Version 1.0 released 
+
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
 
 ## Demo
