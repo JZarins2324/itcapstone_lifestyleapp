@@ -10,6 +10,7 @@ Lifestyle Companion is a web-based application designed to make day-to-day task 
 - [License](#license)
 - [Contact](#contact)
 - [Changelog](#changelog)
+- [Automated Testing](#Testing)
 - [Demo](#demo)
 
 ## Introduction
@@ -66,6 +67,9 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 12/10/2023 Version 1.0 released 
 
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
+
+## Automated Testing
+With all dependencies installed (project uses node, npm, jasmine, and selenium), "npm test" command in git bash or other terminals should run tests on the online hosted project.
 
 ## Demo
 Below is a diagrammatic representation of Lifestyle Companion's functionality:
