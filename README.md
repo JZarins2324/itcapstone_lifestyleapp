@@ -69,7 +69,7 @@ Change .env.example to .env and use your local settings. Run root/dbcreate.php a
 *Note: Update this section regularly with details about new features, bug fixes, and improvements.*
 
 ## Automated Testing
-With all dependencies installed . The project uses node, npm, jasmine, and selenium-webdriver and chromedriver(tests are made for Google Chrome). Running the "npm test" command in git bash or other terminals should run tests on the online hosted project.
+The project uses node, npm, jasmine, and selenium-webdriver and chromedriver(tests are made for Google Chrome). With all dependencies installed, running the "npm test" command in git bash or other terminals should run tests on the online hosted project.
 
 ## Demo
 Below is a diagrammatic representation of Lifestyle Companion's functionality:
